@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
+import Header from './components/Header.jsx';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import About from './components/About.jsx';
+import Contact from './components/Contact.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router> {/* Wrap your component tree with BrowserRouter */}
+      <div>
+        <Header />
+        <Navbar />
+        <main>
+          <About />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
