@@ -38,3 +38,8 @@ body {
 .bg-primary-color {
   background-color: linear-gradient(to right, #6b2b72, #a5079d);
 }
+
+.blur-bg {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
