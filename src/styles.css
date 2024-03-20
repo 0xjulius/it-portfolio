@@ -2,16 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 /* styles.css */
 
 /* Global Styles */
 body {
-    font-family: 'Poppins';
+  font-family: 'Rajdhani';
     background-image: linear-gradient(to right, #ffffff, #f8f7ff, #eff0ff, #e4e9ff, #d8e3ff, #cbe3ff, #bce3ff, #ace3ff, #97e9ff, #81f0ff, #6cf6fc, #5ffbf1);
     color: #fff;
   }
+
+.h1 {
+  font-family: 'Orbitron';
+}
+
+.h2, h3 {
+  font-family: 'Rajdhani';
+}
+
 
   .text-gradient {
     background: radial-gradient(
@@ -54,4 +62,8 @@ body {
 
 .ctext {
   color: #76839d;
+}
+
+.disable-scroll {
+  overflow: hidden;
 }

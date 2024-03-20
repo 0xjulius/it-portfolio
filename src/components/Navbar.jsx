@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="text-white flex justify-between items-center h-24 max-w-[1240px] mx-auto absolute top-0 right-10 z-50 text-md xl:text-2xl lg:text-xl">
+    <div className="ptx flex justify-between items-center h-24 max-w-[1240px] mx-auto absolute top-0 right-10 z-50 text-xl xl:text-3xl lg:text-2xl pt-10">
       <ul className='md:flex hidden'>
         <li className='p-4'><Link to="/">Me</Link></li>
         <li className='p-4'><Link to="#studies">Studies</Link></li>
@@ -18,13 +18,13 @@ const Navbar = () => {
         <li className='p-4'><Link to="/contact">Contact</Link></li>
       </ul>
 
-      <div onClick={handleNav} className='block lg:hidden xl:hidden md:hidden z-10'>
-        {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25}/>}
+      <div onClick={handleNav} className='block lg:hidden xl:hidden md:hidden z-10 pt-10'>
+        {nav ? <AiOutlineClose size={25} color='white' /> : <AiOutlineMenu size={25}/>}
       </div>
 
       <div className={`fixed left-0 top-0 w-full h-full bg-black bg-opacity-75 md:hidden transition-opacity duration-300 ease-in-out ${nav ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="flex flex-col justify-center h-full">
-          <ul className='pt-24 text-2xl text-center'>
+          <ul className='pt-24 text-4xl text-center text-white'>
             <li className='p-2'><Link to="/">Me</Link></li>
             <li className='p-2'><Link to="#studies">Studies</Link></li>
             <li className='p-2'><Link to="/about">About</Link></li>
