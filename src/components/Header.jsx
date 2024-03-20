@@ -8,7 +8,7 @@ function Header() {
           <h1 className='w-full text-4xl font-semibold flex-1 font tracking-widest lg:text-6xl md:text-5xl'>
             <span className='text-gradient'>JULIUS AALTO.</span>
           </h1>
-          <p className='mt-1 subpixel-antialiased tracking-widest'>Welcome to my React website!</p>
+          <p className='mt-3 subpixel-antialiased tracking-widest ptx font-semibold'>Welcome to my IT-Portfolio! <br/> <span className='ctext text-sm font-normal'>Made with React and Tailwind.css</span></p>
         </div>
       </section>
     </div>

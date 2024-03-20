@@ -43,3 +43,15 @@ body {
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
+
+.ptx2 {
+  color: #6fbcf0;
+}
+
+.ptx {
+  color: #1d2947;
+}
+
+.ctext {
+  color: #76839d;
+}
