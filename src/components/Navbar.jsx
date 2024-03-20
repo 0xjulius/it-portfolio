@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="text-white flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 fixed top-0 right-10 z-50 text-xl">
+    <div className="text-white flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 absolute top-0 right-10 z-50 text-xl xl:text-2xl">
       <ul className='md:flex hidden'>
         <li className='p-4'><Link to="/">Home</Link></li>
         <li className='p-4'><Link to="/contact">Projects</Link></li>
@@ -19,7 +19,7 @@ const Navbar = () => {
       </ul>
 
       <div onClick={handleNav} className='block lg:hidden xl:hidden md:hidden z-10'>
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20}/>}
+        {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25}/>}
       </div>
 
       <div className={`fixed left-0 top-0 w-full h-full bg-black bg-opacity-75 md:hidden transition-opacity duration-300 ease-in-out ${nav ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
