@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="text-white flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 absolute top-0 right-10 z-50 text-xl xl:text-2xl">
+    <div className="text-white flex justify-between items-center h-24 max-w-[1240px] mx-auto absolute top-0 right-10 z-50 text-md xl:text-2xl lg:text-xl">
       <ul className='md:flex hidden'>
         <li className='p-4'><Link to="/">Home</Link></li>
         <li className='p-4'><Link to="/contact">Projects</Link></li>

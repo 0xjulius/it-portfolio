@@ -9,7 +9,7 @@
 /* Global Styles */
 body {
     font-family: 'Poppins';
-    background-color: #20242d;
+    background-image: linear-gradient(to right, #ffffff, #f8f7ff, #eff0ff, #e4e9ff, #d8e3ff, #cbe3ff, #bce3ff, #ace3ff, #97e9ff, #81f0ff, #6cf6fc, #5ffbf1);
     color: #fff;
   }
 

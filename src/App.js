@@ -4,7 +4,7 @@ import Header from './components/Header.jsx';
 import Home from './components/Home.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
-import About from './components/About.jsx';
+import Studies from './components/Studies.jsx';
 import Contact from './components/Contact.jsx';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Home />
         <Navbar />
         <main>
-          <About />
+          <Studies />
           <Contact />
         </main>
         <Footer />
