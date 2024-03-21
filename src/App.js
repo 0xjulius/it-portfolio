@@ -9,6 +9,7 @@ import Projects from './components/Projects.jsx';
 import Thesis from './components/Thesis.jsx';
 import Skills from './components/Skills.jsx';
 import Awards from './components/Awards.jsx';
+import ScrollToTopButton from './components/ScrollToTopButton.jsx';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Awards />
         </main>
         <Footer />
+        <ScrollToTopButton />
       </div>
     </Router>
   );

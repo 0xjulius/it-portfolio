@@ -41,7 +41,7 @@ const Navbar = () => {
 
       <div
         onClick={handleNav}
-        className={`block lg:hidden xl:hidden z-10 pt-10 top-0 right-1 ${
+        className={`block cursor-pointer lg:hidden xl:hidden z-10 pt-10 top-0 right-1 ${
           nav ? "fixed top-10 pr-10" : "absolute"
         }`}
       >
@@ -59,28 +59,53 @@ const Navbar = () => {
       >
         <div className="flex flex-col justify-center h-full">
           <ul className="pt-24 text-4xl text-center text-white">
-            <li className="p-2">
-              <Link to="home" onClick={() => setNav(false)}>
+            <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
+              <Link
+                to="home"
+                smooth={true}
+                duration={500}
+                onClick={() => setNav(false)}
+              >
                 Me
               </Link>
             </li>
-            <li className="p-2">
-              <Link to="studies" onClick={() => setNav(false)}>
+            <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
+              <Link
+                to="studies"
+                smooth={true}
+                duration={500}
+                onClick={() => setNav(false)}
+              >
                 Studies
               </Link>
             </li>
-            <li className="p-2">
-              <Link to="projects" onClick={() => setNav(false)}>
+            <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
+              <Link
+                to="projects"
+                smooth={true}
+                duration={500}
+                onClick={() => setNav(false)}
+              >
                 Projects
               </Link>
             </li>
-            <li className="p-2">
-              <Link to="studies" onClick={() => setNav(false)}>
+            <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
+              <Link
+                to="studies"
+                smooth={true}
+                duration={500}
+                onClick={() => setNav(false)}
+              >
                 Studies
               </Link>
             </li>
-            <li className="p-2">
-              <Link to="awards" onClick={() => setNav(false)}>
+            <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
+              <Link
+                to="awards"
+                smooth={true}
+                duration={500}
+                onClick={() => setNav(false)}
+              >
                 Awards
               </Link>
             </li>
