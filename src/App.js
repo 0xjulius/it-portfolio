@@ -8,6 +8,7 @@ import Studies from './components/Studies.jsx';
 import Projects from './components/Projects.jsx';
 import Thesis from './components/Thesis.jsx';
 import Skills from './components/Skills.jsx';
+import Awards from './components/Awards.jsx';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Thesis />
           <Projects/>
           <Skills />
+          <Awards />
         </main>
         <Footer />
       </div>

@@ -33,8 +33,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300">
-          <Link to="projects" spy={true} smooth={true}>
-            Contact
+          <Link to="awards" spy={true} smooth={true}>
+            Awards
           </Link>
         </li>
       </ul>
@@ -80,8 +80,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="p-2">
-              <Link to="contact" onClick={() => setNav(false)}>
-                Contact
+              <Link to="awards" onClick={() => setNav(false)}>
+                Awards
               </Link>
             </li>
           </ul>
