@@ -19,8 +19,8 @@ function App() {
         <main>
           <Studies />
           <Thesis />
-          <Skills />
           <Projects/>
+          <Skills />
         </main>
         <Footer />
       </div>
