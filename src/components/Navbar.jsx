@@ -34,7 +34,7 @@ const Navbar = () => {
         </li>
         <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300">
           <Link to="awards" spy={true} smooth={true}>
-            Awards
+            Accolades
           </Link>
         </li>
       </ul>
@@ -106,7 +106,7 @@ const Navbar = () => {
                 duration={500}
                 onClick={() => setNav(false)}
               >
-                Awards
+                Accolades
               </Link>
             </li>
           </ul>

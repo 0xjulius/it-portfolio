@@ -3,12 +3,14 @@ import awardImage from "../images/kamk-cybersecurity-fundamentals-badge.webp"; /
 import awardImage2 from "../images/kamk-azure-fundamentals-badge.webp";
 import awardImage3 from "../images/kamk-elements-of-cloud-and-cybersecurity-badge.webp";
 import awardImage4 from "../images/certificate-elements-of-ai-fi.webp";
+import awardImage5 from "../images/stage.jpg";
+import awardImage6 from "../images/don.avif";
 
 const Awards = () => {
   return (
     <section className="py-10" id="awards">
       <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
-        Honors, Awards and Certificates
+        Certificates
       </h1>
       <div className="container mx-auto flex items-center">
         {/* Award Image */}
@@ -132,6 +134,61 @@ const Awards = () => {
           </h1>
           <p className="text-lg mb-4 ctext font-semibold">
             Issued in March 2021, University of Helsinki, Finland.
+          </p>
+        </div>
+      </div>
+      <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mt-[100px]">
+        Awards and Honors
+      </h1>
+      <div className="container mx-auto flex items-center pt-20">
+        {/* Award Image */}
+        <div className="w-1/4">
+          <img src={awardImage5} alt="Award" className="w-full h-auto px-2" />
+        </div>
+
+        {/* Award Information */}
+        <div className="w-2/3 px-6">
+          <h1 className="text-4xl font-bold mb-4 ptx">
+            <a
+              className="underline hover:no-underline"
+              href="https://juliusaalto.com/portfolio/wapice-hack-the-stage-iot-ticket/"
+              target="blank"
+            >
+              Wapice's Hack The Stage - Grand finalist
+            </a>
+          </h1>
+          <p className="text-lg mb-4 ctext font-semibold">
+            Awarded in March 2021.
+            <br />
+            <br />I was working as a Lead Technical Project Manager with our
+            student team and managed to earn a spot on IoT-Ticket Hack The Stage
+            -grand final.
+            <a
+              className="underline hover:no-underline ptx"
+              href="https://juliusaalto.com/portfolio/wapice-hack-the-stage-iot-ticket/"
+              target="_blank"
+            >
+              <br />
+              <br />
+              Click here to learn more.
+            </a>
+          </p>
+        </div>
+      </div>
+      <div className="container mx-auto flex items-center pt-20">
+        {/* Award Image */}
+        <div className="w-1/4">
+          <img src={awardImage6} alt="Award" className="w-full h-auto px-2" />
+        </div>
+
+        {/* Award Information */}
+        <div className="w-2/3 px-6">
+          <h1 className="text-4xl font-bold mb-4 ptx">
+            Touko Saari's Foundation Scholarships
+          </h1>
+          <p className="text-lg mb-4 ctext font-semibold">
+            Awarded in June 2012, in recognition of diligent and successful
+            studies.
           </p>
         </div>
       </div>
