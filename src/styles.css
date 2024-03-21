@@ -67,3 +67,42 @@ body {
 .disable-scroll {
   overflow: hidden;
 }
+
+.a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn {
+  cursor: pointer;
+  text-align: center;
+  background-size: 300% 100%;
+  color: white;
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:hover {
+  background-position: 100% 0;
+  background-image: linear-gradient(
+    to right,
+    #e6effe,
+    #f0f4f7,
+    #cbe3ff,
+    #e6effe
+  );
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  color: #1d2947;
+  width: 150px;
+}

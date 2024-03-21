@@ -1,7 +1,6 @@
-// Contact.jsx
 import React from 'react';
 
-function Contact() {
+function Projects() {
   return (
     <section className="contact">
       <div className="container">
@@ -17,4 +16,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Projects;

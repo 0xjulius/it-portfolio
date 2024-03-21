@@ -5,7 +5,9 @@ import Home from './components/Home.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import Studies from './components/Studies.jsx';
-import Contact from './components/Contact.jsx';
+import Projects from './components/Projects.jsx';
+import Thesis from './components/Thesis.jsx';
+import Skills from './components/Skills.jsx';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
         <Navbar />
         <main>
           <Studies />
-          <Contact />
+          <Thesis />
+          <Skills />
+          <Projects/>
         </main>
         <Footer />
       </div>
