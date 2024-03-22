@@ -10,7 +10,7 @@ const Studies = () => {
 
   return (
     <section className="section" id="studies">
-      <div className="container mx-auto mt-[180px] flex-none">
+      <div className="container mx-auto mt-[100px] flex-none">
         <div className="flex flex-col lg:flex-none lg:items-center ">
           <div className="flex-1">
             <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
@@ -99,6 +99,16 @@ const Studies = () => {
                   <br />I have successfully completed my studies with grade
                   point average{" "}
                   <span className="ptx2 font-semibold">3.64/5.0.</span>
+                  <a
+                    className="font-bold cursor-pointer underline hover:no-underline"
+                    href="https://ops.vamk.fi/fi/TK/2020/"
+                    target="_blank"
+                  >
+                    {" "}
+                    <br />
+                    <br />
+                    Review our school's curriculum.
+                  </a>
                 </p>
               </motion.div>
             </div>

@@ -2,10 +2,10 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="text-black pt-10 md:pt-5 lg:pt-10">
-      <section className="md:flex lg:justify-start md:mt-5 justify-center sm:mt-5 sm:ml-5 sticky z-10 px-4">
+    <div className="text-black top-10 lg:pt-10 mt-[100px] lg:mt-5">
+      <section className="md:flex lg:justify-start justify-center sticky z-10 px-4">
         <div className="text-center xl:pl-40 2xl:pl-60">
-          <h1 className="w-full text-4xl font-semibold flex-1 font tracking-widest lg:text-6xl md:text-5xl">
+          <h1 className="w-full text-5xl font-semibold flex-1 font tracking-widest lg:text-6xl">
             <span className="text-gradient">JULIUS</span>{" "}
             <span className="text-white">AALTO.</span>
           </h1>

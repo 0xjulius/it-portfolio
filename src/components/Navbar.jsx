@@ -10,9 +10,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="ptx flex justify-between items-center h-24 max-w-[1240px] mx-auto absolute top-10 right-10 z-50 text-lg xl:text-2xl lg:text-2xl pt-10 xl:pr-20 2xl:pr-40">
+    <div className="ptx flex justify-between items-center h-24 max-w-[1240px] mx-auto absolute top-10 right-10 z-50 text-lg xl:text-2xl lg:text-2xl pt-10 2xl:pr-40">
       <ul className="lg:flex hidden">
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300 ">
+        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300">
           <Link to="home" spy={true} smooth={true}>
             Me
           </Link>
@@ -91,12 +91,12 @@ const Navbar = () => {
             </li>
             <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
               <Link
-                to="studies"
+                to="skills"
                 smooth={true}
                 duration={500}
                 onClick={() => setNav(false)}
               >
-                Studies
+                Skills
               </Link>
             </li>
             <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">

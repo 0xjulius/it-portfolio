@@ -10,6 +10,7 @@ import Thesis from './components/Thesis.jsx';
 import Skills from './components/Skills.jsx';
 import Awards from './components/Awards.jsx';
 import ScrollToTopButton from './components/ScrollToTopButton.jsx';
+import Technologies from './components/Technologies.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <div>
         <Header />
         <Home />
+        <Technologies/>
         <Navbar />
         <main>
           <Studies />

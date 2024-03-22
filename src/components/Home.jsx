@@ -4,7 +4,7 @@ import heropic from "../images/omakuva.webp";
 const Home = () => {
   return (
     <section className="home" id="home">
-      <div className="flex items-center justify-center mt-[180px]">
+      <div className="flex items-center justify-center mt-10">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="mr-4 mt-10 px-4">
             <img
@@ -15,7 +15,7 @@ const Home = () => {
           </div>
           <div className="lg:w-1/2 px-6">
             <h1 className="text-4xl font-bold mb-4 ptx mt-10">Julius Aalto.</h1>
-            <p className="text-2xl max-w-lg ctext mt-10">
+            <p className="text-2xl max-w-lg ctext mt-10 font-semibold">
               I am an upcoming IT professional from Vaasa, Finland who is
               interested in software and web development, IT support roles, and
               cybersecurity. <br />I am looking for a{" "}
