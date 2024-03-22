@@ -1,6 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faCogs, 
@@ -13,15 +11,6 @@ import {
   faServer, 
   faMobileAlt, 
   faTachometerAlt, 
-  faUserLock,
-  faPuzzlePiece,
-  faRocket,
-  faHandsHelping,
-  faBookReader,
-  faUsers,
-  faGlobe,
-  faGamepad,
-  faLink
 } from '@fortawesome/free-solid-svg-icons';
 
 const Skills = () => {
@@ -34,13 +23,7 @@ const Skills = () => {
         <div className="container mx-auto">
           <div className="flex flex-col gap-y-8 lg:shrink lg:items-center lg:gap-x-12">
             <div className="flex-1 text-lg">
-              <motion.div
-                variants={fadeIn("up", 0.3)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: false, amount: 0.7 }}
-                className="lg:flex lg:gap-x-10 mb-12 max-w-max"
-              >
+              <div className="lg:flex lg:gap-x-10 mb-12 max-w-max">
                 <div className="mx-auto lg:mx-0 lg:w-64 ">
                   <h3 className="font-semibold ptx mb-4 mt-6 text-2xl lg:text-left tracking-wider">
                   <FontAwesomeIcon icon={faCogs} className="mr-2 pr-1" />
@@ -93,13 +76,8 @@ const Skills = () => {
                   </p>
                   <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
                 </div>
-              </motion.div>
-              <motion.div
-                variants={fadeIn("up", 0.3)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: false, amount: 0.7 }}
-                className="flex-1 lg:flex gap-x-6 lg:gap-x-10 mb-12 max-w-max"
+              </div>
+              <div className="flex-1 lg:flex gap-x-6 lg:gap-x-10 mb-12 max-w-max"
               >
                 <div className=" mx-auto lg:mx-0">
                   <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
@@ -156,14 +134,8 @@ const Skills = () => {
                   </p>
                   <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
                 </div>
-              </motion.div>
-              <motion.div
-                variants={fadeIn("up", 0.3)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: false, amount: 0.7 }}
-                className="flex-1 lg:flex gap-x-6 lg:gap-x-10 mb-12 max-w-max"
-              >
+              </div>
+              <div className="flex-1 lg:flex gap-x-6 lg:gap-x-10 mb-12 max-w-max">
                 <div className=" mx-auto lg:mx-0">
                   <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
                   <FontAwesomeIcon icon={faServer} className="mr-2 pr-1" />
@@ -216,7 +188,7 @@ const Skills = () => {
                     </span>
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

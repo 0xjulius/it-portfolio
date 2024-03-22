@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../images/Wm_simple_white_250px.webp";
+import "animate.css";
 
 function Header() {
   return (
@@ -14,12 +15,11 @@ function Header() {
                 className="h-auto mx-auto w-[250px] lg:mb-0"
               />
             </div>
-            <span className="text-gradient">JULIUS
-            AALTO.</span>
+            <span className="text-gradient">JULIUS AALTO.</span>
           </h1>
-          <p className="text-xl mt-3 subpixel-antialiased tracking-widest ptx font-semibold">
+          <p className="text-xl mt-3 subpixel-antialiased tracking-widest ptx font-semibold animate__animated animate__fadeInUp">
             Welcome to my IT-Portfolio! <br />{" "}
-            <span className="ctext text-sm font-normal">
+            <span className="ctext text-sm font-normal animate__animated animate__fadeInUp animate__delay-1s">
               Made with React and Tailwind.css
             </span>
           </p>

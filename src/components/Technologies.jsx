@@ -1,5 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 import {
   faHtml5,
   faCss3,
@@ -18,7 +20,11 @@ import {
 const Technologies = () => {
   return (
     <section className="py-10 px-4 ptx mt-10" id="technologies">
-      <div className="container mx-auto">
+      <motion.div className="container mx-auto"
+       variants={fadeIn("up", 0.3)}
+       initial="hidden"
+       whileInView={"show"}
+       viewport={{ once: false, amount: 0.7 }}>
         <div className="flex flex-wrap justify-center lg:flex-row gap-14">
           <Icon icon={faHtml5} title="HTML5" />
           <Icon icon={faCss3} title="CSS3" />
@@ -33,7 +39,7 @@ const Technologies = () => {
           <Icon icon={faWordpress} title="WordPress" />
           <Icon icon={faElementor} title="Elementor" />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

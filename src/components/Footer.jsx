@@ -2,8 +2,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
-  faFacebook,
-  faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -17,12 +15,14 @@ const Footer = () => {
             <a
               href="https://github.com/0xjulius"
               className="text-white hover:text-gray-400 transition-colors duration-300 pl-5"
+              target="_blank" rel="noreferrer"
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
               href="https://www.linkedin.com/in/juliusaalto/"
               className="text-white hover:text-gray-400 transition-colors duration-300 pl-3"
+              target="_blank" rel="noreferrer"
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         <div className="text-center md:text-right">
           <p className="mb-2">
-            Contact me: <a href=""></a>
+            Contact me: <a href="#null"></a>
           </p>
           <p>&copy; 2024 Julius Aalto. All rights reserved.</p>
         </div>

@@ -12,27 +12,27 @@ const Navbar = () => {
   return (
     <div className="ptx flex justify-between items-center h-24 max-w-[1240px] mx-auto absolute top-2 right-10 z-50 text-lg xl:text-2xl lg:text-2xl pt-10 2xl:pr-40">
       <ul className="lg:flex hidden">
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300">
+        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
           <Link to="home" spy={true} smooth={true}>
             Me
           </Link>
         </li>
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300">
+        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
           <Link to="studies" spy={true} smooth={true}>
             Studies
           </Link>
         </li>
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300">
+        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
           <Link to="projects" spy={true} smooth={true}>
             Projects
           </Link>
         </li>
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300">
+        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
           <Link to="skills" spy={true} smooth={true}>
             Skills
           </Link>
         </li>
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300">
+        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
           <Link to="awards" spy={true} smooth={true}>
             Accolades
           </Link>
