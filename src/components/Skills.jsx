@@ -21,10 +21,10 @@ const Skills = () => {
           Professional skills
         </h2>
         <div className="container mx-auto">
-          <div className="flex flex-col gap-y-8 lg:shrink lg:items-center lg:gap-x-12">
+          <div className="flex flex-col gap-y-8 lg:shrink lg:items-center lg:gap-x-12 ">
             <div className="flex-1 text-lg">
               <div className="lg:flex lg:gap-x-10 mb-12 max-w-max">
-                <div className="mx-auto lg:mx-0 lg:w-64 ">
+                <div className="mx-auto lg:mx-0 lg:w-64">
                   <h3 className="font-semibold ptx mb-4 mt-6 text-2xl lg:text-left tracking-wider">
                   <FontAwesomeIcon icon={faCogs} className="mr-2 pr-1" />
                     Operating systems

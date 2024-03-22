@@ -23,7 +23,7 @@ const Awards = () => {
         </div>
 
         {/* Award Information */}
-        <div className="lg:w-2/3 px-6">
+        <div className="lg:w-2/3 px-6 mt-10">
           <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10">
             <a
               className="underline hover:no-underline"

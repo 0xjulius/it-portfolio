@@ -27,7 +27,7 @@ const Projects = () => {
             <img
               src={project1}
               alt="Project 1"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               Cryptocurrency price checker built with React and Tailwind CSS.
@@ -59,7 +59,7 @@ const Projects = () => {
             <img
               src={project2}
               alt="Project 2"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               By developing this project, I've acquired practical experience in
@@ -91,7 +91,7 @@ const Projects = () => {
             <img
               src={project3}
               alt="Project 3"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               Project showcasing loading and hover effects, menu/sidebar
@@ -123,7 +123,7 @@ const Projects = () => {
             <img
               src={project4}
               alt="Project 4"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               Built with React, Vite, Tailwind CSS, and animations.css. Key
@@ -156,7 +156,7 @@ const Projects = () => {
             <img
               src={project5}
               alt="Project 5"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               Built with HTML5 and CSS only, optimized for mobile and tablet
@@ -189,7 +189,7 @@ const Projects = () => {
             <img
               src={project6}
               alt="Project 6"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               Fully deployed WordPress solution. The website showcases our
@@ -223,7 +223,7 @@ const Projects = () => {
             <img
               src={project7}
               alt="Project 7"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               Python Project which is scraping the web for the latest IT job
@@ -248,7 +248,7 @@ const Projects = () => {
             <img
               src={project8}
               alt="Project 8"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               Made with Unity / C# / C++ / Photoshop / Visual Studio Code. Made
@@ -279,7 +279,7 @@ const Projects = () => {
             <img
               src={project9}
               alt="Project 9"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               Generating random numbers from 1-41 and sorting them, while
@@ -303,7 +303,7 @@ const Projects = () => {
             <img
               src={project10}
               alt="Project 10"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               Python tool designed to show your current BMI and estimate calorie
@@ -329,7 +329,7 @@ const Projects = () => {
             <img
               src={project11}
               alt="Project 11"
-              className="w-full h-auto md:h-64 object-cover"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold">
               My own customized portfolio with WordPress and Elementor.

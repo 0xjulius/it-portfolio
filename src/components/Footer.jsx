@@ -1,9 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -15,14 +12,16 @@ const Footer = () => {
             <a
               href="https://github.com/0xjulius"
               className="text-white hover:text-gray-400 transition-colors duration-300 pl-5"
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
               href="https://www.linkedin.com/in/juliusaalto/"
-              className="text-white hover:text-gray-400 transition-colors duration-300 pl-3"
-              target="_blank" rel="noreferrer"
+              className="text-white hover:text-gray-400 transition-all duration-300 pl-3"
+              target="_blank"
+              rel="noreferrer"
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
@@ -30,7 +29,7 @@ const Footer = () => {
         </div>
         <div className="text-center md:text-right">
           <p className="mb-2">
-            Contact me: <a href="#null"></a>
+            Contact me: <a className="underline hover:no-underline cursor-pointer" href="mailto:julius@juliusaalto.com">julius@juliusaalto.com</a> <br/>All emails are promptly directed to the appropriate recipient.
           </p>
           <p>&copy; 2024 Julius Aalto. All rights reserved.</p>
         </div>

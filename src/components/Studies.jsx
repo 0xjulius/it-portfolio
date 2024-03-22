@@ -13,10 +13,10 @@ const Studies = () => {
       <div className="container mx-auto mt-[100px] flex-none">
         <div className="flex flex-col lg:flex-none lg:items-center ">
           <div className="flex-1">
-            <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
+            <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-16">
               My studies and education
             </h1>
-            <div className="xl:flex gap-x-6 xl:gap-x-10 text-center">
+            <div className="xl:flex gap-x-6 xl:gap-x-10 text-center p-4">
               <motion.div
                 variants={fadeIn("right", 0.3)}
                 initial="hidden"
@@ -27,7 +27,7 @@ const Studies = () => {
                 <h3 className="font-semibold mb-4 mt-16 text-xl lg:text-2xl max-w-[400px] mx-auto ptx">
                   Vocational Qualification on Business and Administration.
                 </h3>
-                <p className="mx-auto ctext text-center text-xl  max-w-[400px]">
+                <p className="mx-auto ctext text-center text-xl max-w-[400px]">
                   <span className="font-semibold">
                     Koulutuskeskus Sedu, Seinäjoki.
                   </span>{" "}
@@ -45,7 +45,7 @@ const Studies = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.3 }}
-                className="mx-auto text-center"
+                className="mx-auto text-center px-4"
               >
                 <h3 className="font-semibold mb-4 mt-16 text-lg lg:text-2xl ptx">
                   Finnish Defence Forces, <br />
@@ -66,7 +66,7 @@ const Studies = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.3 }}
-                className="mx-auto text-center"
+                className="mx-auto text-center px-4"
               >
                 <h3 className="font-semibold ptx mb-4 mt-16 text-xl lg:text-2xl">
                   Visual Designer, <br />
@@ -86,7 +86,7 @@ const Studies = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.3 }}
-                className="mx-auto lg:mx-0 text-center"
+                className="mx-auto lg:mx-0 text-center px-4"
               >
                 <h3 className="font-semibold ptx mb-4 mt-16 text-xl lg:text-2xl lg:min-w-64">
                   IT-Bachelor of Business <br />
