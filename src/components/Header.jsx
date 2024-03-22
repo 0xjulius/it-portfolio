@@ -14,8 +14,8 @@ function Header() {
                 className="h-auto mx-auto w-[250px] lg:mb-0"
               />
             </div>
-            <span className="text-gradient">JULIUS</span>{" "}
-            <span className="text-white">AALTO.</span>
+            <span className="text-gradient">JULIUS
+            AALTO.</span>
           </h1>
           <p className="text-xl mt-3 subpixel-antialiased tracking-widest ptx font-semibold">
             Welcome to my IT-Portfolio! <br />{" "}
