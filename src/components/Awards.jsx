@@ -5,8 +5,6 @@ import awardImage3 from "../images/kamk-elements-of-cloud-and-cybersecurity-badg
 import awardImage4 from "../images/certificate-elements-of-ai-fi.webp";
 import awardImage5 from "../images/stage.jpg";
 import awardImage6 from "../images/don.avif";
-import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
 
 const Awards = () => {
   return (
@@ -14,13 +12,7 @@ const Awards = () => {
       <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
         Certificates
       </h1>
-      <motion.div
-        className="flex flex-col items-center lg:flex-row"
-        variants={fadeIn("up", 0.3)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-      >
+      <div className="flex flex-col items-center lg:flex-row">
         {/* Award Image */}
         <div className="lg:w-1/4 lg:mb-0 lg:mr-6 ">
           <img
@@ -36,7 +28,8 @@ const Awards = () => {
             <a
               className="underline hover:no-underline"
               href="https://bit.ly/4a399Qh"
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               Cybersecurity Fundamentals
             </a>
@@ -57,14 +50,8 @@ const Awards = () => {
             processing various subjects across the aforementioned topics.
           </p>
         </div>
-      </motion.div>
-      <motion.div
-        className="flex flex-col items-center lg:flex-row"
-        variants={fadeIn("up", 0.3)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-      >
+      </div>
+      <div className="flex flex-col items-center lg:flex-row">
         {/* Award Image */}
         <div className="lg:w-1/4 mb-4 lg:mb-0 lg:mr-6">
           <img
@@ -80,7 +67,8 @@ const Awards = () => {
             <a
               className="underline hover:no-underline"
               href="https://bit.ly/3VuKmQK"
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               Elements of Cloud and Cybersecurity
             </a>
@@ -101,14 +89,8 @@ const Awards = () => {
             across the aforementioned topics.
           </p>
         </div>
-      </motion.div>
-      <motion.div
-        className="flex flex-col items-center lg:flex-row"
-        variants={fadeIn("up", 0.3)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-      >
+      </div>
+      <div className="flex flex-col items-center lg:flex-row">
         {/* Award Image */}
         <div className="lg:w-1/4 mb-4 lg:mb-0 lg:mr-6">
           <img
@@ -124,7 +106,8 @@ const Awards = () => {
             <a
               className="underline hover:no-underline"
               href="https://bit.ly/43vQpGo"
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               Azure Fundamentals
             </a>
@@ -146,14 +129,8 @@ const Awards = () => {
             topics.
           </p>
         </div>
-      </motion.div>
-      <motion.div
-        className="flex flex-col items-center lg:flex-row"
-        variants={fadeIn("up", 0.3)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-      >
+      </div>
+      <div className="flex flex-col items-center lg:flex-row">
         {/* Award Image */}
         <div className="lg:w-1/4 mb-4 lg:mb-0 lg:mr-6 mt-10">
           <img
@@ -169,7 +146,8 @@ const Awards = () => {
             <a
               className="underline hover:no-underline"
               href="https://bit.ly/4aq6e3I"
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               Elements of AI - The Basics of Artificial Intelligence
             </a>
@@ -178,7 +156,7 @@ const Awards = () => {
             Issued in March 2021, University of Helsinki, Finland.
           </p>
         </div>
-      </motion.div>
+      </div>
       <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mt-[100px]">
         Awards and Honors
       </h1>
@@ -198,7 +176,8 @@ const Awards = () => {
             <a
               className="underline hover:no-underline"
               href="https://juliusaalto.com/portfolio/wapice-hack-the-stage-iot-ticket/"
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               Wapice's Hack The Stage - Grand finalist
             </a>
@@ -212,7 +191,8 @@ const Awards = () => {
             <a
               className="underline hover:no-underline ptx"
               href="https://juliusaalto.com/portfolio/wapice-hack-the-stage-iot-ticket/"
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               <br />
               <br />
