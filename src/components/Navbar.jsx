@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="ptx flex justify-between items-center h-24 max-w-[1240px] mx-auto absolute top-10 right-10 z-50 text-lg xl:text-2xl lg:text-2xl pt-10 2xl:pr-40">
+    <div className="ptx flex justify-between items-center h-24 max-w-[1240px] mx-auto absolute top-2 right-10 z-50 text-lg xl:text-2xl lg:text-2xl pt-10 2xl:pr-40">
       <ul className="lg:flex hidden">
         <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn transition-color duration-300">
           <Link to="home" spy={true} smooth={true}>
@@ -42,7 +42,7 @@ const Navbar = () => {
       <div
         onClick={handleNav}
         className={`block cursor-pointer lg:hidden xl:hidden z-10 pt-10 top-0 right-1 ${
-          nav ? "fixed top-10 pr-10" : "absolute"
+          nav ? "fixed top-2 pr-10" : "absolute"
         }`}
       >
         {nav ? (
