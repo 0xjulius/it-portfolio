@@ -7,16 +7,21 @@ const Footer = () => {
   return (
     <footer className="relative text-white py-16 mt-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
-      <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover brightness-150 blur-lg">
-        <source src={footerbg} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute inset-0 w-full h-full object-cover brightness-150 blur-xl"
+        >
+          <source src={footerbg} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="flex items-center mb-4 md:mb-0 z-10">
           <span className="text-xl font-semibold"></span>
           <div className="ml-4 flex space-x-4 text-3xl">
             <a
               href="https://github.com/0xjulius"
-              className="text-white hover:text-gray-400 transition-colors duration-300 pl-5"
+              className="ptx hover:text-white transition-colors duration-300 pl-5"
               target="_blank"
               rel="noreferrer"
             >
@@ -24,7 +29,7 @@ const Footer = () => {
             </a>
             <a
               href="https://www.linkedin.com/in/juliusaalto/"
-              className="text-white hover:text-gray-400 transition-all duration-300 pl-3"
+              className="ptx hover:text-white transition-all duration-300 pl-3"
               target="_blank"
               rel="noreferrer"
             >
@@ -32,9 +37,17 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="text-center md:text-right z-10 text-xl font-semibold">
+        <div className="text-center md:text-right z-10 text-xl font-semibold ptx">
           <p className="mb-2">
-            Contact me: <a className="underline hover:no-underline cursor-pointer" href="mailto:julius@juliusaalto.com">julius@juliusaalto.com</a> <br/>All emails are promptly directed to the appropriate recipient.
+            Contact me:{" "}
+            <a
+              className="underline hover:no-underline cursor-pointer hover:text-gray-500"
+              href="mailto:julius@juliusaalto.com"
+            >
+              julius@juliusaalto.com
+            </a>{" "}
+            <br />
+            All emails are promptly directed to the appropriate recipient.
           </p>
           <p>&copy; 2024 Julius Aalto. All rights reserved.</p>
         </div>
