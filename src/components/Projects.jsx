@@ -19,70 +19,8 @@ const Projects = () => {
           My projects
         </h1>
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">
-          {/* First Project */}
-          <div className="w-full md:w-1/2 p-4">
-            <h2 className="text-center text-xl font-bold mb-4">
-              Cryptocurrency price checker
-            </h2>
-            <img
-              src={project1}
-              alt="Project 1"
-              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
-            />
-            <p className="text-center mt-4 font-semibold">
-              Cryptocurrency price checker built with React and Tailwind CSS.
-              Utilizes the CoinGecko API to fetch real-time prices and saves
-              them to local storage when real-time prices are rate limited.
-            </p>
-            <div className="flex justify-center mt-4">
-              <a
-                href="https://github.com/0xjulius/price-checker-crypto"
-                target="_blank"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-              >
-                Source Code
-              </a>
-              <a
-                href="https://0xjulius.github.io/price-checker-crypto/"
-                target="_blank"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Live Website
-              </a>
-            </div>
-          </div>
-          {/* Second Project */}
-          <div className="w-full md:w-1/2 p-4">
-            <h2 className="text-center text-xl font-bold mb-4">
-              Budget Calculator with HTML, CSS + JS
-            </h2>
-            <img
-              src={project2}
-              alt="Project 2"
-              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
-            />
-            <p className="text-center mt-4 font-semibold">
-              By developing this project, I've acquired practical experience in
-              DOM manipulation, event handling, and error handling in
-              JavaScript.
-            </p>
-            <div className="flex justify-center mt-4">
-              <a
-                href="https://github.com/julmezha/budjettilaskuri"
-                target="_blank"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-              >
-                Source Code
-              </a>
-              <a
-                href="https://0xjulius.github.io/budjettilaskuri/"
-                target="_blank"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Live Website
-              </a>
-            </div>
-          </div>
+        
+         
           {/* 3rd project */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
@@ -108,6 +46,38 @@ const Projects = () => {
               </a>
               <a
                 href="https://tesla-react-app-tailwind.vercel.app/"
+                target="_blank"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Live Website
+              </a>
+            </div>
+          </div>
+            {/* First Project */}
+            <div className="w-full md:w-1/2 p-4">
+            <h2 className="text-center text-xl font-bold mb-4">
+              Cryptocurrency price checker
+            </h2>
+            <img
+              src={project1}
+              alt="Project 1"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+            />
+            <p className="text-center mt-4 font-semibold">
+              Cryptocurrency price checker built with React and Tailwind CSS.
+              Utilizes the CoinGecko API to fetch real-time prices and saves
+              them to local storage when real-time prices are rate limited.
+            </p>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/0xjulius/price-checker-crypto"
+                target="_blank"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                Source Code
+              </a>
+              <a
+                href="https://0xjulius.github.io/price-checker-crypto/"
                 target="_blank"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
@@ -141,6 +111,38 @@ const Projects = () => {
               </a>
               <a
                 href="https://bank-app-react-one.vercel.app/"
+                target="_blank"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Live Website
+              </a>
+            </div>
+          </div>
+           {/* Second Project */}
+           <div className="w-full md:w-1/2 p-4">
+            <h2 className="text-center text-xl font-bold mb-4">
+              Budget Calculator with HTML, CSS + JS
+            </h2>
+            <img
+              src={project2}
+              alt="Project 2"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+            />
+            <p className="text-center mt-4 font-semibold">
+              By developing this project, I've acquired practical experience in
+              DOM manipulation, event handling, and error handling in
+              JavaScript.
+            </p>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/julmezha/budjettilaskuri"
+                target="_blank"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                Source Code
+              </a>
+              <a
+                href="https://0xjulius.github.io/budjettilaskuri/"
                 target="_blank"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >

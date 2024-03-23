@@ -20,7 +20,7 @@ const Skills = () => {
         <h2 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-10">
           Professional skills
         </h2>
-        <div className="container mx-auto">
+        <div className="container mx-auto font-semibold">
           <div className="flex flex-col gap-y-8 lg:shrink lg:items-center lg:gap-x-12 ">
             <div className="flex-1 text-lg">
               <div className="lg:flex lg:gap-x-10 mb-12 max-w-max">
