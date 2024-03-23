@@ -13,6 +13,8 @@ import {
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
+{/*Simplifying things for the future 5/5 */}
+
 const SkillItem = ({ icon, title, description }) => (
   <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
     <div className="p-4 h-full transition-all duration-300 hover:scale-105">
