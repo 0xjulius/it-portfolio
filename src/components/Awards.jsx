@@ -9,7 +9,7 @@ import awardImage6 from "../images/don.avif";
 const Awards = () => {
   return (
     <section className="py-10" id="awards">
-      <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
+      <h1 className="text-[30px] lg:text-[50px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
         Certificates
       </h1>
       <div className="flex flex-col items-center lg:flex-row card m-4 lg:m-10 pb-10">
@@ -157,7 +157,7 @@ const Awards = () => {
           </p>
         </div>
       </div>
-      <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mt-[100px]">
+      <h1 className="text-[30px] lg:text-[50px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mt-[100px]">
         Awards and Honors
       </h1>
       <div className="flex flex-col items-center lg:flex-row pt-10 card m-4 lg:m-10 pb-10">

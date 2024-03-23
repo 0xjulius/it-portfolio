@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/Wm_simple_white_250px.webp";
+import logo from "../images/Wm_white.png";
 import "animate.css";
 
 function Header() {
