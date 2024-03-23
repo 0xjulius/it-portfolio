@@ -338,7 +338,7 @@ const Projects = () => {
             </p>
             <div className="flex justify-center mt-4">
               <a
-                href="https://www.juliusaalto.com"
+                href="https://www.juliusaalto.com/it-portfolio"
                 target="_blank" rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
