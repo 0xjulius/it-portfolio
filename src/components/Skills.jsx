@@ -13,184 +13,98 @@ import {
   faTachometerAlt, 
 } from '@fortawesome/free-solid-svg-icons';
 
+const SkillItem = ({ icon, title, description }) => (
+  <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+    <div className="p-4 h-full">
+      <h3 className="font-semibold text-lg mb-2 ptx">
+        <FontAwesomeIcon icon={icon} className="mr-2 pr-1" />
+        {title}
+      </h3>
+      <p className="leading-tight ctext font-semibold">{description}</p>
+    </div>
+  </div>
+);
+
 const Skills = () => {
   return (
     <section className="section" id="skills">
-      <div className="container mx-auto px-10 mt-[180px]">
-        <h2 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-10">
-          Professional skills
+      <div className="container mx-auto px-4 mt-16">
+        <h2 className="text-4xl lg:text-5xl font-bold uppercase text-center mb-10">
+          Professional Skills
         </h2>
-        <div className="container mx-auto font-semibold">
-          <div className="flex flex-col gap-y-8 lg:shrink lg:items-center lg:gap-x-12 ">
-            <div className="flex-1 text-lg">
-              <div className="lg:flex lg:gap-x-10 mb-12 max-w-max">
-                <div className="mx-auto lg:mx-0 lg:w-64">
-                  <h3 className="font-semibold ptx mb-4 mt-6 text-2xl lg:text-left tracking-wider">
-                  <FontAwesomeIcon icon={faCogs} className="mr-2 pr-1" />
-                    Operating systems
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Understanding and troubleshooting issues with different
-                      operating systems like Windows, Mac, and Linux.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-                <div className="mx-auto lg:mx-0 lg:w-64">
-                  <h3 className="font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-2xl tracking-wider">
-                  <FontAwesomeIcon icon={faNetworkWired} className="mr-2 pr-1" />
-                    Networks
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Understanding of network architecture, TCP/IP protocols,
-                      routers, switches, and firewalls.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-                <div className="mx-auto lg:mx-0 lg:w-64">
-                  <h3 className="font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-2xl tracking-wider">
-                  <FontAwesomeIcon icon={faDatabase} className="mr-2 pr-1" />
-                    Databases
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Knowledge of database management, domains and
-                      administration, including SQL basics and MariaDB.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-                <div className=" mx-auto lg:mx-0 lg:w-64">
-                  <h3 className="font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-2xl tracking-wider">
-                  <FontAwesomeIcon icon={faDesktop} className="mr-2 pr-1" />
-                    Hardware
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Troubleshooting hardware issues like replacing or
-                      upgrading memory, hard drives, and other components.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-              </div>
-              <div className="flex-1 lg:flex gap-x-6 lg:gap-x-10 mb-12 max-w-max"
-              >
-                <div className=" mx-auto lg:mx-0">
-                  <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
-                  <FontAwesomeIcon icon={faCode} className="mr-2 pr-1" />
-                    Web Development
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Understanding of web development technologies such as
-                      HTML, CSS, JavaScript and DOMs.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-                <div className=" mx-auto lg:mx-0">
-                  <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
-                  <FontAwesomeIcon icon={faCogs} className="mr-2 pr-1" />
-                    Software
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Knowledge to install, update, configure, troubleshoot and
-                      maintain software applications used by an organization or
-                      any invidual.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-                <div className=" mx-auto lg:mx-0">
-                  <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
-                  <FontAwesomeIcon icon={faShieldAlt} className="mr-2 pr-1" />
-                    Cyber Security
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Knowledge of cybersecurity fundamentals and protocols such
-                      as encryption, firewalls, antivirus software, and data
-                      backup solutions.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-                <div className=" mx-auto lg:mx-0">
-                  <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
-                  <FontAwesomeIcon icon={faCloud} className="mr-2 pr-1" />
-                    Cloud Services
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Understanding of cloud computing technologies, such as
-                      fundamentals of Microsoft Azure, and Active Directory
-                      services.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-              </div>
-              <div className="flex-1 lg:flex gap-x-6 lg:gap-x-10 mb-12 max-w-max">
-                <div className=" mx-auto lg:mx-0">
-                  <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
-                  <FontAwesomeIcon icon={faServer} className="mr-2 pr-1" />
-                    Virtualization
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Understanding of virtualization technologies such as
-                      VMware and VirtualBox and working with them.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-                <div className=" mx-auto lg:mx-0">
-                  <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
-                  <FontAwesomeIcon icon={faMobileAlt} className="mr-2 pr-1" />
-                    Mobile devices
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Ability to troubleshoot mobile device issues, mainly iOS
-                      -devices.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-                <div className=" mx-auto lg:mx-0">
-                  <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
-                  <FontAwesomeIcon icon={faTachometerAlt} className="mr-2 pr-1" />
-                    Overclocking
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Knowledge of boosting CPU and GPU core speeds for maximum
-                      PC performance for rendering and increasing in-game
-                      performance at high-frame rates.
-                    </span>
-                  </p>
-                  <div className="border-b border-white/50 mt-[20px] lg:border-none"></div>
-                </div>
-                <div className=" mx-auto lg:mx-0">
-                  <h3 className="font-primary font-semibold ptx mb-4 mt-6 text-2xl lg:text-left lg:text-xl tracking-wider">
-                  <FontAwesomeIcon icon={faShieldAlt} className="mr-2 pr-1" />
-                    VPNs
-                  </h3>
-                  <p className="mx-auto lg:mx-0 ctext leading-tight lg:text-left lg:w-64">
-                    <span className="leading-tight">
-                      Knowledge of virtual private networks and how to secure
-                      connections through VPNs.
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-wrap card">
+          <SkillItem
+            icon={faCogs}
+            title="Operating systems"
+            description="Understanding and troubleshooting issues with different operating systems like Windows, Mac, and Linux."
+          />
+          <SkillItem
+            icon={faNetworkWired}
+            title="Networks"
+            description="Understanding of network architecture, TCP/IP protocols, routers, switches, and firewalls."
+          />
+          <SkillItem
+            icon={faDatabase}
+            title="Databases"
+            description="Knowledge of database management, domains and administration, including SQL basics and MariaDB."
+          />
+          <SkillItem
+            icon={faCode}
+            title="Web Development"
+            description="Understanding of web development technologies such as
+            HTML, CSS, React, JavaScript NODEjs and DOMs."
+          />
+                    <SkillItem
+            icon={faCogs}
+            title="Software"
+            description="Knowledge to install, update, configure, troubleshoot and
+            maintain software applications used by an organization or
+            any invidual."
+          />
+                    <SkillItem
+            icon={faShieldAlt}
+            title="Cyber Security"
+            description="Knowledge of cybersecurity fundamentals and protocols such
+            as encryption, firewalls, antivirus software, and data
+            backup solutions."
+          />
+                    <SkillItem
+            icon={faCloud}
+            title="Cloud Services"
+            description="   Understanding of cloud computing technologies, such as
+            fundamentals of Microsoft Azure, and Active Directory
+            services."
+          />
+                    <SkillItem
+            icon={faServer} 
+            title="Virtualization"
+            description="Understanding of virtualization technologies such as
+            VMware and VirtualBox and working with them."
+          />
+                    <SkillItem
+            icon={faMobileAlt}
+            title="Mobile devices"
+            description="Ability to troubleshoot mobile device issues, mainly iOS
+            -devices."
+          />
+                    <SkillItem
+            icon={faTachometerAlt}
+            title="Overclocking"
+            description=" Knowledge of boosting CPU and GPU core speeds for maximum
+            PC performance for rendering and increasing in-game
+            performance at high-frame rates."
+          />
+                    <SkillItem
+            icon={faShieldAlt}
+            title="Hardware"
+            description="Troubleshooting hardware issues like replacing or upgrading memory, hard drives, and other components."
+          />
+                    <SkillItem
+            icon={faDesktop}
+            title="VPNs"
+            description="Knowledge of virtual private networks and how to secure
+            connections through VPNs."
+          />
         </div>
       </div>
     </section>
