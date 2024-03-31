@@ -15,7 +15,7 @@ const Projects = () => {
   return (
     <section className="py-10" id="projects">
       <div className="container mx-auto lg:mt-10">
-        <h1 className="text-[30px] lg:text-[50px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
+        <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
           My projects
         </h1>
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">

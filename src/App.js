@@ -11,6 +11,7 @@ import Skills from './components/Skills.jsx';
 import Awards from './components/Awards.jsx';
 import ScrollToTopButton from './components/ScrollToTopButton.jsx';
 import Technologies from './components/Technologies.jsx';
+import Gallery from './components/Gallery.jsx';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Thesis />
           <Projects/>
           <Skills />
+          <Gallery />
           <Awards />
         </main>
         <Footer />

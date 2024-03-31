@@ -13,8 +13,6 @@ import {
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
-{/*Simplifying things for the future 5/5 */}
-
 const SkillItem = ({ icon, title, description }) => (
   <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
     <div className="p-4 h-full transition-all duration-300 hover:scale-105">
@@ -30,8 +28,8 @@ const SkillItem = ({ icon, title, description }) => (
 const Skills = () => {
   return (
     <section className="section" id="skills">
-      <div className="container mx-auto px-4 mt-20 mb-40">
-        <h2 className="text-[30px] lg:text-[50px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-10">
+      <div className="container mx-auto px-4 mt-20 mb-10">
+        <h2 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-10">
           Professional Skills
         </h2>
         <div className="flex flex-wrap card">

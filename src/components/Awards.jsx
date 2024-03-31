@@ -9,10 +9,10 @@ import awardImage6 from "../images/don.avif";
 const Awards = () => {
   return (
     <section className="py-10" id="awards">
-      <h1 className="text-[30px] lg:text-[50px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
+      <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 ">
         Certificates
       </h1>
-      <div className="flex flex-col items-center lg:flex-row card m-4 lg:m-10 pb-10">
+      <div className="flex flex-col items-center lg:flex-row card m-4 lg:m-10 pb-10 ">
         {/* Award Image */}
         <div className="lg:w-1/4 lg:mb-0 lg:mr-6 ">
           <img
@@ -24,7 +24,7 @@ const Awards = () => {
 
         {/* Award Information */}
         <div className="lg:w-2/3 px-6 mt-10">
-          <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10">
+          <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10 ">
             <a
               className="underline hover:no-underline"
               href="https://bit.ly/4a399Qh"
@@ -43,8 +43,8 @@ const Awards = () => {
             <br />
             <br />
             After accomplishing this badge, the student has fundamental
-            knowledge on cloud and cybersecurity solutions across Microsoft’s
-            Azure services as well as related fundamental terminology and
+            knowledge on cloud and cybersecurity solutions across <span className="ptx2 font-semibold">Microsoft’s
+            Azure </span> services as well as related fundamental terminology and
             principles. Upon earning the badge, the student has demonstrated
             their expertise in the field by completing practical exercises and
             processing various subjects across the aforementioned topics.
@@ -82,8 +82,8 @@ const Awards = () => {
             <br />
             <br />
             After accomplishing this badge, the student has fundamental
-            knowledge on cloud and cybersecurity solutions as well as related
-            fundamental terminology, features, and principles. Upon earning the
+            knowledge on <span className="ptx2 font-semibold">cloud and cybersecurity solutions as well as related
+            fundamental terminology, features, and principles</span>. Upon earning the
             badge, the student has demonstrated their expertise in the field by
             completing practical exercises and processing various subjects
             across the aforementioned topics.
@@ -121,7 +121,7 @@ const Awards = () => {
             <br />
             <br />
             After accomplishing this badge, the student has fundamental
-            knowledge on Microsoft’s cloud-based Azure platform as well as its
+            knowledge on <span className="ptx2 font-semibold">Microsoft’s cloud-based Azure platform</span> as well as its
             services and capabilities including safety, infrastructure, and
             management features. Upon earning the badge, the student has
             demonstrated their expertise in the field by completing practical
@@ -157,7 +157,7 @@ const Awards = () => {
           </p>
         </div>
       </div>
-      <h1 className="text-[30px] lg:text-[50px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mt-[100px]">
+      <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mt-[100px]">
         Awards and Honors
       </h1>
       <div className="flex flex-col items-center lg:flex-row pt-10 card m-4 lg:m-10 pb-10">
@@ -185,7 +185,7 @@ const Awards = () => {
           <p className="text-lg mb-4 ctext font-semibold text-center lg:text-left">
             Awarded in March 2021.
             <br />
-            <br />I was working as a Lead Technical Project Manager with our
+            <br />I was working as a <span className="ptx2 font-semibold">Lead Technical Project Manager</span> with our
             student team and managed to earn a spot on IoT-Ticket Hack The Stage
             -grand final.
             <a
