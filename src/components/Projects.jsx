@@ -10,6 +10,7 @@ import project8 from "../images/project8.webp";
 import project9 from "../images/project9.webp";
 import project10 from "../images/project10.webp";
 import project11 from "../images/project11.png";
+import project from "../images/project-main.png";
 
 const Projects = () => {
   return (
@@ -20,7 +21,36 @@ const Projects = () => {
         </h1>
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">
         
-         
+        <div className="w-full md:w-1/2 p-4">
+            <h2 className="text-center text-xl font-bold mb-4">
+              IT-Portfolio with React
+            </h2>
+            <img
+              src={project}
+              alt="Project 3"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+            />
+            <p className="text-center mt-4 font-semibold text-lg">
+              Project showcasing multiple React components with Tailwind. Main goal was to recreate my old IT-portfolio again and develop my skills to the next level.
+            </p>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/0xjulius/react-portfolio"
+                target="_blank" rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                Check out source code
+              </a>
+              <a
+                href="https://react-portfolio-0xjulius.vercel.app/"
+                target="_blank" rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Live Website
+              </a>
+            </div>
+          </div>
+
           {/* 3rd project */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
