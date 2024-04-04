@@ -53,7 +53,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`fixed left-0 top-0 w-full h-full bg-black bg-opacity-75 lg:hidden transition-opacity duration-300 ease-in-out ${
+        className={`fixed left-0 top-0 w-full h-full bg-black backdrop-blur-sm bg-opacity-75 lg:hidden transition-opacity duration-300 ease-in-out ${
           nav ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
