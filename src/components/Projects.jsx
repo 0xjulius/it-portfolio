@@ -10,6 +10,8 @@ import project8 from "../images/project8.webp";
 import project9 from "../images/project9.webp";
 import project10 from "../images/project10.webp";
 import project11 from "../images/project11.png";
+import project12 from "../images/project12.png";
+import project13 from "../images/project13.png";
 import project from "../images/project-main.png";
 
 const Projects = () => {
@@ -20,8 +22,7 @@ const Projects = () => {
           My projects
         </h1>
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">
-        
-        <div className="w-full md:w-1/2 p-4">
+          <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
               IT-Portfolio with React
             </h2>
@@ -31,19 +32,23 @@ const Projects = () => {
               className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold text-lg">
-              Project showcasing multiple React components with Tailwind. Main goal was to recreate my old IT-portfolio again and develop my skills to the next level.
+              Project showcasing multiple React components with Tailwind. Main
+              goal was to recreate my old IT-portfolio again and develop my
+              skills to the next level.
             </p>
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/react-portfolio"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Check out source code
               </a>
               <a
                 href="https://react-portfolio-0xjulius.vercel.app/"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Live Website
@@ -69,22 +74,24 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/julmezha/tesla-react-app-tailwind"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code
               </a>
               <a
                 href="https://tesla-react-app-tailwind.vercel.app/"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Live Website
               </a>
             </div>
           </div>
-            {/* First Project */}
-            <div className="w-full md:w-1/2 p-4">
+          {/* First Project */}
+          <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
               Cryptocurrency price checker
             </h2>
@@ -101,14 +108,16 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/price-checker-crypto"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code
               </a>
               <a
                 href="https://0xjulius.github.io/price-checker-crypto/"
-                target="_blank"rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Live Website
@@ -134,22 +143,24 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/julmezha/bank-app-react"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code
               </a>
               <a
                 href="https://bank-app-react-one.vercel.app/"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Live Website
               </a>
             </div>
           </div>
-           {/* Second Project */}
-           <div className="w-full md:w-1/2 p-4">
+          {/* Second Project */}
+          <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
               Budget Calculator with HTML, CSS + JS
             </h2>
@@ -166,14 +177,16 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/julmezha/budjettilaskuri"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code
               </a>
               <a
                 href="https://0xjulius.github.io/budjettilaskuri/"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Live Website
@@ -199,14 +212,16 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/ref-site-concept"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code
               </a>
               <a
                 href="https://0xjulius.github.io/ref-site-concept/"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Live Website
@@ -233,14 +248,16 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/light-a-candle-wp"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code for Light a Candle Plugin
               </a>
               <a
                 href="https://www.lumivaara.fi"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Live Website
@@ -265,7 +282,8 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/python-job-finder"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code
@@ -289,14 +307,16 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/FlappyBird"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code
               </a>
               <a
                 href="https://0xjulius.github.io/FlappyBird/"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Live Game
@@ -320,7 +340,8 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/python-lotto-generaattori"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code
@@ -346,7 +367,8 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/bmi_laskuri"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Source Code
@@ -369,10 +391,59 @@ const Projects = () => {
             <div className="flex justify-center mt-4">
               <a
                 href="https://www.juliusaalto.com/it-portfolio"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
               >
                 Live Website
+              </a>
+            </div>
+          </div>
+          {/* 11th project */}
+          <div className="w-full md:w-1/2 p-4 font-semibold">
+            <h2 className="text-center text-xl font-bold mb-4">
+              CS2/CSGO-hour / rank guesser with C#
+            </h2>
+            <img
+              src={project12}
+              alt="Project 12"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+            />
+            <p className="text-center mt-4 font-semibold text-lg">
+              Guesses your Premier and FaceIt elo, and calculates your gaming
+              hours.
+            </p>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/0xjulius/cs2-rank-guessr"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                Live Website
+              </a>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 p-4 font-semibold">
+            <h2 className="text-center text-xl font-bold mb-4">
+              Kivi sakset paperi -game with c#
+            </h2>
+            <img
+              src={project13}
+              alt="Project 13"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+            />
+            <p className="text-center mt-4 font-semibold text-lg">
+              Small game, with c# / visual studio
+            </p>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/0xjulius/kivipaperisakset-24"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                Source code
               </a>
             </div>
           </div>
