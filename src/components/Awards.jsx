@@ -6,6 +6,7 @@ import awardImage4 from "../images/certificate-elements-of-ai-fi.webp";
 import awardImage5 from "../images/stage.jpg";
 import awardImage6 from "../images/don.avif";
 import awardImage7 from "../images/gandalf.png";
+import awardImage8 from "../images/practical-ai-badge.png";
 
 const Awards = () => {
   return (
@@ -13,6 +14,43 @@ const Awards = () => {
       <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 ">
         Certificates
       </h1>
+      <div className="flex flex-col items-center lg:flex-row card m-4 lg:m-10 pb-10 ">
+        {/* Award Image */}
+        <div className="lg:w-1/4 lg:mb-0 lg:mr-6 ">
+          <img
+            src={awardImage8}
+            alt="Award"
+            className="max-w-96 lg:w-full h-auto px-4"
+          />
+        </div>
+
+        {/* Award Information */}
+        <div className="lg:w-2/3 px-6 mt-10">
+          <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10 ">
+            <a
+              className="underline hover:no-underline"
+              href="https://bit.ly/3xDehfr"
+              target="_blank"
+              rel="noreferrer"
+            >
+            Practical AI
+            </a>
+          </h1>
+          <p className="text-lg mb-4 ctext font-semibold text-center lg:text-left">
+            Issued in April 2024, Kajaani University of Applied Sciences. <br />{" "}
+            <br />
+            This badge is a recognition of skills and knowledge in the field of artificial intelligence as well as the completion of the Practical AI course.
+            <br />
+            <br />
+            After accomplishing this course, the student has practical knowledge on artificial intelligence as well as related fundamental terminology and principles.
+            Upon earning the badge, the student has demonstrated their expertise in the field by completing practical exercises and processing various subjects across the aforementioned topics.
+            <br />
+            <br />
+            This badge has been granted by the course developers, namely Microsoft, Kajaani University of Applied Sciences, and mentor companies.
+
+          </p>
+        </div>
+      </div>
       <div className="flex flex-col items-center lg:flex-row card m-4 lg:m-10 pb-10 ">
         {/* Award Image */}
         <div className="lg:w-1/4 lg:mb-0 lg:mr-6 ">
