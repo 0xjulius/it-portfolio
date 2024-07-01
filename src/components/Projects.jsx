@@ -59,7 +59,7 @@ const Projects = () => {
 
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              IT-Portfolio with React
+              IT-Portfolio with React + Tailwind
             </h2>
             <img
               src={project}
@@ -94,7 +94,7 @@ const Projects = () => {
           {/* 3rd project */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              Tesla website Clone
+              Tesla website Clone with React, Tailwind
             </h2>
             <img
               src={project3}
@@ -128,7 +128,7 @@ const Projects = () => {
           {/* First Project */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              Cryptocurrency price checker
+              Cryptocurrency price checker with React, Tailwind
             </h2>
             <img
               src={project1}
@@ -162,7 +162,7 @@ const Projects = () => {
           {/* 4th project */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              Banking app one pager
+              Banking app one pager React + Vite + Tailwind
             </h2>
             <img
               src={project4}
@@ -231,7 +231,7 @@ const Projects = () => {
           {/* 5th project */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              Referral website concept
+              Referral website concept HTML, CSS only
             </h2>
             <img
               src={project5}
