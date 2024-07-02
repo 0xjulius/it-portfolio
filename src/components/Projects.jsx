@@ -14,6 +14,7 @@ import project12 from "../images/project12.png";
 import project13 from "../images/project13.png";
 import project from "../images/project-main.png";
 import project14 from "../images/project-photography.png";
+import project15 from "../images/project15.png";
 
 const Projects = () => {
   return (
@@ -25,7 +26,8 @@ const Projects = () => {
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">
           <div className="w-full md:w-1/2 p-4 border border-white shadow-lg shadow-white rounded-lg">
             <h2 className="text-center text-xl font-bold mb-4">
-              Photography gallery website made with React, Vite, Tailwind <span className="ptx2 text-2xl"> NEW!</span>
+              Photography gallery website made with React, Vite, Tailwind{" "}
+              <span className="ptx2 text-2xl"> NEW!</span>
             </h2>
             <img
               src={project14}
@@ -33,9 +35,9 @@ const Projects = () => {
               className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold text-lg">
-              I built this gallery showcasing my photography skills using React, Vite,
-              Animations.css, and Tailwind. It taught me responsive design,
-              state management and efficient component structuring.
+              I built this gallery showcasing my photography skills using React,
+              Vite, Animations.css, and Tailwind. It taught me responsive
+              design, state management and efficient component structuring.
             </p>
             <div className="flex justify-center mt-4">
               <a
@@ -48,6 +50,41 @@ const Projects = () => {
               </a>
               <a
                 href="https://visionbyjulius.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Live Website
+              </a>
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/2 p-4">
+            <h2 className="text-center text-xl font-bold mb-4">
+              Simple useState training made with React, Vite, Tailwind{" "}
+              <span className="ptx2 text-2xl"> NEW!</span>
+            </h2>
+            <img
+              src={project15}
+              alt="Project 15"
+              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+            />
+            <p className="text-center mt-4 font-semibold text-lg">
+              Key learnings were utilizing useState to manage state within
+              functional components, and implementing conditional logic to
+              selectively render components based on state.
+            </p>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/0xjulius/react-usestate-training"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                Check out source code
+              </a>
+              <a
+                href="https://usestate-training-livid.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
