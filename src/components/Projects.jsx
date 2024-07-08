@@ -61,8 +61,8 @@ const Projects = () => {
 
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              Simple useState training made with React, Vite, Tailwind{" "}
-              <span className="ptx2 text-2xl"> NEW!</span>
+              Shop With Elon - Funny way to showcase useState on React, Vite,
+              Tailwind <span className="ptx2 text-2xl"> NEW!</span>
             </h2>
             <img
               src={project15}
@@ -70,9 +70,9 @@ const Projects = () => {
               className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold text-lg">
-              Key learnings were utilizing useState to manage state within
-              functional components, and implementing conditional logic to
-              selectively render components based on state.
+              Key learnings include using useState for state management,
+              Tailwind CSS for styling, number formatting, and implementing a
+              sticky header for user experience enhancement.
             </p>
             <div className="flex justify-center mt-4">
               <a
