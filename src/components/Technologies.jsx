@@ -15,7 +15,9 @@ import {
   faWindows,
   faWordpress,
   faElementor,
+  faPhp, // Added for PHP
 } from "@fortawesome/free-brands-svg-icons";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons"; // Added for SQL
 
 const Technologies = () => {
   return (
@@ -38,6 +40,8 @@ const Technologies = () => {
           <Icon icon={faWindows} title="Windows" />
           <Icon icon={faWordpress} title="WordPress" />
           <Icon icon={faElementor} title="Elementor" />
+          <Icon icon={faPhp} title="PHP" /> {/* Added PHP */}
+          <Icon icon={faDatabase} title="SQL" /> {/* Added SQL */}
         </div>
       </motion.div>
     </section>

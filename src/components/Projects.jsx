@@ -24,7 +24,7 @@ const Projects = () => {
           My projects
         </h1>
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">
-          <div className="w-full md:w-1/2 p-4 border border-white shadow-lg shadow-white rounded-lg">
+          <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
               Photography gallery website made with React, Vite, Tailwind{" "}
               <span className="ptx2 text-2xl"> NEW!</span>
