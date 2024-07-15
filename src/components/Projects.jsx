@@ -131,7 +131,7 @@ const Projects = () => {
           {/* 3rd project */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              Tesla website Clone with React, Tailwind
+              Tesla website Clone with React, Tailwind (tutorial)
             </h2>
             <img
               src={project3}
@@ -199,7 +199,7 @@ const Projects = () => {
           {/* 4th project */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              Banking app one pager React + Vite + Tailwind
+              Banking app one pager React + Vite + Tailwind (tutorial)
             </h2>
             <img
               src={project4}
@@ -365,7 +365,7 @@ const Projects = () => {
           {/* 8th project */}
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              FlappyBird -Night version (schoolproject)
+              FlappyBird -Night version (schoolproject/tutorial)
             </h2>
             <img
               src={project8}
