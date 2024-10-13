@@ -15,6 +15,7 @@ import project13 from "../images/project13.png";
 import project from "../images/project-main.png";
 import project14 from "../images/project-photography.png";
 import project15 from "../images/project15.png";
+import project16 from "../images/project16.png";
 
 const Projects = () => {
   return (
@@ -23,16 +24,43 @@ const Projects = () => {
         <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
           My projects
         </h1>
+
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              Photography gallery website made with React, Vite, Tailwind{" "}
+              Simple CS2/esports mouse eDPI calculator made with C#{" "}
               <span className="ptx2 text-2xl"> NEW!</span>
+            </h2>
+            <img
+              src={project16}
+              alt="Project 16"
+              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
+            />
+            <p className="text-center mt-4 font-semibold text-lg">
+              This project offered hands-on experience with C# and WinForms,
+              managing files and audio with NAudio, validating input and
+              enhancing problem-solving and debugging skills.
+            </p>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/0xjulius/eDPI-Calculator"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                Check out source code
+              </a>
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/2 p-4">
+            <h2 className="text-center text-xl font-bold mb-4">
+              Photography gallery website made with React, Vite, Tailwind{" "}
             </h2>
             <img
               src={project14}
               alt="Project 14"
-              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold text-lg">
               I built this gallery showcasing my photography skills using React,
@@ -62,12 +90,12 @@ const Projects = () => {
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
               Shop With Elon - Funny way to showcase useState on React, Vite,
-              Tailwind <span className="ptx2 text-2xl"> NEW!</span>
+              Tailwind
             </h2>
             <img
               src={project15}
               alt="Project 15"
-              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold text-lg">
               Key learnings include using useState for state management,
@@ -101,7 +129,7 @@ const Projects = () => {
             <img
               src={project}
               alt="Project 3"
-              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold text-lg">
               Project showcasing multiple React components with Tailwind. Main
@@ -308,7 +336,7 @@ const Projects = () => {
             <img
               src={project6}
               alt="Project 6"
-              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold text-lg">
               Fully deployed WordPress solution. The website showcases our
@@ -455,7 +483,7 @@ const Projects = () => {
             <img
               src={project11}
               alt="Project 11"
-              className="w-full h-auto md:h-64 object-cover transition-all duration-300  hover:scale-105"
+              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
             />
             <p className="text-center mt-4 font-semibold text-lg">
               My own customized portfolio with WordPress and Elementor.
