@@ -1,7 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
 import {
   faHtml5,
   faCss3,
@@ -22,9 +20,9 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons"; // Added for SQL
 const Technologies = () => {
   return (
     <section className="py-10 px-4 ptx mt-10" id="technologies">
-              <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-16">
-              TECHNOLOGIES
-            </h1>
+      <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-16">
+        TECHNOLOGIES
+      </h1>
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center lg:flex-row gap-14">
           <Icon icon={faHtml5} title="HTML5" />
