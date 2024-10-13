@@ -22,11 +22,10 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons"; // Added for SQL
 const Technologies = () => {
   return (
     <section className="py-10 px-4 ptx mt-10" id="technologies">
-      <motion.div className="container mx-auto"
-       variants={fadeIn("up", 0.3)}
-       initial="hidden"
-       whileInView={"show"}
-       viewport={{ once: false, amount: 0.7 }}>
+              <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-16">
+              TECHNOLOGIES
+            </h1>
+      <div className="container mx-auto">
         <div className="flex flex-wrap justify-center lg:flex-row gap-14">
           <Icon icon={faHtml5} title="HTML5" />
           <Icon icon={faCss3} title="CSS3" />
@@ -43,7 +42,7 @@ const Technologies = () => {
           <Icon icon={faPhp} title="PHP" /> {/* Added PHP */}
           <Icon icon={faDatabase} title="SQL" /> {/* Added SQL */}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
