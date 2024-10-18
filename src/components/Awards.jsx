@@ -27,27 +27,26 @@ const Awards = () => {
         {/* Award Information */}
         <div className="lg:w-2/3 px-6 mt-10">
           <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10 ">
-            <a
-              className="underline hover:no-underline"
-              href="https://bit.ly/3xDehfr"
-              target="_blank"
-              rel="noreferrer"
-            >
-            Practical AI
-            </a>
+            Practical AI by Microsoft
           </h1>
           <p className="text-lg mb-4 ctext font-semibold text-center lg:text-left">
-            Issued in April 2024, Kajaani University of Applied Sciences. <br />{" "}
-            <br />
-            This badge is a recognition of skills and knowledge in the field of artificial intelligence as well as the completion of the Practical AI course.
-            <br />
-            <br />
-            After accomplishing this course, the student has practical knowledge on artificial intelligence as well as related fundamental terminology and principles.
-            Upon earning the badge, the student has demonstrated their expertise in the field by completing practical exercises and processing various subjects across the aforementioned topics.
+            Issued in Kajaani University of Applied Sciences. <br /> <br />
+            This badge is a recognition of skills and knowledge in the field of
+            artificial intelligence as well as the completion of the Practical
+            AI course.
             <br />
             <br />
-            This badge has been granted by the course developers, namely Microsoft, Kajaani University of Applied Sciences, and mentor companies.
-
+            After accomplishing this course, the student has practical knowledge
+            on artificial intelligence as well as related fundamental
+            terminology and principles. Upon earning the badge, the student has
+            demonstrated their expertise in the field by completing practical
+            exercises and processing various subjects across the aforementioned
+            topics.
+            <br />
+            <br />
+            This badge has been granted by the course developers, namely
+            Microsoft, Kajaani University of Applied Sciences, and mentor
+            companies.
           </p>
         </div>
       </div>
@@ -64,14 +63,7 @@ const Awards = () => {
         {/* Award Information */}
         <div className="lg:w-2/3 px-6 mt-10">
           <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10 ">
-            <a
-              className="underline hover:no-underline"
-              href="https://bit.ly/4a399Qh"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Cybersecurity Fundamentals
-            </a>
+            Cybersecurity Fundamentals
           </h1>
           <p className="text-lg mb-4 ctext font-semibold text-center lg:text-left">
             Issued in March 2023, Kajaani University of Applied Sciences. <br />{" "}
@@ -104,14 +96,7 @@ const Awards = () => {
         {/* Award Information */}
         <div className="lg:w-2/3 px-6">
           <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10">
-            <a
-              className="underline hover:no-underline"
-              href="https://bit.ly/3VuKmQK"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Elements of Cloud and Cybersecurity
-            </a>
+            Elements of Cloud and Cybersecurity
           </h1>
           <p className="text-lg mb-4 ctext font-semibold text-center lg:text-left">
             Issued in March 2023, Kajaani University of Applied Sciences. <br />
@@ -146,14 +131,7 @@ const Awards = () => {
         {/* Award Information */}
         <div className="lg:w-2/3 px-6">
           <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10">
-            <a
-              className="underline hover:no-underline"
-              href="https://bit.ly/43vQpGo"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Azure Fundamentals
-            </a>
+            Azure Fundamentals by Microsoft
           </h1>
           <p className="text-lg mb-4 ctext font-semibold text-center lg:text-left">
             Issued in March 2023, Kajaani University of Applied Sciences. <br />
@@ -189,14 +167,7 @@ const Awards = () => {
         {/* Award Information */}
         <div className="lg:w-2/3 px-6">
           <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10">
-            <a
-              className="underline hover:no-underline"
-              href="https://bit.ly/4aq6e3I"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Elements of AI - The Basics of Artificial Intelligence
-            </a>
+            Elements of AI - The Basics of Artificial Intelligence
           </h1>
           <p className="text-lg mb-4 ctext font-semibold text-center lg:text-left">
             Issued in March 2021, University of Helsinki, Finland.
@@ -284,10 +255,11 @@ const Awards = () => {
             safe.
             <br />
             <br />
-            Gandalf challenge is light-hearted fun, it models a real problems that large language model applications face everyday. Gandalf has been played by
-            millions of people around the world, making it the most popular AI
-            security game in the world. I am currently at level 7 leaderboard.{" "}
-            <br />
+            Gandalf challenge is light-hearted fun, it models a real problems
+            that large language model applications face everyday. Gandalf has
+            been played by millions of people around the world, making it the
+            most popular AI security game in the world. I am currently at level
+            7 leaderboard. <br />
             <br />
             <a
               href=" https://www.lakera.ai/blog/who-is-gandalf"
@@ -360,12 +332,10 @@ const Awards = () => {
             Touko Saari's Foundation Scholarships
           </h1>
           <p className="text-lg mb-4 ctext font-semibold text-center lg:text-left">
-            Awarded in June 2012, in recognition of diligent and successful
-            studies.
+            Awarded in recognition of diligent and successful studies.
           </p>
         </div>
       </div>
- 
     </section>
   );
 };
