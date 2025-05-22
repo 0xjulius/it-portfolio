@@ -21,7 +21,9 @@ const Thesis = () => {
           </span>
           , which will allow users to create innovative way to light virtual
           memorial candles for their deceased loved ones who passed away in
-          Lumivaara. <br/><br/>Achieving the{" "}
+          Lumivaara. <br />
+          <br />
+          Achieving the{" "}
           <span className="ptx2 font-semibold">perfect score</span> of five
           points for my thesis is a major milestone, and I am confident that
           this accomplishment will significantly elevate my career.

@@ -26,11 +26,14 @@ const Home = () => {
               worth of valuable office-related work experience alongside my
               studies. <br />
               <br />
-              I’ve got a solid background in IT and can handle all sorts of hardware and software problems. I love being part of innovative projects and can’t wait to dive in and make things happen together!
-
+              I’ve got a solid background in IT and can handle all sorts of
+              hardware and software problems. I love being part of innovative
+              projects and can’t wait to dive in and make things happen
+              together!
               <br />
               <br />
-              Feel free to ask if you’d like to check out my grades or CV—I’m happy to share them.
+              Feel free to ask if you’d like to check out my grades or CV—I’m
+              happy to share them.
             </p>
           </div>
         </div>

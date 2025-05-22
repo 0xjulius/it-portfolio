@@ -16,6 +16,8 @@ import project from "../images/project-main.png";
 import project14 from "../images/project-photography.png";
 import project15 from "../images/project15.png";
 import project16 from "../images/project16.png";
+import project17 from "../images/project17.png";
+import project18 from "../images/project18.png";
 
 const Projects = () => {
   return (
@@ -24,12 +26,79 @@ const Projects = () => {
         <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2">
           My projects
         </h1>
-
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-center text-xl font-bold mb-4">
-              Simple CS2/esports mouse eDPI calculator made with C#{" "}
+              XML to JSON News feed with React, Axios, Vite, Tailwind{" "}
               <span className="ptx2 text-2xl"> NEW!</span>
+            </h2>
+            <img
+              src={project18}
+              alt="Project 18"
+              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
+            />
+            <p className="text-center mt-4 font-semibold text-lg">
+              React app that fetches Yle’s RSS feed via a proxy, converts XML to
+              JSON, and displays news using Tailwind styles. Uses Axios for
+              requests and fast-xml-parser for parsing.
+            </p>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/0xjulius/xml-to-json-axios-react"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                Check out source code
+              </a>
+              <a
+                href="https://xml2json-axios-react.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Live Website
+              </a>
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/2 p-4">
+            <h2 className="text-center text-xl font-bold mb-4">
+              Weather JSON api-request fetcher with React, Vite, Tailwind{" "}
+              <span className="ptx2 text-2xl"> NEW!</span>
+            </h2>
+            <img
+              src={project17}
+              alt="Project 17"
+              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
+            />
+            <p className="text-center mt-4 font-semibold text-lg">
+              Fetching and displaying JSON data from a weather API using React,
+              styling UI with Tailwind, and setting up the project with Vite
+            </p>
+            <div className="flex justify-center mt-4">
+              <a
+                href="https://github.com/0xjulius/json-api-fetch-react"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+              >
+                Check out source code
+              </a>
+              <a
+                href="https://json-api-fetch-react.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Live Website
+              </a>
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/2 p-4">
+            <h2 className="text-center text-xl font-bold mb-4">
+              Simple CS2/esports mouse eDPI calculator made with C#{" "}
             </h2>
             <img
               src={project16}

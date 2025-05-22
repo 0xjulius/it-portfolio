@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { FaArrowUp } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { FaArrowUp } from "react-icons/fa";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,27 +15,27 @@ const ScrollToTopButton = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
     return () => {
-      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener("scroll", toggleVisibility);
     };
   }, []);
 
   return (
     <div>
-      {isVisible && 
+      {isVisible && (
         <button
           className="fixed bottom-10 right-10 bg-white ptx2 rounded-full p-4 lg:p-5 focus:outline-none z-10"
           onClick={scrollToTop}
         >
           <FaArrowUp />
         </button>
-      }
+      )}
     </div>
   );
 };
