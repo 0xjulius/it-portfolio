@@ -32,16 +32,32 @@ const Projects = () => {
               XML to JSON News feed with React, Axios, Vite, Tailwind{" "}
               <span className="ptx2 text-2xl"> NEW!</span>
             </h2>
-            <img
-              src={project18}
-              alt="Project 18"
-              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
-            />
+
+            {/* container with relative for layering */}
+            <div className="relative w-full md:h-64 overflow-hidden rounded-lg">
+              {/* blurred background image */}
+              <img
+                src={project18}
+                alt="Project 18 background blur"
+                className="absolute top-0 left-0 w-full h-full object-cover filter blur-xl scale-110"
+                aria-hidden="true"
+              />
+
+              {/* main image on top */}
+              <img
+                src={project18}
+                alt="Project 18"
+                className="relative w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+
             <p className="text-center mt-4 font-semibold text-lg">
               React app that fetches Yle’s RSS feed via a proxy, converts XML to
               JSON, and displays news using Tailwind styles. Uses Axios for
               requests and fast-xml-parser for parsing.
             </p>
+
+            {/* links etc */}
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/xml-to-json-axios-react"
@@ -67,15 +83,30 @@ const Projects = () => {
               Weather JSON api-request fetcher with React, Vite, Tailwind{" "}
               <span className="ptx2 text-2xl"> NEW!</span>
             </h2>
-            <img
-              src={project17}
-              alt="Project 17"
-              className="w-full h-auto md:h-64 bg-cover transition-all duration-300  hover:scale-105"
-            />
+
+            {/* container with relative and blur bg */}
+            <div className="relative w-full md:h-64 overflow-hidden rounded-lg">
+              {/* blurred background image */}
+              <img
+                src={project17}
+                alt="Project 17 background blur"
+                className="absolute top-0 left-0 w-full h-full object-cover filter blur-xl scale-110"
+                aria-hidden="true"
+              />
+
+              {/* main image on top */}
+              <img
+                src={project17}
+                alt="Project 17"
+                className="relative w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+
             <p className="text-center mt-4 font-semibold text-lg">
               Fetching and displaying JSON data from a weather API using React,
               styling UI with Tailwind, and setting up the project with Vite
             </p>
+
             <div className="flex justify-center mt-4">
               <a
                 href="https://github.com/0xjulius/json-api-fetch-react"
