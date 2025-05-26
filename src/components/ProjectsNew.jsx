@@ -223,7 +223,7 @@ function ProjectsNew() {
   return (
     <section className="py-10" id="projects">
       <div className="container mx-auto lg:mt-10">
-        <h1 className="text-[30px] lg:text-[36px] uppercase text-center text-4xl font-bold ptx2">
+        <h1 className="text-[30px] lg:text-[36px] uppercase text-center text-4xl font-bold text-gradient">
           My projects
         </h1>
 

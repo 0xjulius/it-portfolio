@@ -29,7 +29,7 @@ const Skills = () => {
   return (
     <section className="section" id="skills">
       <div className="container mx-auto px-4 mt-20 mb-10">
-        <h2 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-10">
+        <h2 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold text-gradient mb-10">
           Professional Skills
         </h2>
         <div className="flex flex-wrap card">

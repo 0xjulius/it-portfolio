@@ -4,7 +4,7 @@ const Thesis = () => {
   return (
     <section className="schoolThesis mb-20">
       <div className="mx-auto text-center pt-10 px-5 max-w-[600px] lg:max-w-[900px] mt-[100px]">
-        <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold pt-10 mb-10 ptx2">
+        <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold pt-10 mb-10 text-gradient">
           My thesis of University of Applied Sciences studies
         </h1>
         <a

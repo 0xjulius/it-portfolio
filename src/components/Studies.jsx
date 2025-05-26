@@ -13,7 +13,7 @@ const Studies = () => {
       <div className="container mx-auto mt-[100px] flex-none">
         <div className="flex flex-col lg:flex-none lg:items-center ">
           <div className="flex-1">
-            <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-16">
+            <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold text-gradient mb-16">
               My studies and education
             </h1>
             <div className="xl:flex gap-x-6 xl:gap-x-10 text-center p-4">

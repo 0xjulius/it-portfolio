@@ -10,7 +10,7 @@ export default function ProjectCard({
 }) {
   return (
     <div className="w-full md:w-1/2 p-4">
-      <h2 className="text-center text-xl font-bold mb-4">
+      <h2 className="text-center text-xl font-bold mb-4 ">
         {title}
         {badge && <span className="ptx2 text-2xl"> {badge}</span>}
       </h2>

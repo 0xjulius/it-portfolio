@@ -20,7 +20,7 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons"; // Added for SQL
 const Technologies = () => {
   return (
     <section className="py-10 px-4 ptx mt-10" id="technologies">
-      <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold ptx2 mb-16">
+      <h1 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold mb-16 text-gradient">
         TECHNOLOGIES
       </h1>
       <div className="container mx-auto">
