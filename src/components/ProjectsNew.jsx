@@ -18,11 +18,21 @@ import project10 from "../images/project10.webp";
 import project11 from "../images/project11.png";
 import project12 from "../images/project12.png";
 import project from "../images/project-main.png";
+import project19 from "../images/project19.png";
 
 const projects = [
   {
+    image: project19,
+    title: "The Joe Rogan Experience Podcast Application (Unofficial)",
+    description:
+      "A responsive, serverless custom API React app to browse, stream, and search Joe Rogan Experience episodes via RSS. Built with React, Tailwind, and Framer Motion.",
+    github: "https://github.com/0xjulius/jre-pods",
+    live: "https://jre-pods.vercel.app/",
+    badge: "NEW!",
+  },
+  {
     image: project18,
-    title: "XML to JSON News feed with React, Axios, Vite, Tailwind",
+    title: "Yle Uutiset - News feed solution",
     description:
       "React app that fetches Yle’s RSS feed via a proxy, converts XML to JSON, and displays news using Tailwind styles.",
     github: "https://github.com/0xjulius/xml-to-json-axios-react",
@@ -31,7 +41,8 @@ const projects = [
   },
   {
     image: project17,
-    title: "Weather JSON api-request fetcher with React, Vite, Tailwind",
+    title:
+      "Weather application JSON api-request fetcher with React, Vite, Tailwind",
     description:
       "Fetching and displaying JSON data from a weather API using React, styling UI with Tailwind, and setting up the project with Vite",
     github: "https://github.com/0xjulius/json-api-fetch-react",
