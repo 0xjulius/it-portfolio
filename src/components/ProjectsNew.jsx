@@ -25,7 +25,7 @@ const projects = [
     image: project19,
     title: "The Joe Rogan Experience Podcast Application (Unofficial)",
     description:
-      "A responsive, serverless custom API React app to browse, stream, and search Joe Rogan Experience episodes via RSS. Built with React, Tailwind, and Framer Motion.",
+      "A full stack, responsive, serverless custom API React app to browse, stream, and search Joe Rogan Experience episodes via RSS. Built with React, Tailwind, and Framer Motion.",
     github: "https://github.com/0xjulius/jre-pods",
     live: "https://jre-pods.vercel.app/",
     badge: "NEW!",
