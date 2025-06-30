@@ -23,11 +23,11 @@ import project19 from "../images/project19.png";
 const projects = [
   {
     image: project19,
-    title: "The Joe Rogan Experience Podcast Application (Unofficial)",
+    title: "The PodStation - Where podcasts come alive",
     description:
-      "A full stack, responsive, serverless custom API React app to browse, stream, and search Joe Rogan Experience episodes via RSS. Built with React, Tailwind, and Framer Motion.",
-    github: "https://github.com/0xjulius/jre-pods",
-    live: "https://jre-pods.vercel.app/",
+      "A full stack, responsive, serverless custom API React app to browse, stream, and search podcast episodes via RSS. Built with React, Tailwind",
+    github: "https://github.com/0xjulius/PodStation-save-and-listen",
+    live: "https://podstation-0xjulius.vercel.app/",
     badge: "NEW!",
   },
   {
