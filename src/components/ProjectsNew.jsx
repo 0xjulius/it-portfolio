@@ -19,6 +19,7 @@ import project11 from "../images/project11.png";
 import project12 from "../images/project12.png";
 import project from "../images/project-main.png";
 import project19 from "../images/project19.png";
+import project20 from "../images/project20.png";
 
 const projects = [
   {
@@ -48,6 +49,16 @@ const projects = [
     github: "https://github.com/0xjulius/json-api-fetch-react",
     live: "https://json-api-fetch-react.vercel.app/",
     badge: "NEW!",
+  },
+
+  {
+    image: project20,
+    title: "Python ATM-Machine simulation",
+    description:
+      " Python project simulating an ATM machine. Features include deposits, and withdrawals",
+    github: "https://github.com/0xjulius/atm-machine",
+    live: "",
+    badge: "",
   },
 
   {
