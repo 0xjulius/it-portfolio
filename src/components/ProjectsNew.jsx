@@ -20,8 +20,18 @@ import project12 from "../images/project12.png";
 import project from "../images/project-main.png";
 import project19 from "../images/project19.png";
 import project20 from "../images/project20.png";
+import project21 from "../images/project21.png";
 
 const projects = [
+  {
+    image: project21,
+    title: "ATM-machine - Simple react app with a retro vibe",
+    description:
+      "A React-based ATM simulator with a 90s Finnish retro vibe, featuring 0-9 buttons, sound-effects and basic banking options. Built with React, Tailwind",
+    github: "https://github.com/0xjulius/atm-machine-react",
+    live: "https://atm-machine-0xjulius.vercel.app/",
+    badge: "NEW!",
+  },
   {
     image: project19,
     title: "The PodStation - Where podcasts come alive",
@@ -29,7 +39,6 @@ const projects = [
       "A full stack, responsive, serverless custom API React app to browse, stream, and search podcast episodes via RSS. Built with React, Tailwind",
     github: "https://github.com/0xjulius/PodStation-save-and-listen",
     live: "https://podstation-0xjulius.vercel.app/",
-    badge: "NEW!",
   },
   {
     image: project18,
@@ -38,7 +47,7 @@ const projects = [
       "React app that fetches Yle’s RSS feed via a proxy, converts XML to JSON, and displays news using Tailwind styles.",
     github: "https://github.com/0xjulius/xml-to-json-axios-react",
     live: "https://xml2json-axios-react.vercel.app/",
-    badge: "NEW!",
+    badge: "",
   },
   {
     image: project17,
@@ -48,7 +57,7 @@ const projects = [
       "Fetching and displaying JSON data from a weather API using React, styling UI with Tailwind, and setting up the project with Vite",
     github: "https://github.com/0xjulius/json-api-fetch-react",
     live: "https://json-api-fetch-react.vercel.app/",
-    badge: "NEW!",
+    badge: "",
   },
 
   {
