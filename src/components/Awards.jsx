@@ -33,7 +33,7 @@ const Awards = () => {
         {/* Award Information */}
         <div className="lg:w-2/3 px-6 mt-10">
           <h1 className="text-4xl font-bold mb-4 ptx text-center lg:text-left lg:pt-10 ">
-            AI Agents – Your Executive’s Right Hand
+            Microsoft Copilot: AI Agents
           </h1>
           <p className="text-lg mb-4 ctext font-semibold text-center lg:text-left">
             Issued by Esa Riutta, Eduhouse. <br /> <br />
