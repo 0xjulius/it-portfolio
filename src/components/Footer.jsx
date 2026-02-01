@@ -38,14 +38,17 @@ const Footer = () => {
             Contact me:{" "}
             <a
               className="underline hover:no-underline cursor-pointer hover:text-gray-500"
-              href="mailto:julius.aalto@gmail.com"
+              href="mailto:contact@juliusaalto.com"
             >
-              julius.aalto@gmail.com
+              contact@juliusaalto.com
             </a>{" "}
             <br />
             All emails are promptly directed to the appropriate recipient.
           </p>
-          <p>&copy; 2025 Julius Aalto. All rights reserved.</p>
+          <p>
+            {" "}
+            © {new Date().getFullYear()} - Julius Aalto. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
