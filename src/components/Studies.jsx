@@ -103,6 +103,7 @@ const Studies = () => {
                     className="font-bold cursor-pointer underline hover:no-underline"
                     href="https://ops.vamk.fi/fi/TK/2020/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     {" "}
                     <br />

@@ -11,6 +11,7 @@ const Thesis = () => {
           className="a text-3xl font-semibold ptx"
           href="https://bit.ly/43pT6JA"
           target="_blank"
+          rel="noreferrer"
         >
           Development of Light a Candle -plugin for WordPress
         </a>

@@ -12,6 +12,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton.jsx";
 import Technologies from "./components/Technologies.jsx";
 import Gallery from "./components/Gallery.jsx";
 import ProjectsNew from "./components/ProjectsNew.jsx";
+import GitHubHeatmap from "./components/GitHubHeatmap.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <div>
         <Header />
         <Home />
+        <GitHubHeatmap />
         <Technologies />
         <Navbar />
         <main>
