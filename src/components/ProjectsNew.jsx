@@ -21,8 +21,18 @@ import project from "../images/project-main.png";
 import project19 from "../images/project19.png";
 import project20 from "../images/project20.png";
 import project21 from "../images/project21.png";
+import project22 from "../images/project22.png";
 
 const projects = [
+  {
+    image: project22,
+    title: "Duunify.com – Mini-SaaS | Smart Job Application Solution",
+    description:
+      "A production-ready Mini-SaaS platform engineered for tracking job applications. Features individual user authentication, automated data scraping from job links, and data-driven insights.",
+    github: "",
+    live: "https://duunify.com",
+    badge: "NEW!",
+  },
   {
     image: project21,
     title: "ATM-machine - Simple react app with a retro vibe",
@@ -30,7 +40,7 @@ const projects = [
       "A React-based ATM simulator with a 90s Finnish retro vibe, featuring 0-9 buttons, sound-effects and basic banking options. Built with React, Tailwind",
     github: "https://github.com/0xjulius/atm-machine-react",
     live: "https://atm-machine-0xjulius.vercel.app/",
-    badge: "NEW!",
+    badge: "",
   },
   {
     image: project19,
