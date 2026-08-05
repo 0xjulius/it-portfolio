@@ -38,6 +38,7 @@ export const projects = [
   },
   {
     slug: "atm-machine-react",
+    hasArticle: true,
     tags: ["React", "Tailwind CSS", "JavaScript"],
     image: project21,
     title: "ATM-machine - Simple react app with a retro vibe",

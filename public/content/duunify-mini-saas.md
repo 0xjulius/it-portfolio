@@ -123,3 +123,20 @@ Koodikanta on jaettu loogisiin kokonaisuuksiin Next.js App Router -konvention mu
 * **`/lib`**: Ydinlogiikka, konfiguraatiot ja tietokantayhteydet (`supabase.ts`, `export-csv.ts`, `logger.ts`).
 * **`/hooks`**: Sovelluskohtaiset React Hookit datan noutamiseen (esim. `useDashboard.ts`, `useApplications.ts`).
 * **`/types`**: Keskitetyt TypeScript-rajapinnat (esim. `database.ts`, `application.ts`), jotka vastaavat Supabasen skeemaa.
+
+## Yhteenveto
+
+
+### Laajempi konteksti: Moderni Mini-SaaS ja Duunifyn arkkitehtuuri
+Vastaavanlaista tarkkaa arkkitehtuuria ja tekoälyvetoista suunnittelua hyödynnetään myös muissa suomalaisissa kehitysprojekteissa, kuten modernissa **Duunify**-alustassa. Duunifyssa korvataan perinteiset Excel-taulukot automatisoidulla järjestelmällä, joka hallitsee koko työnhakuprosessin elinkaarta:
+* **Automaattinen tiedonkeruu (DOM Parsing):** URL-osoitteen perusteella sivustolta haetaan metatiedot ja leipäteksti Cheeriolla, mikä takaa tietojen säilyvyyden silloinkin, kun alkuperäinen työpaikkailmoitus poistetaan verkosta.
+* **Tietoturva ja monikerroksinen arkkitehtuuri:** Supabase-tietokantayhteydet on eriytetty selaimen, palvelimen ja järjestelmänvalvojan (Service Role) kesken, ja RLS (Row Level Security) suojaa käyttäjien dataa.
+* **Käytettävyys ja analytiikka:** React Server Components (RSC), Tailwind CSS, Next.js App Router sekä Recharts-pohjainen visuaalinen dashboard muodostavat saumattoman kokonaisuuden, joka tekee monimutkaisesta datasta helppokäyttöistä ja visuaalisesti näyttävää.
+
+Oli kyseessä sitten yksittäinen interaktiivinen komponentti tai laajempi Mini-SaaS-palvelu, avain menestykseen on teknisen toteutuksen ja huolellisen ulkoasun/käyttökokemuksen tasapaino.
+
+Tutustu Duunify-projektiin ja lähdekoodiin GitHubissa:  
+
+👉 **[Duunify.com](https://duunify.com)**
+
+👉 **[Github](https://github.com/0xjulius/Duunify)**
