@@ -124,6 +124,212 @@ Koodikanta on jaettu loogisiin kokonaisuuksiin Next.js App Router -konvention mu
 * **`/hooks`**: Sovelluskohtaiset React Hookit datan noutamiseen (esim. `useDashboard.ts`, `useApplications.ts`).
 * **`/types`**: Keskitetyt TypeScript-rajapinnat (esim. `database.ts`, `application.ts`), jotka vastaavat Supabasen skeemaa.
 
+## 5. Projektin Rakenne
+```
+duunify/
+│
+├── app/                                  # Next.js App Router
+│   │
+│   ├── layout.tsx                        # Koko sovelluksen layout
+│   ├── page.tsx                          # Landing page
+│   ├── globals.css                       # Globaalit tyylit
+│   ├── favicon.ico
+│   │
+│   ├── admin/                            # Admin-paneeli
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── logs/
+│   │   │   └── page.tsx
+│   │   └── users/
+│   │       └── page.tsx
+│   │
+│   ├── api/                              # API Routes
+│   │   ├── admin/
+│   │   │   └── users/
+│   │   │       └── [id]/
+│   │   │           ├── ban/              # Reitti käyttäjien bännäämiselle
+│   │   │           │   └── route.ts
+│   │   │           └── route.ts
+│   │   ├── contact/
+│   │   │   └── route.ts
+│   │   └── parse-job/
+│   │       └── route.ts
+│   │
+│   ├── applications/
+│   │   ├── page.tsx
+│   │   ├── AddApplicationForm.tsx
+│   │   ├── ApplicationCard.tsx
+│   │   ├── ApplicationDialog.tsx
+│   │   └── [id]/
+│   │       └── page.tsx
+│   │
+│   ├── banned/                           # Porttikieltosivu estetyille käyttäjille
+│   │   └── page.tsx
+│   │
+│   ├── dashboard/
+│   │   └── page.tsx
+│   │
+│   ├── calendar/
+│   │   └── page.tsx
+│   │
+│   ├── favorites/
+│   │   └── page.tsx
+│   │
+│   ├── history/
+│   │   └── page.tsx
+│   │
+│   ├── settings/
+│   │   └── page.tsx
+│   │
+│   ├── contact/
+│   │   └── page.tsx
+│   │
+│   ├── login/
+│   │   ├── actions.ts                    # Kirjautumislogiikka (sis. bännitarkistuksen)
+│   │   └── page.tsx
+│   │
+│   ├── logout/
+│   │   └── page.tsx
+│   │
+│   ├── privacy/
+│   │   └── page.tsx
+│   │
+│   ├── tos/
+│   │   └── page.tsx
+│   │
+│   └── demo/
+│       ├── page.tsx
+│       ├── applications/
+│       │   └── page.tsx
+│       ├── calendar/
+│       │   └── page.tsx
+│       ├── history/
+│       │   └── page.tsx
+│       └── favorites/
+│           └── page.tsx
+│
+├── components/                           # Jaettavat React-komponentit
+│   │
+│   ├── admin/
+│   │   ├── AdminSidebar.tsx
+│   │   ├── LogDetailModal.tsx
+│   │   └── UsersTable.tsx                # Käyttäjähallintataulukko bännin keston valinnalla
+│   │
+│   ├── applications/
+│   │   └── AddAttachment.tsx
+│   │
+│   ├── calendar/
+│   │   ├── AddEventModal.tsx
+│   │   ├── CalendarClient.tsx
+│   │   ├── CalendarView.tsx
+│   │   ├── EventDetailModal.tsx
+│   │   ├── MiniCalendar.tsx
+│   │   └── QuickEvents.tsx
+│   │
+│   ├── dashboard/
+│   │   ├── ActivityHeatmap.tsx
+│   │   ├── ApplicationChart.tsx
+│   │   ├── ApplicationTrendChart.tsx
+│   │   ├── ConsistencyCard.tsx
+│   │   ├── DashboardHeader.tsx
+│   │   ├── ImpactRatingCard.tsx
+│   │   ├── LocationsChart.tsx
+│   │   ├── MapComponent.tsx
+│   │   ├── RecentApplications.tsx
+│   │   ├── StatsCard.tsx
+│   │   └── UpcomingDeadlines.tsx
+│   │
+│   ├── demo/
+│   │   ├── DemoBanner.tsx
+│   │   └── DemoSidebar.tsx
+│   │
+│   ├── history/
+│   │   └── HistoryClient.tsx
+│   │
+│   ├── logout/
+│   │   ├── LogoutConfirmModal.tsx
+│   │   └── ModalProvider.tsx
+│   │
+│   ├── settings/
+│   │   ├── AvatarUpload.tsx
+│   │   ├── PasswordChangeForm.tsx
+│   │   ├── ProfileDetailsForm.tsx
+│   │   └── SettingsClient.tsx
+│   │
+│   ├── ui/                               # Yleiset UI-komponentit
+│   │   ├── avatar.tsx
+│   │   ├── badge.tsx
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   ├── chart.tsx
+│   │   ├── dialog.tsx
+│   │   ├── input.tsx
+│   │   ├── progress.tsx
+│   │   ├── sheet.tsx
+│   │   ├── skeleton.tsx
+│   │   ├── skeletons.tsx
+│   │   ├── table.tsx
+│   │   ├── TimerComponent.tsx
+│   │   ├── theme-provider.tsx
+│   │   └── tooltip.tsx
+│   │
+│   ├── Footer.tsx
+│   ├── LandingIndexCard.tsx
+│   ├── LoginModal.tsx
+│   ├── NavBar.tsx
+│   ├── NavBarWait.tsx
+│   ├── Sidebar.tsx
+│   ├── SimpleNav.tsx
+│   ├── DownloadButton.tsx
+│   ├── WaitlistSignup.tsx
+│   └── AppToaster.tsx
+│
+├── lib/                                  # Sovelluslogiikka
+│   ├── auth-errors.ts
+│   ├── calendar.ts
+│   ├── demo-data.ts
+│   ├── export-csv.ts
+│   ├── history.ts
+│   ├── logger.ts
+│   ├── ratelimit.ts
+│   ├── supabase.ts
+│   ├── supabase-admin.ts
+│   └── supabase-server.ts
+│
+├── middleware.ts                         # Reittien suojaus (Auth + Admin)
+│
+├── public/                               # Staattiset tiedostot
+│   ├── logo.svg
+│   ├── favicon.ico
+│   ├── icons/
+│   ├── screenshots/
+│   └── images/
+│
+├── types/                                # TypeScript-tyypit
+│   ├── application.ts
+│   ├── user.ts
+│   ├── history.ts
+│   └── database.ts
+│
+├── hooks/                                # Custom React Hooks
+│   ├── useAuth.ts
+│   ├── useApplications.ts
+│   ├── useDashboard.ts
+│   └── useProfile.ts
+│
+├── utils/                                # Pienet apufunktiot
+│   ├── formatDate.ts
+│   ├── formatSalary.ts
+│   ├── validators.ts
+│   └── constants.ts
+│
+├── package.json
+├── proxy.ts                              # middleware-name-update
+├── tsconfig.json
+├── next.config.ts
+└── README.md
+```
+
 ## Yhteenveto
 
 
@@ -140,3 +346,4 @@ Tutustu Duunify-projektiin ja lähdekoodiin GitHubissa:
 👉 **[Duunify.com](https://duunify.com)**
 
 👉 **[Github](https://github.com/0xjulius/Duunify)**
+
