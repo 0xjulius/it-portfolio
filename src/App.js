@@ -19,6 +19,7 @@ import Gallery from "./components/Gallery.jsx";
 import ProjectsNew from "./components/ProjectsNew.jsx";
 import GitHubHeatmap from "./components/GitHubHeatmap.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";
+import VantaBackground from "./components/VantaBackground";
 
 // Komponentti, joka nollaa vierityksen AINA kun URL-reitti (pathname) muuttuu
 function ScrollToTop() {
@@ -71,15 +72,14 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Routes>
-        {/* Main portfolio page */}
-        <Route path="/" element={<PortfolioHome />} />
 
-        {/* Dynamic blog page for individual projects */}
+      <VantaBackground />
+
+      <Routes>
+        <Route path="/" element={<PortfolioHome />} />
         <Route path="/projects/:slug" element={<ProjectDetail />} />
       </Routes>
 
-      {/* Nappi sijoitettuna tänne, jotta se näkyy jokaisella sivulla */}
       <ScrollToTopButton />
     </Router>
   );
