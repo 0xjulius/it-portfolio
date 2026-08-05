@@ -23,8 +23,11 @@ import project20 from "../images/project20.png";
 import project21 from "../images/project21.png";
 import project22 from "../images/project22.png";
 
-const projects = [
+export const projects = [
   {
+    slug: "duunify-mini-saas",
+    hasArticle: true,
+    tags: ["React", "Tailwind CSS", "SaaS", "Full-Stack"],
     image: project22,
     title: "Duunify.com – Mini-SaaS | Smart Job Application Solution",
     description:
@@ -34,6 +37,8 @@ const projects = [
     badge: "NEW!",
   },
   {
+    slug: "atm-machine-react",
+    tags: ["React", "Tailwind CSS", "JavaScript"],
     image: project21,
     title: "ATM-machine - Simple react app with a retro vibe",
     description:
@@ -43,6 +48,8 @@ const projects = [
     badge: "",
   },
   {
+    slug: "podstation-podcast-app",
+    tags: ["React", "Tailwind CSS", "API", "Serverless"],
     image: project19,
     title: "The PodStation - Where podcasts come alive",
     description:
@@ -51,6 +58,8 @@ const projects = [
     live: "https://podstation-0xjulius.vercel.app/",
   },
   {
+    slug: "yle-uutiset-news-feed",
+    tags: ["React", "Tailwind CSS", "Axios", "XML/RSS"],
     image: project18,
     title: "Yle Uutiset - News feed solution",
     description:
@@ -60,6 +69,8 @@ const projects = [
     badge: "",
   },
   {
+    slug: "weather-app-json-api",
+    tags: ["React", "Vite", "Tailwind CSS", "REST API"],
     image: project17,
     title:
       "Weather application JSON api-request fetcher with React, Vite, Tailwind",
@@ -69,8 +80,9 @@ const projects = [
     live: "https://json-api-fetch-react.vercel.app/",
     badge: "",
   },
-
   {
+    slug: "python-atm-simulation",
+    tags: ["Python", "CLI"],
     image: project20,
     title: "Python ATM-Machine simulation",
     description:
@@ -79,8 +91,9 @@ const projects = [
     live: "",
     badge: "",
   },
-
   {
+    slug: "python-job-finder-telegram-bot",
+    tags: ["Python", "Web Scraping", "Telegram Bot", "Automation"],
     image: project7,
     title: "Python IT-job finder and Telegram bot",
     description:
@@ -89,8 +102,9 @@ const projects = [
     live: "",
     badge: "",
   },
-
   {
+    slug: "shop-with-elon-usestate",
+    tags: ["React", "Vite", "Tailwind CSS", "JavaScript"],
     image: project15,
     title:
       "Shop With Elon - Funny way to showcase useState on React, Vite, Tailwind",
@@ -100,8 +114,9 @@ const projects = [
     live: "https://usestate-training-livid.vercel.app/",
     badge: "",
   },
-
   {
+    slug: "photography-gallery-react",
+    tags: ["React", "Vite", "Tailwind CSS", "CSS Animations"],
     image: project14,
     title: "Photography gallery website made with React, Vite, Tailwind",
     description:
@@ -110,8 +125,9 @@ const projects = [
     live: "https://visionbyjulius.vercel.app/",
     badge: "",
   },
-
   {
+    slug: "lumivaara-wordpress-php-plugin",
+    tags: ["WordPress", "PHP", "MySQL", "CSS"],
     image: project6,
     title: "Lumivaara.fi -WordPress Solution + PHP WP Plugin",
     description:
@@ -120,8 +136,9 @@ const projects = [
     live: "https://www.lumivaara.fi",
     badge: "| My Bachelor’s Thesis",
   },
-
   {
+    slug: "cs2-rank-guesser-csharp",
+    tags: ["C#", ".NET", "Desktop"],
     image: project12,
     title: "CS2/CSGO-hour / rank guesser with C#",
     description:
@@ -131,6 +148,8 @@ const projects = [
     badge: "",
   },
   {
+    slug: "old-wordpress-portfolio",
+    tags: ["WordPress", "Elementor", "CMS"],
     image: project11,
     title: "Old WordPress IT-portfolio",
     description:
@@ -139,8 +158,9 @@ const projects = [
     live: "https://juliusaalto.com",
     badge: "",
   },
-
   {
+    slug: "bmi-calculator-python",
+    tags: ["Python", "CLI"],
     image: project10,
     title: "Amazing BMI calculator with Python",
     description:
@@ -149,8 +169,9 @@ const projects = [
     live: "",
     badge: "",
   },
-
   {
+    slug: "lotto-generator-python",
+    tags: ["Python", "CLI"],
     image: project9,
     title: "Lotto number random generator with Python",
     description:
@@ -159,8 +180,9 @@ const projects = [
     live: "",
     badge: "",
   },
-
   {
+    slug: "react-tailwind-it-portfolio",
+    tags: ["React", "Tailwind CSS", "JavaScript"],
     image: project,
     title: " IT-Portfolio with React + Tailwind",
     description:
@@ -169,8 +191,9 @@ const projects = [
     live: "https://react-portfolio-0xjulius.vercel.app/",
     badge: "",
   },
-
   {
+    slug: "flappybird-night-version",
+    tags: ["Unity", "C#", "C++", "WebGL"],
     image: project8,
     title: "FlappyBird -Night version",
     description:
@@ -179,8 +202,9 @@ const projects = [
     live: "https://0xjulius.github.io/FlappyBird/",
     badge: "(schoolproject/tutorial)",
   },
-
   {
+    slug: "rock-paper-scissors-csharp",
+    tags: ["C#", ".NET", "Game Development"],
     image: project13,
     title: " Kivi sakset paperi -game with c#",
     description: "Small game, with c# / visual studio",
@@ -188,8 +212,9 @@ const projects = [
     live: "",
     badge: "",
   },
-
   {
+    slug: "referral-website-concept",
+    tags: ["HTML5", "CSS3", "Responsive Design"],
     image: project5,
     title: " Referral website concept HTML, CSS only",
     description:
@@ -198,8 +223,9 @@ const projects = [
     live: "https://0xjulius.github.io/ref-site-concept/",
     badge: "",
   },
-
   {
+    slug: "banking-app-one-pager",
+    tags: ["React", "Vite", "Tailwind CSS", "Tutorial"],
     image: project4,
     title: " Banking app one pager React + Vite + Tailwind ",
     description:
@@ -208,8 +234,9 @@ const projects = [
     live: "https://bank-app-react-one.vercel.app/",
     badge: "(tutorial)",
   },
-
   {
+    slug: "tesla-website-clone",
+    tags: ["React", "Tailwind CSS", "Tutorial"],
     image: project3,
     title: "Tesla website Clone with React, Tailwind ",
     description:
@@ -218,8 +245,9 @@ const projects = [
     live: "https://tesla-react-app-tailwind.vercel.app/",
     badge: "Tutorial",
   },
-
   {
+    slug: "budget-calculator-js",
+    tags: ["HTML5", "CSS3", "JavaScript", "DOM Manipulation"],
     image: project2,
     title: " Budget Calculator with HTML, CSS + JS",
     description:
@@ -228,8 +256,9 @@ const projects = [
     live: "https://0xjulius.github.io/budjettilaskuri/",
     badge: "",
   },
-
   {
+    slug: "crypto-price-checker",
+    tags: ["React", "Tailwind CSS", "REST API", "LocalStorage"],
     image: project1,
     title: "Cryptocurrency price checker with React, Tailwind",
     description:
@@ -239,6 +268,8 @@ const projects = [
     badge: "",
   },
   {
+    slug: "cs2-edpi-calculator-csharp",
+    tags: ["C#", "WinForms", ".NET"],
     image: project16,
     title: "Simple CS2/esports mouse eDPI calculator made with C#",
     description:
@@ -259,7 +290,7 @@ function ProjectsNew() {
 
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">
           {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+            <ProjectCard key={project.slug} {...project} />
           ))}
         </div>
       </div>
