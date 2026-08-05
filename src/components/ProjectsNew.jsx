@@ -27,7 +27,7 @@ export const projects = [
   {
     slug: "duunify-mini-saas",
     hasArticle: true,
-    tags: ["React", "Tailwind CSS", "SaaS", "Full-Stack"],
+    tags: ["React", "NextJS", "Tailwind", "SaaS", "Full-Stack", "Automation"],
     image: project22,
     title: "Duunify.com – Mini-SaaS | Smart Job Application Solution",
     description:

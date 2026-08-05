@@ -13,10 +13,19 @@ Perinteinen työnhaku nojaa usein hajautettuihin Excel-taulukoihin, muistilappui
 
 Duunify ratkaisee nämä haasteet rakentamalla järjestelmän seuraavien keskeisten käyttötapausten ympärille:
 
-### UC-1: Automaattinen työpaikkailmoituksen tuonti (Web Scraping)
+### UC-1: Automaattinen työpaikkailmoituksen tuonti ja ilmoitusdatan säilyvyys
+
 * **Käyttäjä:** Työnhakija
-* **Ongelma:** Lomakkeiden käsin täyttäminen on hidasta ja altista virheille.
-* **Ratkaisu:** Käyttäjä syöttää työpaikkailmoituksen URL-osoitteen (tukee mm. Duunitori, Työmarkkinatori, Jobly). Järjestelmä lukee sivun HTML-rakenteen taustalla, jäsentää sieltä JSON-LD-metadatan ja täyttää automaattisesti kentät: *yritys, tehtävänimike, palkka, sijainti ja kuvaus*.
+* **Liiketoimintaongelma & Kriittinen riski:** 
+  * **Manuaalinen kuormitus:** Ilmoituksen tietojen (yritys, rooli, palkkatoive, kuvaus) kopioiminen käsin on hidasta ja altista virheille kuormittavassa työnhaussa.
+  * **Datahävikki ("404 - Sivua ei löydy" -ilmiö):** Työpaikkailmoitukset poistetaan verkkosivustoilta usein heti hakuajan päätyttyä tai haastattelukierroksen alkaessa. Jos hakija kutsutaan haastatteluun viikkoja myöhemmin, alkuperäinen linkki on rikki. Hakija ei enää näe ilmoituksen vaatimuksia, sovittuja palkkaraameja tai yksityiskohtia, jolloin haastatteluun valmistautuminen vaarantuu.
+* **Ratkaisu:** 
+  * Käyttäjä syöttää sovellukseen työpaikkailmoituksen URL-osoitteen (tuetut alustat: mm. Duunitori, Työmarkkinatori, Jobly).
+  * Taustajärjestelmän rajapinta hakee sivun HTML-rakenteen ja jäsentää ilmoituksen metadatan sekä koko leipätekstin.
+  * Automaatio täyttää kentät (*yritys, tehtävänimike, palkka, sijainti, jne*) ja tallentaa koko ilmoitustekstin sellaisenaan tietokantaan.
+* **Saavutettu hyöty ja arvo:**
+  * **Nollavaiva:** Poistaa manuaalisen näppäilyn ja madaltaa kynnystä tallentaa hakemuksia.
+  * **Tietojen säilyvyystakuu (Data Persistence):** Hakijalla on aina hallussaan täydellinen, pysyvä kopio ilmoituksesta ulkoisen sivuston tilasta riippumatta. Tämä takaa tarkan valmistautumisen haastatteluun sekä luo pohjan ilmoitusdatan hyödyntämiselle jatkossa (esim. AI-pohjaiset haastattelukysymysgeneroinnit).
 
 ### UC-2: Hakemusten ja hakuprosessin elinkaaren hallinta
 * **Käyttäjä:** Työnhakija
