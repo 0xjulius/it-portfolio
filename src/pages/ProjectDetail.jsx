@@ -109,13 +109,8 @@ export default function ProjectDetail() {
 
           {/* Header Block with Title Badge Styling */}
           <header className="mb-6">
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-gradient tracking-tight leading-tight mb-4">
               {project.title}
-              {project.badge && (
-                <span className="ptx2 text-2xl text-amber-500 ml-2">
-                  {project.badge}
-                </span>
-              )}
             </h1>
 
             {/* Tech Stack Pills matching ProjectCard badge styles */}
