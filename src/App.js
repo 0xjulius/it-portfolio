@@ -20,6 +20,17 @@ import ProjectsNew from "./components/ProjectsNew.jsx";
 import GitHubHeatmap from "./components/GitHubHeatmap.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";
 
+// Komponentti, joka nollaa vierityksen AINA kun URL-reitti (pathname) muuttuu
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 // Group your main portfolio sections into a single page component
 function PortfolioHome() {
   const { hash } = useLocation();
@@ -33,8 +44,6 @@ function PortfolioHome() {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
-    } else {
-      window.scrollTo(0, 0);
     }
   }, [hash]);
 
@@ -54,7 +63,6 @@ function PortfolioHome() {
         <Awards />
       </main>
       <Footer />
-      <ScrollToTopButton />
     </>
   );
 }
@@ -62,6 +70,7 @@ function PortfolioHome() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         {/* Main portfolio page */}
         <Route path="/" element={<PortfolioHome />} />
@@ -69,6 +78,9 @@ function App() {
         {/* Dynamic blog page for individual projects */}
         <Route path="/projects/:slug" element={<ProjectDetail />} />
       </Routes>
+
+      {/* Nappi sijoitettuna tänne, jotta se näkyy jokaisella sivulla */}
+      <ScrollToTopButton />
     </Router>
   );
 }
