@@ -29,7 +29,7 @@ const projects = [
     title: "Duunify.com – Mini-SaaS | Smart Job Application Solution",
     description:
       "A production-ready Mini-SaaS platform engineered for tracking job applications while eliminating Excel. Features user authentication, automated data from job links, and data-driven insights.",
-    github: "",
+    github: "https://github.com/0xjulius/Duunify",
     live: "https://duunify.com",
     badge: "NEW!",
   },
