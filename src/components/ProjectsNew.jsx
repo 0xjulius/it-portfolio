@@ -50,6 +50,7 @@ export const projects = [
   },
   {
     slug: "podstation-podcast-app",
+    hasArticle: true,
     tags: ["React", "Tailwind CSS", "API", "Serverless"],
     image: project19,
     title: "The PodStation - Where podcasts come alive",
@@ -59,7 +60,8 @@ export const projects = [
     live: "https://podstation-0xjulius.vercel.app/",
   },
   {
-    slug: "yle-uutiset-news-feed",
+    slug: "ylenews-feed",
+    hasArticle: true,
     tags: ["React", "Tailwind CSS", "Axios", "XML/RSS"],
     image: project18,
     title: "Yle Uutiset - News feed solution",
@@ -71,6 +73,7 @@ export const projects = [
   },
   {
     slug: "weather-app-json-api",
+    hasArticle: true,
     tags: ["React", "Vite", "Tailwind CSS", "REST API"],
     image: project17,
     title:
@@ -83,6 +86,7 @@ export const projects = [
   },
   {
     slug: "python-atm-simulation",
+    hasArticle: true,
     tags: ["Python", "CLI"],
     image: project20,
     title: "Python ATM-Machine simulation",
@@ -94,6 +98,7 @@ export const projects = [
   },
   {
     slug: "python-job-finder-telegram-bot",
+    hasArticle: true,
     tags: ["Python", "Web Scraping", "Telegram Bot", "Automation"],
     image: project7,
     title: "Python IT-job finder and Telegram bot",
@@ -105,6 +110,7 @@ export const projects = [
   },
   {
     slug: "shop-with-elon-usestate",
+    hasArticle: true,
     tags: ["React", "Vite", "Tailwind CSS", "JavaScript"],
     image: project15,
     title:
@@ -116,7 +122,8 @@ export const projects = [
     badge: "",
   },
   {
-    slug: "photography-gallery-react",
+    slug: "photography-gallery",
+    hasArticle: true,
     tags: ["React", "Vite", "Tailwind CSS", "CSS Animations"],
     image: project14,
     title: "Photography gallery website made with React, Vite, Tailwind",
