@@ -12,6 +12,25 @@ export default function ProjectCard({
   live,
   badge,
 }) {
+  // Erotetaan kuva-alue omaan muuttujaan selkeyden vuoksi.
+  // Lisätty 'group' luokka, jotta hover-efekti toimii kauniisti linkin kanssa.
+  const ImageContent = (
+    <div className="relative w-full h-64 overflow-hidden rounded-lg group">
+      <img
+        src={image}
+        alt="blur background"
+        className="absolute top-0 left-0 w-full h-full object-cover filter blur-xl scale-110"
+        aria-hidden="true"
+      />
+      <img
+        src={image}
+        alt={title}
+        // Vaihdettu hover -> group-hover, jolloin zoomaus aktivoituu linkkiä hoveratessa
+        className="relative w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+  );
+
   return (
     <div className="w-full md:w-1/2 p-4 flex flex-col justify-between">
       <div>
@@ -36,20 +55,14 @@ export default function ProjectCard({
           </div>
         )}
 
-        {/* Image with blurred background */}
-        <div className="relative w-full h-64 overflow-hidden rounded-lg">
-          <img
-            src={image}
-            alt="blur background"
-            className="absolute top-0 left-0 w-full h-full object-cover filter blur-xl scale-110"
-            aria-hidden="true"
-          />
-          <img
-            src={image}
-            alt={title}
-            className="relative w-full h-full object-contain transition-transform duration-300 hover:scale-105"
-          />
-        </div>
+        {/* TÄSSÄ UUSI LOGIIKKA: Jos hasArticle on true, kääritään kuva Link-komponenttiin */}
+        {slug && hasArticle ? (
+          <Link to={`/projects/${slug}`} className="block cursor-pointer">
+            {ImageContent}
+          </Link>
+        ) : (
+          ImageContent
+        )}
 
         <p className="text-center mt-4 font-semibold text-lg">{description}</p>
       </div>
