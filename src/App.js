@@ -5,6 +5,8 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import { LanguageProvider } from "./context/LanguageContext";
+import LanguageToggle from "./components/LanguageToggle.jsx"; // <-- Tuodaan kielinappi
 import Header from "./components/Header.jsx";
 import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -38,7 +40,6 @@ function PortfolioHome() {
 
   useEffect(() => {
     if (hash) {
-      // Small delay allows DOM nodes to render properly before executing the scroll
       setTimeout(() => {
         const element = document.getElementById(hash.replace("#", ""));
         if (element) {
@@ -70,18 +71,23 @@ function PortfolioHome() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
+    <LanguageProvider>
+      <Router>
+        {/* Kielinappi sijoitettu tähän, jotta se toimii moitteettomasti kaikkien sivujen ja osioiden päällä */}
+        <LanguageToggle />
 
-      <VantaBackground />
+        <ScrollToTop />
 
-      <Routes>
-        <Route path="/" element={<PortfolioHome />} />
-        <Route path="/projects/:slug" element={<ProjectDetail />} />
-      </Routes>
+        <VantaBackground />
 
-      <ScrollToTopButton />
-    </Router>
+        <Routes>
+          <Route path="/" element={<PortfolioHome />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
+        </Routes>
+
+        <ScrollToTopButton />
+      </Router>
+    </LanguageProvider>
   );
 }
 

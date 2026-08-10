@@ -1,40 +1,62 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { useLanguage } from "../context/LanguageContext";
+
+const navContent = {
+  fi: {
+    me: "Koti",
+    studies: "Opinnot",
+    projects: "Projektit",
+    skills: "Osaaminen",
+    accolades: "Sertifikaatit",
+  },
+  en: {
+    me: "Me",
+    studies: "Studies",
+    projects: "Projects",
+    skills: "Skills",
+    accolades: "Accolades",
+  },
+};
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const { lang } = useLanguage();
+  const t = navContent[lang] || navContent.fi;
 
   const handleNav = () => {
     setNav(!nav);
   };
 
   return (
-    <div className="ptx flex justify-between items-center h-24 max-w-[1240px] mx-auto absolute top-2 right-10 z-50 text-lg xl:text-2xl lg:text-2xl pt-10 2xl:pr-40">
-      <ul className="lg:flex hidden">
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
+    // Korjattu säiliö: poistettu pr-40 ja annettu tilaa leilata
+    <div className="ptx flex justify-end items-center h-24 w-full absolute top-2 right-4 lg:right-12 z-50 text-base xl:text-xl pt-10">
+      {/* Lisätty gap-6 ja flex-wrap vapaudeksi */}
+      <ul className="lg:flex hidden items-center gap-4 whitespace-nowrap">
+        <li className="font-semibold btn py-2 px-3 transition-colors duration-300">
           <Link to="home" spy={true} smooth={true}>
-            Me
+            {t.me}
           </Link>
         </li>
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
+        <li className="font-semibold btn py-2 px-3 transition-colors duration-300">
           <Link to="studies" spy={true} smooth={true}>
-            Studies
+            {t.studies}
           </Link>
         </li>
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
+        <li className="font-semibold btn py-2 px-3 transition-colors duration-300">
           <Link to="projects" spy={true} smooth={true}>
-            Projects
+            {t.projects}
           </Link>
         </li>
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
+        <li className="font-semibold btn py-2 px-3 transition-colors duration-300">
           <Link to="skills" spy={true} smooth={true}>
-            Skills
+            {t.skills}
           </Link>
         </li>
-        <li className="font-semibold btn py-4 px-5 animate__animated animate__fadeIn animate__delay-1s transition-color duration-300">
+        <li className="font-semibold btn py-2 px-3 transition-colors duration-300">
           <Link to="awards" spy={true} smooth={true}>
-            Accolades
+            {t.accolades}
           </Link>
         </li>
       </ul>
@@ -66,7 +88,7 @@ const Navbar = () => {
                 duration={500}
                 onClick={() => setNav(false)}
               >
-                Me
+                {t.me}
               </Link>
             </li>
             <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
@@ -76,7 +98,7 @@ const Navbar = () => {
                 duration={500}
                 onClick={() => setNav(false)}
               >
-                Studies
+                {t.studies}
               </Link>
             </li>
             <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
@@ -86,7 +108,7 @@ const Navbar = () => {
                 duration={500}
                 onClick={() => setNav(false)}
               >
-                Projects
+                {t.projects}
               </Link>
             </li>
             <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
@@ -96,7 +118,7 @@ const Navbar = () => {
                 duration={500}
                 onClick={() => setNav(false)}
               >
-                Skills
+                {t.skills}
               </Link>
             </li>
             <li className="p-6 cursor-pointer hover:rounded hover:bg-white/10 animate__animated animate__fadeIn transition-color duration-500">
@@ -106,7 +128,7 @@ const Navbar = () => {
                 duration={500}
                 onClick={() => setNav(false)}
               >
-                Accolades
+                {t.accolades}
               </Link>
             </li>
           </ul>

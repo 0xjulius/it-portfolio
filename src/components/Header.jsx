@@ -1,10 +1,31 @@
 import React from "react";
 import logo from "../images/Wm_white.png";
+import LanguageToggle from "./LanguageToggle"; // <-- Tuodaan kielinappi
+import { useLanguage } from "../context/LanguageContext"; // <-- Tuodaan kielikonteksti
 import "animate.css";
 
+const headerContent = {
+  fi: {
+    welcome: "Tervetuloa IT-portfoliooni!",
+    subtitle: "Toteutettu Reactilla ja Tailwind CSS:llä",
+  },
+  en: {
+    welcome: "Welcome to my IT-Portfolio!",
+    subtitle: "Made with React and Tailwind.css",
+  },
+};
+
 function Header() {
+  const { lang } = useLanguage();
+  const t = headerContent[lang] || headerContent.fi;
+
   return (
-    <div className="text-black top-10 lg:pt-10 mt-[100px] lg:mt-5">
+    <div className="relative text-black top-10 lg:pt-10 mt-[100px] lg:mt-5">
+      {/* Kielinappi vasemmassa yläkulmassa */}
+      <div className="fixed top-4 left-4 z-50">
+        <LanguageToggle />
+      </div>
+
       <section className="md:flex lg:justify-start justify-center sticky z-10 px-4">
         <div className="text-center xl:pl-40 2xl:pl-60">
           <h1 className="w-full text-5xl font-semibold flex-1 font tracking-widest lg:text-6xl">
@@ -18,9 +39,9 @@ function Header() {
             <span className="text-gradient">JULIUS AALTO.</span>
           </h1>
           <p className="text-xl mt-3 subpixel-antialiased tracking-widest ptx font-semibold animate__animated animate__fadeInUp">
-            Welcome to my IT-Portfolio! <br />{" "}
+            {t.welcome} <br />{" "}
             <span className="ctext text-sm font-normal animate__animated animate__fadeInUp animate__delay-1s">
-              Made with React and Tailwind.css
+              {t.subtitle}
             </span>
           </p>
         </div>

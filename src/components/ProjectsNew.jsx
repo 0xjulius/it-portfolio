@@ -1,4 +1,7 @@
+import React from "react";
 import ProjectCard from "../components/ProjectCard";
+import { useLanguage } from "../context/LanguageContext";
+
 import project18 from "../images/project18.png";
 import project17 from "../images/project17.png";
 import project16 from "../images/project16.png";
@@ -23,39 +26,50 @@ import project20 from "../images/project20.png";
 import project21 from "../images/project21.png";
 import project22 from "../images/project22.png";
 
-export const projects = [
+export const projectsData = [
   {
     slug: "duunify-mini-saas",
     hasArticle: true,
     tags: ["React", "NextJS", "Tailwind", "SaaS", "Full-Stack", "Automation"],
     image: project22,
-    title: "Duunify.com – Mini-SaaS | Smart Job Application Solution",
-    description:
+    titleEn: "Duunify.com – Mini-SaaS | Smart Job Application Solution",
+    titleFi: "Duunify.com – Mini-SaaS | Älykäs työnhakuratkaisu",
+    descriptionEn:
       "A production-ready Mini-SaaS platform engineered for tracking job applications while eliminating Excel. Features user authentication, automated data from job links, and data-driven insights.",
+    descriptionFi:
+      "Tuotantovalmis Mini-SaaS-alusta työhakemusten seurantaan ilman Exceliä. Sisältää käyttäjätunnistautumisen, automaattisen datan haun työpaikkalinkeistä sekä visuaaliset tilastot.",
     github: "https://github.com/0xjulius/Duunify",
     live: "https://duunify.com",
-    badge: "NEW!",
+    badgeEn: "NEW!",
+    badgeFi: "UUSI!",
   },
   {
     slug: "atm-machine-react",
     hasArticle: true,
     tags: ["React", "Tailwind CSS", "JavaScript"],
     image: project21,
-    title: "ATM-machine - Simple react app with a retro vibe",
-    description:
-      "A React-based ATM simulator with a 90s Finnish retro vibe, featuring 0-9 buttons, sound-effects and basic banking options. Built with React, Tailwind",
+    titleEn: "ATM-machine - Simple react app with a retro vibe",
+    titleFi: "Pankkiautomaatti - Retro-henkinen React-sovellus",
+    descriptionEn:
+      "A React-based ATM simulator with a 90s Finnish retro vibe, featuring 0-9 buttons, sound-effects and basic banking options. Built with React, Tailwind.",
+    descriptionFi:
+      "React-pohjainen pankkiautomaattisimulaattori 90-luvun suomalaisella retrofiliksellä. Sisältää näppäimistön, ääniefektit ja peruspankkitoiminnot.",
     github: "https://github.com/0xjulius/atm-machine-react",
     live: "https://atm-machine-0xjulius.vercel.app/",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "podstation-podcast-app",
     hasArticle: true,
     tags: ["React", "Tailwind CSS", "API", "Serverless"],
     image: project19,
-    title: "The PodStation - Where podcasts come alive",
-    description:
-      "A full stack, responsive, serverless custom API React app to browse, stream, and search podcast episodes via RSS. Built with React, Tailwind",
+    titleEn: "The PodStation - Where podcasts come alive",
+    titleFi: "The PodStation - Podcast-soitin verkkoselaimessa",
+    descriptionEn:
+      "A full stack, responsive, serverless custom API React app to browse, stream, and search podcast episodes via RSS. Built with React, Tailwind.",
+    descriptionFi:
+      "Full-stack-, serverless- ja React-sovellus podcast-jaksojen selaamiseen, kuunteluun ja hakuun RSS-syötteiden kautta.",
     github: "https://github.com/0xjulius/PodStation-save-and-listen",
     live: "https://podstation-0xjulius.vercel.app/",
   },
@@ -64,241 +78,330 @@ export const projects = [
     hasArticle: true,
     tags: ["React", "Tailwind CSS", "Axios", "XML/RSS"],
     image: project18,
-    title: "Yle Uutiset - News feed solution",
-    description:
+    titleEn: "Yle Uutiset - News feed solution",
+    titleFi: "Yle Uutiset - Uutissoitin ja lukija",
+    descriptionEn:
       "React app that fetches Yle’s RSS feed via a proxy, converts XML to JSON, and displays news using Tailwind styles.",
+    descriptionFi:
+      "React-sovellus, joka hakee Ylen RSS-syötteen proxyn kautta, muuntaa XML-datan JSON-muotoon ja esittää uutiset tyylikkäästi.",
     github: "https://github.com/0xjulius/xml-to-json-axios-react",
     live: "https://xml2json-axios-react.vercel.app/",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "weather-app-json-api",
     hasArticle: true,
     tags: ["React", "Vite", "Tailwind CSS", "REST API"],
     image: project17,
-    title:
-      "Weather application JSON api-request fetcher with React, Vite, Tailwind",
-    description:
-      "Fetching and displaying JSON data from a weather API using React, styling UI with Tailwind, and setting up the project with Vite",
+    titleEn: "Weather application JSON api-request fetcher",
+    titleFi: "Sääsovellus JSON API -rajapintahauilla",
+    descriptionEn:
+      "Fetching and displaying JSON data from a weather API using React, styling UI with Tailwind, and setting up the project with Vite.",
+    descriptionFi:
+      "Säädatan hakeminen ja esittäminen REST API -rajapinnasta Reactilla, Vite-ympäristössä ja Tailwind CSS -tyyleillä.",
     github: "https://github.com/0xjulius/json-api-fetch-react",
     live: "https://json-api-fetch-react.vercel.app/",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "python-atm-simulation",
     hasArticle: true,
     tags: ["Python", "CLI"],
     image: project20,
-    title: "Python ATM-Machine simulation",
-    description:
-      " Python project simulating an ATM machine. Features include deposits, and withdrawals",
+    titleEn: "Python ATM-Machine simulation",
+    titleFi: "Python Pankkiautomaattisimulaattori",
+    descriptionEn:
+      "Python project simulating an ATM machine. Features include deposits, and withdrawals.",
+    descriptionFi:
+      "Pythonilla toteutettu pankkiautomaattisimulaattori. Ominaisuuksina muun muassa talletukset ja nostot komentonäkymässä.",
     github: "https://github.com/0xjulius/atm-machine",
     live: "",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "python-job-finder-telegram-bot",
     hasArticle: true,
     tags: ["Python", "Web Scraping", "Telegram Bot", "Automation"],
     image: project7,
-    title: "Python IT-job finder and Telegram bot",
-    description:
-      " Python Project which is scraping the web for the latest IT job postings all around Finland. It sends job alerts straight to your phone via Telegram!",
+    titleEn: "Python IT-job finder and Telegram bot",
+    titleFi: "Python IT-työpaikka-botti & Telegram-ilmoitukset",
+    descriptionEn:
+      "Python Project which is scraping the web for the latest IT job postings all around Finland. It sends job alerts straight to your phone via Telegram!",
+    descriptionFi:
+      "Python-projekti, joka skrapaa verkosta Suomen uusimmat IT-työpaikkailmoitukset ja lähettää hälytykset suoraan puhelimeen Telegram-botilla!",
     github: "https://github.com/0xjulius/python-job-finder",
     live: "",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "shop-with-elon-usestate",
     hasArticle: true,
     tags: ["React", "Vite", "Tailwind CSS", "JavaScript"],
     image: project15,
-    title:
-      "Shop With Elon - Funny way to showcase useState on React, Vite, Tailwind",
-    description:
-      "Key learnings include using useState for state management, Tailwind CSS for styling, number formatting, and implementing a sticky header for user experience enhancement.",
+    titleEn: "Shop With Elon - Showcase useState on React",
+    titleFi: "Shop With Elon - useState-tilanhallinnan harjoitus sovellus",
+    descriptionEn:
+      "Key learnings include using useState for state management, Tailwind CSS for styling, number formatting, and implementing a sticky header.",
+    descriptionFi:
+      "Hauska peli/harjoitus, jossa opittiin Reactin useState-tilanhallintaa, lukujen muotoilua sekä kiinteän navigaatiopalkin toteutusta.",
     github: "https://github.com/0xjulius/react-usestate-training",
     live: "https://usestate-training-livid.vercel.app/",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "photography-gallery",
     hasArticle: true,
     tags: ["React", "Vite", "Tailwind CSS", "CSS Animations"],
     image: project14,
-    title: "Photography gallery website made with React, Vite, Tailwind",
-    description:
-      "I built this gallery showcasing my photography skills using React, Vite, Animations.css, and Tailwind. It taught me responsive design, state management and efficient component structuring.",
+    titleEn: "Photography gallery website made with React",
+    titleFi: "Valokuvausgalleria verkkosivusto Reactilla",
+    descriptionEn:
+      "Built showcasing my photography skills using React, Vite, Animations.css, and Tailwind. Responsive design and state management.",
+    descriptionFi:
+      "Valokuvausportfolioni, joka on toteutettu Reactilla, Vitellä ja Tailwindilla. Opetusti responssiivista suunnittelua ja komponenttien rakennetta.",
     github: "https://github.com/0xjulius/photography-gallery",
     live: "https://visionbyjulius.vercel.app/",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "lumivaara-wordpress-php-plugin",
     tags: ["WordPress", "PHP", "MySQL", "CSS"],
     image: project6,
-    title: "Lumivaara.fi -WordPress Solution + PHP WP Plugin",
-    description:
-      "Fully deployed WordPress solution. I continued to develop the project by crafting a custom WordPress plugin using PHP. This plugin enables users to light virtual candles on the website. ",
+    titleEn: "Lumivaara.fi - WordPress Solution + PHP WP Plugin",
+    titleFi: "Lumivaara.fi - WordPress-sivusto & PHP-lisäosa",
+    descriptionEn:
+      "Fully deployed WordPress solution with a custom PHP plugin that enables users to light virtual candles on the website.",
+    descriptionFi:
+      "Julkaistu WordPress-sivusto ja kustomoitu PHP-lisäosa, jonka avulla käyttäjät voivat sytyttää virtuaalisia muistokynttilöitä.",
     github: "https://github.com/0xjulius/light-a-candle-wp",
     live: "https://www.lumivaara.fi",
-    badge: "| My Bachelor’s Thesis",
+    badgeEn: "| My Bachelor’s Thesis",
+    badgeFi: "| Opinnäytetyöni",
   },
   {
     slug: "cs2-rank-guesser-csharp",
     tags: ["C#", ".NET", "Desktop"],
     image: project12,
-    title: "CS2/CSGO-hour / rank guesser with C#",
-    description:
-      " Guesses your Premier and FaceIt elo, and calculates your gaming hours.",
+    titleEn: "CS2/CSGO-hour / rank guesser with C#",
+    titleFi: "CS2 / CS:GO pelituntien ja arvon arvioija C#:lla",
+    descriptionEn:
+      "Guesses your Premier and FaceIt elo, and calculates your gaming hours.",
+    descriptionFi:
+      "Laskee ja arvioi pelituntiesi perusteella CS2 Premier- ja FaceIt-elo-arvosi.",
     github: "https://github.com/0xjulius/cs2-rank-guessr",
     live: "",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "old-wordpress-portfolio",
     tags: ["WordPress", "Elementor", "CMS"],
     image: project11,
-    title: "Old WordPress IT-portfolio",
-    description:
-      " My own customized portfolio with WordPress and Elementor. Site has been redone with React.",
+    titleEn: "Old WordPress IT-portfolio",
+    titleFi: "Aiempi WordPress IT-portfolio",
+    descriptionEn:
+      "My own customized portfolio with WordPress and Elementor. Site has been redone with React.",
+    descriptionFi:
+      "Aiempi kustomoitu portfolioni WordPressillä ja Elementorilla. Sivusto on myöhemmin rakennettu uudelleen Reactilla.",
     github: "",
     live: "https://juliusaalto.com",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "bmi-calculator-python",
     tags: ["Python", "CLI"],
     image: project10,
-    title: "Amazing BMI calculator with Python",
-    description:
+    titleEn: "BMI calculator with Python",
+    titleFi: "Painoindeksilaskuri Pythonilla",
+    descriptionEn:
       "Python tool designed to show your current BMI and estimate calorie burn during walking exercises.",
+    descriptionFi:
+      "Python-työkalu painoindeksin laskemiseen sekä kävelylenkkien kalorikulutuksen arvioimiseen.",
     github: "https://github.com/0xjulius/bmi_laskuri",
     live: "",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "lotto-generator-python",
     tags: ["Python", "CLI"],
     image: project9,
-    title: "Lotto number random generator with Python",
-    description:
-      " Generating random numbers from 1-41 and sorting them, while deleting duplicates.",
+    titleEn: "Lotto number random generator with Python",
+    titleFi: "Lottorivigeneraattori Pythonilla",
+    descriptionEn:
+      "Generating random numbers from 1-41 and sorting them, while deleting duplicates.",
+    descriptionFi:
+      "Satunnaisten lottonumeroiden (1–41) generointi, järjestäminen ja kaksoiskappaleiden poistaminen.",
     github: "https://github.com/0xjulius/python-lotto-generaattori",
     live: "",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "react-tailwind-it-portfolio",
     tags: ["React", "Tailwind CSS", "JavaScript"],
     image: project,
-    title: " IT-Portfolio with React + Tailwind",
-    description:
-      "Project showcasing multiple React components with Tailwind. Main goal was to recreate my old IT-portfolio again and develop my skills to the next level.",
+    titleEn: "IT-Portfolio with React + Tailwind",
+    titleFi: "IT-Portfolio Reactilla ja Tailwindilla",
+    descriptionEn:
+      "Project showcasing multiple React components with Tailwind. Modernized version of my old portfolio.",
+    descriptionFi:
+      "Tämä portfolio-sivusto! Rakennettu uudelleen Reactilla ja Tailwindilla moderneja web-kehitystaitoja hyödyntäen.",
     github: "https://github.com/0xjulius/react-portfolio",
     live: "https://react-portfolio-0xjulius.vercel.app/",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "flappybird-night-version",
     tags: ["Unity", "C#", "C++", "WebGL"],
     image: project8,
-    title: "FlappyBird -Night version",
-    description:
-      " Made with Unity / C# / C++ / Photoshop / Visual Studio Code. Made for PC. Exported to WebGL + Windows executable.",
+    titleEn: "FlappyBird - Night version",
+    titleFi: "FlappyBird - Yöversio peli",
+    descriptionEn:
+      "Made with Unity / C# / C++ / Photoshop. Exported to WebGL and Windows executable.",
+    descriptionFi:
+      "Toteutettu Unitylla, C#:lla ja Photoshopilla. Käännetty pelattavaksi selainversioon (WebGL) sekä Windows-sovellukseksi.",
     github: "https://github.com/0xjulius/FlappyBird",
     live: "https://0xjulius.github.io/FlappyBird/",
-    badge: "(schoolproject/tutorial)",
+    badgeEn: "(school project)",
+    badgeFi: "(Kouluprojekti)",
   },
   {
     slug: "rock-paper-scissors-csharp",
     tags: ["C#", ".NET", "Game Development"],
     image: project13,
-    title: " Kivi sakset paperi -game with c#",
-    description: "Small game, with c# / visual studio",
+    titleEn: "Rock Paper Scissors game with C#",
+    titleFi: "Kivi sakset paperi -peli C#:lla",
+    descriptionEn: "Small desktop game built with C# and Visual Studio.",
+    descriptionFi:
+      "Pieni työpöytäpeli toteutettuna C#:lla ja Visual Studiolla.",
     github: "https://github.com/0xjulius/kivipaperisakset-24",
     live: "",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "referral-website-concept",
     tags: ["HTML5", "CSS3", "Responsive Design"],
     image: project5,
-    title: " Referral website concept HTML, CSS only",
-    description:
-      " Built with HTML5 and CSS only, optimized for mobile and tablet devices with media queries.",
+    titleEn: "Referral website concept HTML & CSS only",
+    titleFi: "Suosittelusivusto-konsepti pelkällä HTML/CSS:llä",
+    descriptionEn:
+      "Built with HTML5 and CSS only, optimized for mobile and tablet devices with media queries.",
+    descriptionFi:
+      "Pelkällä HTML5:llä ja CSS:llä toteutettu responssiivinen sivustokonsepti, joka toimii täydellisesti eri laitteilla.",
     github: "https://github.com/0xjulius/ref-site-concept",
     live: "https://0xjulius.github.io/ref-site-concept/",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "banking-app-one-pager",
     tags: ["React", "Vite", "Tailwind CSS", "Tutorial"],
     image: project4,
-    title: " Banking app one pager React + Vite + Tailwind ",
-    description:
-      " Built with React, Vite, Tailwind CSS, and animations.css. Key learnings include creating one-pager navigation with IDs, implementing active states in navigation.",
+    titleEn: "Banking app one-pager React + Vite + Tailwind",
+    titleFi: "Pankkisovelluksen landing page React + Tailwind",
+    descriptionEn:
+      "Built with React, Vite, Tailwind CSS, and animations. Focus on layout and active states.",
+    descriptionFi:
+      "Yhden sivun pankkisovellusUI toteutettuna Reactilla, Vitellä ja Tailwindilla animaatioita hyödyntäen.",
     github: "https://github.com/julmezha/bank-app-react",
     live: "https://bank-app-react-one.vercel.app/",
-    badge: "(tutorial)",
+    badgeEn: "(tutorial)",
+    badgeFi: "(tutoriaali)",
   },
   {
     slug: "tesla-website-clone",
     tags: ["React", "Tailwind CSS", "Tutorial"],
     image: project3,
-    title: "Tesla website Clone with React, Tailwind ",
-    description:
-      " Project showcasing loading and hover effects, menu/sidebar creation. Key learnings include navigation and hover animations, navbar creation, and Tailwind usage.",
+    titleEn: "Tesla website Clone with React & Tailwind",
+    titleFi: "Tesla-verkkosivuston klooni Reactilla",
+    descriptionEn:
+      "Project showcasing hover effects, responsive sidebar, and clean Tailwind layout.",
+    descriptionFi:
+      "Projekti, jossa harjoiteltiin kuvalatauksia, leijutusefektejä, sivuvalikkoa ja puhdasta Tailwind-asettelua.",
     github: "https://github.com/julmezha/tesla-react-app-tailwind",
     live: "https://tesla-react-app-tailwind.vercel.app/",
-    badge: "Tutorial",
+    badgeEn: "Tutorial",
+    badgeFi: "Tutoriaali",
   },
   {
     slug: "budget-calculator-js",
     tags: ["HTML5", "CSS3", "JavaScript", "DOM Manipulation"],
     image: project2,
-    title: " Budget Calculator with HTML, CSS + JS",
-    description:
-      " By developing this project, I've acquired practical experience in DOM manipulation, event handling, and error handling in JavaScript.",
+    titleEn: "Budget Calculator with HTML, CSS & JS",
+    titleFi: "Budjettilaskuri JavaScriptillä",
+    descriptionEn:
+      "Practical experience in DOM manipulation, event handling, and error handling in JavaScript.",
+    descriptionFi:
+      "Käytännön harjoitus DOM-manipulaatiosta, tapahtumankuuntelijoista ja virheenkäsittelystä JavaScriptillä.",
     github: "https://github.com/julmezha/budjettilaskuri",
     live: "https://0xjulius.github.io/budjettilaskuri/",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "crypto-price-checker",
     tags: ["React", "Tailwind CSS", "REST API", "LocalStorage"],
     image: project1,
-    title: "Cryptocurrency price checker with React, Tailwind",
-    description:
-      "Cryptocurrency price checker built with React and Tailwind CSS. Utilizes the CoinGecko API to fetch real-time prices and saves them to local storage when real-time prices are rate limited.",
+    titleEn: "Cryptocurrency price checker with React",
+    titleFi: "Kryptovaluuttojen hinta-analysaattori Reactilla",
+    descriptionEn:
+      "Utilizes CoinGecko API to fetch real-time crypto prices with LocalStorage caching.",
+    descriptionFi:
+      "Hyödyntää CoinGecko API -rajapintaa kryptovaluuttojen reaalikuvaisten hintojen hakuun ja tallentaa ne paikallismuistiin.",
     github: "https://github.com/0xjulius/price-checker-crypto",
     live: "https://0xjulius.github.io/price-checker-crypto/",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
   {
     slug: "cs2-edpi-calculator-csharp",
     tags: ["C#", "WinForms", ".NET"],
     image: project16,
-    title: "Simple CS2/esports mouse eDPI calculator made with C#",
-    description:
-      " This project offered hands-on experience with C# and WinForms, validating input and enhancing problem-solving and debugging skills.",
+    titleEn: "CS2/esports mouse eDPI calculator with C#",
+    titleFi: "CS2 eDPI-hiirilaskuri C#:lla",
+    descriptionEn:
+      "C# WinForms desktop app for calculating effective DPI (eDPI) for esports gaming.",
+    descriptionFi:
+      "C# WinForms -työpöytäsovellus eDPI-herkkyyden laskemiseen elektronisen urheilun ja CS2-pelin tarpeisiin.",
     github: "https://github.com/0xjulius/eDPI-Calculator",
     live: "",
-    badge: "",
+    badgeEn: "",
+    badgeFi: "",
   },
 ];
 
+export const projects = projectsData;
+
 function ProjectsNew() {
+  const { lang } = useLanguage();
+  const isFi = lang === "fi";
+
   return (
     <section className="py-10" id="projects">
       <div className="container mx-auto lg:mt-10">
         <h1 className="text-[30px] lg:text-[36px] uppercase text-center text-4xl font-bold text-gradient">
-          My projects
+          {isFi ? "Projektini" : "My projects"}
         </h1>
 
         <div className="flex flex-wrap items-center justify-center ptx lg:mt-10">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} {...project} />
+          {projectsData.map((project) => (
+            <ProjectCard
+              key={project.slug}
+              {...project}
+              title={isFi ? project.titleFi : project.titleEn}
+              description={isFi ? project.descriptionFi : project.descriptionEn}
+              badge={isFi ? project.badgeFi : project.badgeEn}
+            />
           ))}
         </div>
       </div>

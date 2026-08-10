@@ -1,9 +1,12 @@
 import React from "react";
+import { useLanguage } from "../context/LanguageContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import footerbg from "../images/aaabstract.png";
 
 const Footer = () => {
+  const { lang = "fi" } = useLanguage() || {};
+
   return (
     <footer className="relative text-white py-16 mt-12">
       <img
@@ -35,7 +38,7 @@ const Footer = () => {
         </div>
         <div className="text-center md:text-right z-10 text-xl font-semibold ptx">
           <p className="mb-2">
-            Contact me:{" "}
+            {lang === "fi" ? "Ota yhteyttä: " : "Contact me: "}{" "}
             <a
               className="underline hover:no-underline cursor-pointer hover:text-gray-500"
               href="mailto:contact@juliusaalto.com"
@@ -43,11 +46,16 @@ const Footer = () => {
               contact@juliusaalto.com
             </a>{" "}
             <br />
-            All emails are promptly directed to the appropriate recipient.
+            {lang === "fi"
+              ? "Kaikki sähköpostit ohjataan viipymättä oikealle vastaanottajalle."
+              : "All emails are promptly directed to the appropriate recipient."}
           </p>
           <p>
             {" "}
-            © {new Date().getFullYear()} - Julius Aalto. All rights reserved.
+            © {new Date().getFullYear()} - Julius Aalto.{" "}
+            {lang === "fi"
+              ? "Kaikki oikeudet pidätetään."
+              : "All rights reserved."}
           </p>
         </div>
       </div>
