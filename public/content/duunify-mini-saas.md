@@ -1,222 +1,585 @@
-# Duunify –  Tekninen Arkkitehtuuri ja Toteutus
+# Duunify – Tekninen arkkitehtuuri ja toteutus
 
-**Duunify** on moderni, suomalaisille työnhakijoille suunniteltu Mini-SaaS-alusta. Järjestelmä on rakennettu korvaamaan perinteiset, manuaalisesti ylläpidettävät Excel-taulukot älykkäällä ja automatisoidulla työkalulla, joka visualisoi koko hakuprosessin reaaliaikaisesti. Sovellus on toteutettu täysin suomeksi ja se tarjoaa saumattoman käyttökokemuksen niin työpöydällä kuin mobiilissakin.
+**Duunify** on suomalaisille työnhakijoille suunnattu moderni web-sovellus, jonka tavoitteena on tehdä työnhausta järjestelmällisempää, helpommin seurattavaa ja vähemmän manuaalista.
 
----
+Duunify kokoaa työnhaun eri vaiheet yhteen paikkaan: työpaikkailmoitusten tallentamisen, hakemusten seurannan, kalenterin, muistiinpanot, analytiikan sekä tekoälyä hyödyntävän työnhakuavustajan.
 
-## 1. Liiketoimintaongelma ja Käyttötapaukset (Use Cases)
-
-Perinteinen työnhaku nojaa usein hajautettuihin Excel-taulukoihin, muistilappuihin tai sähköpostiviesteihin. Tämä aiheuttaa useita kriittisiä ongelmia:
-* **Manuaalisen työn määrä:** Jokaisen hakemuksen tietojen (yritys, rooli, palkkatoive, kuvaus) kopioiminen käsin vie aikaa.
-* **Prosessin hallitsemattomuus:** Haastattelujen, hakuaikojen ja jatkotoimenpiteiden unohdukset kesken prosessin.
-* **Analytiikan puute:** Hakija ei näe kokonaiskuvaa hakumääristä, vastausprosenteista tai aktiivisuudesta ajan yli.
-
-Duunify ratkaisee nämä haasteet rakentamalla järjestelmän seuraavien keskeisten käyttötapausten ympärille:
-
-### UC-1: Automaattinen työpaikkailmoituksen tuonti ja ilmoitusdatan säilyvyys
-
-* **Käyttäjä:** Työnhakija
-* **Liiketoimintaongelma & Kriittinen riski:** 
-  * **Manuaalinen kuormitus:** Ilmoituksen tietojen (yritys, rooli, palkkatoive, kuvaus) kopioiminen käsin on hidasta ja altista virheille kuormittavassa työnhaussa.
-  * **Datahävikki ("404 - Sivua ei löydy" -ilmiö):** Työpaikkailmoitukset poistetaan verkkosivustoilta usein heti hakuajan päätyttyä tai haastattelukierroksen alkaessa. Jos hakija kutsutaan haastatteluun viikkoja myöhemmin, alkuperäinen linkki on rikki. Hakija ei enää näe ilmoituksen vaatimuksia, sovittuja palkkaraameja tai yksityiskohtia, jolloin haastatteluun valmistautuminen vaarantuu.
-* **Ratkaisu:** 
-  * Käyttäjä syöttää sovellukseen työpaikkailmoituksen URL-osoitteen (tuetut alustat: mm. Duunitori, Työmarkkinatori, Jobly).
-  * Taustajärjestelmän rajapinta hakee sivun HTML-rakenteen ja jäsentää ilmoituksen metadatan sekä koko leipätekstin.
-  * Automaatio täyttää kentät (*yritys, tehtävänimike, palkka, sijainti, jne*) ja tallentaa koko ilmoitustekstin sellaisenaan tietokantaan.
-* **Saavutettu hyöty ja arvo:**
-  * **Nollavaiva:** Poistaa manuaalisen näppäilyn ja madaltaa kynnystä tallentaa hakemuksia.
-  * **Tietojen säilyvyystakuu (Data Persistence):** Hakijalla on aina hallussaan täydellinen, pysyvä kopio ilmoituksesta ulkoisen sivuston tilasta riippumatta. Tämä takaa tarkan valmistautumisen haastatteluun sekä luo pohjan ilmoitusdatan hyödyntämiselle jatkossa (esim. AI-pohjaiset haastattelukysymysgeneroinnit).
-
-### UC-2: Hakemusten ja hakuprosessin elinkaaren hallinta
-* **Käyttäjä:** Työnhakija
-* **Ongelma:** Vaikeus hahmottaa, missä vaiheessa kukin hakemus on ja mitä liitteitä on lähetetty.
-* **Ratkaisu:** Hakemusten tilaa seurataan selkeällä tilakoneella (*Tallennettu, Haettu, Haastattelu, Tarjous, Hylätty*). Hakemukseen voi liittää muistiinpanoja ja liitetiedostoja (CV, saatekirje).
-
-### UC-3: Aikataulujen, haastattelujen ja muistutusten hallinta
-* **Käyttäjä:** Työnhakija
-* **Ongelma:** Päällekkäiset haastatteluvaraukset ja unohdetut hakuajan päättymispäivät.
-* **Ratkaisu:** Keskitetty kalenterimoduuli yhdistää automaattisesti haastatteluajat, hakuaikojen takarajat ja käyttäjän omat muistutukset samaan kuukausi- ja minikalenterinäkymään.
-
-### UC-4: Prosessin visuaalinen analytiikka ja toimintaloki
-* **Käyttäjä:** Työnhakija
-* **Ongelma:** Tuntuma työnhaun edistymisestä perustuu mutu-tuntumaan.
-* **Ratkaisu:** Dashboard tarjoaa visuaaliset mittarit: GitHub-tyylinen aktiivisuusruudukko, statusjakaumat, maantieteellinen karttanäkymä sekä viikoittainen aktiivisuusindeksi. Toimintaloki tallentaa kaikki tapahtumat auditointia ja CSV-vientijärjestelmää varten.
-
-### UC-5: Järjestelmän ylläpito ja turvallisuus (Admin & Security)
-* **Käyttäjä:** Järjestelmänvalvoja (Admin)
-* **Ongelma:** Väärinkäytökset, roskaposti ja valtuuttamaton pääsy suojattuihin resursseihin.
-* **Ratkaisu:** Roolipohjainen pääsynhallinta (RBAC), käyttäjien porttikieltojärjestelmä (bänniprosessi) sekä automaattinen audit-lokitus tehdyistä muutoksista.
-
-### UC-6: Kirjautumatonta kokeilua tukeva Demo-tila
-* **Käyttäjä:** Potentiaalinen uusi käyttäjä
-* **Ongelma:** Kynnys rekisteröityä palveluun ilman kokeilua on korkea.
-* **Ratkaisu:** Täysin eristetty `/demo`-ympäristö, joka käyttää lokaalia valedataa (mock-data) ilman tietokantakutsuja.
-
-## 1. Teknologiapino ja Infrastruktuuri
-
-Duunifyn arkkitehtuuri nojaa vahvasti palvelinpuolen renderöintiin (SSR) ja moderniin React-ekosysteemiin. 
-
-### 1.1 Frontend ja Käyttöliittymä
-* **Kehys:** Next.js (App Router). Mahdollistaa React Server Components (RSC) -teknologian hyödyntämisen, mikä vähentää selaimelle lähetettävän JavaScriptin määrää ja nopeuttaa sivunlatauksia.
-* **Kieli:** TypeScript. Takaa tyyppiturvallisuuden koko sovelluksen laajuisesti, vähentäen ajonaikaisia virheitä.
-* **Tyylittely:** Tailwind CSS. Mahdollistaa modulaarisen ja responsiivisen suunnittelujärjestelmän (Design System) ylläpidon.
-* **UI-Komponentit ja Tilailmoitukset:** Sonner globaaleihin toast-ilmoituksiin. 
-
-### 1.2 Tietokanta ja Backend
-* **Tietokantamoottori:** Supabase (PostgreSQL). Tarjoaa relaatiotietokannan, käyttäjäautentikaation (Auth) sekä tiedostojen tallennuksen (Storage) CV:itä ja liitteitä varten.
-* **Datan jäsennys (Web Scraping):** Cheerio. Käytetään taustajärjestelmässä (API-reitit) työpaikkaportaalien HTML-rakenteen lukemiseen ja metadatan eristämiseen.
-* **Sähköpostipalvelin:** Resend. Vastaa yhteydenottolomakkeen viestien luotettavasta välityksestä.
-
-### 1.3 Analytiikka ja Visualisointi
-* **Kaaviot:** Recharts. Vastaa Dashboardin monimutkaisista datavisualisoinneista, kuten hakemustrendeistä ja aktiivisuusruudukoista.
-* **Kalenterinäkymä:** react-big-calendar. Mahdollistaa kuukausi- ja minikalenterinäkymät haastatteluiden ja hakuaikojen hallintaan.
+Alkuperäinen ydinidea oli ratkaista ongelma, jossa työnhakija joutuu ylläpitämään työnhakuaan hajallaan esimerkiksi Excelissä, muistilapuissa ja sähköposteissa. Uusien ominaisuuksien myötä Duunify ei ainoastaan seuraa työnhakua, vaan auttaa myös **tekemään työnhakua**.
 
 ---
 
-## 2. Tietoturva ja Arkkitehtoniset Ratkaisut
+# 1. Liiketoimintaongelma ja käyttötapaukset
 
-Projekti sisältää useita edistyneitä ohjelmistosuunnittelun malleja tietoturvan ja datan eheyden varmistamiseksi.
+Perinteinen työnhaku koostuu helposti useista erillisistä työkaluista. Työpaikat löytyvät eri palveluista, hakemukset lähetetään eri järjestelmissä ja haastattelut sekä muistutukset ovat erillisissä kalentereissa.
 
-### 2.1 Monitasoinen Supabase-arkkitehtuuri
-Tietoturvasyistä tietokantayhteydet on eriytetty tiukasti kolmeen erilaiseen instanssiin:
-1. **`lib/supabase.ts` (Selain):** Selainpuolen operaatioihin tarkoitettu instanssi, joka nojaa evästepohjaiseen istuntoon. Tämän instanssin oikeudet on rajattu tiukasti RLS-säännöillä.
-2. **`lib/supabase-server.ts` (Palvelin):** Suojattu instanssi Next.js:n palvelinkomponenteille, joka osaa lukea ja kirjoittaa evästeitä turvallisesti palvelimella.
-3. **`lib/supabase-admin.ts` (Service Role):** Täysin RLS-säännöt ohittava instanssi, jota käytetään vain ja ainoastaan suojatuissa backend-reiteissä (esim. järjestelmänvalvojan toiminnot, kuten käyttäjän tilin jäädytys). Tätä ei koskaan altisteta client-puolelle.
+Tämä aiheuttaa erityisesti kolme ongelmaa:
 
-### 2.2 Tietokannan RLS (Row Level Security)
-* Kaikki käyttäjiin liittyvä data (taulut `applications`, `calendar_events`, `application_history`, `profiles`, `deleted_applications_log`) on suojattu PostgreSQL:n sisäänrakennetulla RLS-mekanismilla.
-* Tämä tarkoittaa, että vaikka hyökkääjä onnistuisi lähettämään suoran API-kutsun, tietokanta kieltäytyy palauttamasta muiden käyttäjien tietoja.
+- **Manuaalinen työ:** työpaikkailmoitusten tietojen kopioiminen ja hakemusten ylläpitäminen vie aikaa.
+- **Kokonaiskuvan puute:** hakija ei aina tiedä, missä vaiheessa eri hakemukset ovat.
+- **Tietojen katoaminen:** työpaikkailmoitus voi poistua alkuperäisestä palvelusta, vaikka hakuprosessi jatkuisi vielä viikkoja.
 
-### 2.3 Porttikieltojen (Bännien) Hallinta ja Middleware
-Järjestelmä sisältää vankan, monitasoisen suojan häiriköiviä käyttäjiä vastaan:
-* **Profiilisynkronointi:** Tieto käyttäjän bännistä (`is_banned`, `banned_until`) tallennetaan suoraan `profiles`-tauluun, jotta se on nopeasti luettavissa.
-* **Edge-tason suojaus:** Next.js:n `proxy.ts` (middleware) tarkistaa jokaisen pyynnön yhteydessä käyttäjän tilan. Estetyt käyttäjät ohjataan välittömästi `/banned`-reitille ennen kuin yhtäkään suojattua sivua renderöidään tai tietokantakyselyitä suoritetaan.
-* **Kirjautumislogiikka:** `login/actions.ts` tarkistaa tilan heti onnistuneen salasanatarkistuksen jälkeen. Jos bänni on aktiivinen, järjestelmä tuhoaa istunnon välittömästi (`signOut`) paljastamatta bänniä ulkopuolisille.
+Duunify kokoaa nämä asiat yhteen paikkaan.
+
+## UC-1: Työpaikkailmoituksen automaattinen tuonti
+
+### Ongelma
+
+Työpaikkailmoituksen tietojen kopioiminen käsin on hidasta ja altista virheille.
+
+Lisäksi ilmoitukset poistuvat usein alkuperäisestä palvelusta hakuajan päätyttyä. Tällöin hakija ei välttämättä enää pääse tarkistamaan, mitä tehtävässä luvattiin tai mitä työnantaja ilmoituksessa edellytti.
+
+### Ratkaisu
+
+Käyttäjä voi syöttää työpaikkailmoituksen URL-osoitteen Duunifyyn.
+
+Järjestelmä hakee ilmoituksen sisällön ja pyrkii tunnistamaan siitä keskeiset tiedot, kuten:
+
+- yrityksen
+- tehtävänimikkeen
+- sijainnin
+- palkan
+- hakuajan päättymisen
+- työpaikkailmoituksen varsinaisen sisällön
+
+Ilmoitus tallennetaan Duunifyn tietokantaan.
+
+### Hyöty
+
+Käyttäjän ei tarvitse kirjoittaa tietoja käsin, ja ilmoituksen sisältö säilyy Duunifyssä myös silloin, kun alkuperäinen verkkosivu myöhemmin poistuu.
+
+Tämä muodostaa myös pohjan muille ominaisuuksille, kuten työnhakuavustajalle.
 
 ---
 
-## 3. Keskeiset Ominaisuudet ja Datan Käsittely
+# UC-2: Hakemusten hallinta
 
-### 3.1 Automaattinen Datan Keruu (DOM Parsing)
-* Käyttäjä voi syöttää työpaikkailmoituksen URL-osoitteen (esim. Duunitori, Työmarkkinatori, Jobly), jolloin `/api/parse-job/route.ts` hakee sivun sisällön.
-* Cheerio etsii HTML:n seasta jäsennellyn JSON-LD -datan, josta järjestelmä poimii automaattisesti yrityksen nimen, tehtävänimikkeen, palkan, sijainnin ja hakuajan päättymisen. Tämä estää dynaamisten CSS-luokkien muutoksista johtuvat scraper-virheet.
+Käyttäjä voi seurata työnhaun etenemistä yhdestä näkymästä.
 
-### 3.2 Tietokannan Eheys ja Poistolokit
-* Kun hakemus poistetaan, relaatiotietokannan `cascade`-sääntö poistaisi automaattisesti myös siihen liittyvän `application_history`-datan.
-* Jotta analytiikka ja toimintaloki pysyvät tarkkoina, järjestelmä käyttää erillistä `deleted_applications_log`-taulua. Tämä taulu on irrallinen, joten tiedot säilyvät hakemuksen poistamisesta huolimatta.
+Hakemuksella voi olla esimerkiksi seuraavia tiloja:
 
-### 3.3 Komponenttien Uudelleenkäytettävyys (Demo vs. Tuotanto)
-* Järjestelmä tarjoaa kirjautumista vaatimattoman demo-tilan mock-datalla.
-* Ominaisuus on toteutettu siististi Reactin propseilla: esimerkiksi komponentit `ActivityHeatmap.tsx` tai `LocationsChart.tsx` ottavat vastaan valinnaisen `demoData`-propin.
-* Jos prop on läsnä, komponentti renderöi lokaalin mock-datan (`lib/demo-data.ts`); jos ei, se hakee oikean käyttäjän datan Supabasesta. Tämä poistaa koodin duplikoinnin tarpeen demo- ja tuotantoympäristöjen välillä.
+- Tallennettu
+- Haettu
+- Haastattelu
+- Tarjous
+- Hylätty
+
+Hakemukseen voidaan liittää myös muistiinpanoja ja tiedostoja, kuten CV ja saatekirje.
+
+Tavoitteena on, että käyttäjän ei tarvitse muistaa ulkoa, mitä missäkin hakuprosessissa on tapahtunut.
 
 ---
 
-## 4. Modulaarinen Hakemistorakenne
+# UC-3: Kalenteri ja muistutukset
 
-Koodikanta on jaettu loogisiin kokonaisuuksiin Next.js App Router -konvention mukaisesti:
+Työnhakuun liittyy paljon päivämääriä:
 
-* **`/app`**: Reititys ja näkymät. Sisältää suojatut sivut (`/dashboard`, `/applications`), hallintapaneelin (`/admin`), julkiset sivut (`/login`, `/contact`) sekä demoympäristön (`/demo`).
-* **`/components`**: Jaettavat käyttöliittymäkomponentit.
-  * `ui/`: Yleiset, uudelleenkäytettävät matalan tason komponentit (painikkeet, dialogit, skeleton-latauskuvakkeet).
-  * Ominaisuuskohtaiset kansiot, kuten `admin/` (käyttäjätaulukot), `dashboard/` (tilastokortit ja kaaviot) sekä `calendar/` (tapahtumamodaalit).
-* **`/lib`**: Ydinlogiikka, konfiguraatiot ja tietokantayhteydet (`supabase.ts`, `export-csv.ts`, `logger.ts`).
-* **`/hooks`**: Sovelluskohtaiset React Hookit datan noutamiseen (esim. `useDashboard.ts`, `useApplications.ts`).
-* **`/types`**: Keskitetyt TypeScript-rajapinnat (esim. `database.ts`, `application.ts`), jotka vastaavat Supabasen skeemaa.
+- hakuaikoja
+- haastatteluja
+- jatkohaastatteluja
+- muistutuksia
+- muita sovittuja tapahtumia
 
-## 5. Projektin Rakenne
+Duunify kokoaa nämä samaan kalenteriin.
+
+Näin hakija pystyy näkemään työnhaun aikataulun kokonaisuutena ja vähentämään unohtuneita määräaikoja.
+
+---
+
+# UC-4: Työnhaun analytiikka
+
+Duunify kerää tietoa käyttäjän työnhakuprosessista ja näyttää sitä visuaalisesti.
+
+Dashboard voi näyttää esimerkiksi:
+
+- hakemusten määrän
+- hakemusten tilajakauman
+- aktiivisuuden ajan kuluessa
+- työpaikkojen sijainteja
+- toimintalokin
+
+Tavoitteena ei ole pelkästään näyttää numeroita, vaan auttaa käyttäjää ymmärtämään oman työnhakunsa etenemistä.
+
+---
+
+# UC-5: Työnhakuavustaja
+
+Työnhakuavustaja on yksi Duunifyn merkittävimmistä uusista ominaisuuksista.
+
+Aikaisemmin Duunify keskittyi suurelta osin työnhaun **seuraamiseen ja järjestämiseen**. Työnhakuavustaja laajentaa palvelua kohti itse työnhakuprosessin tukemista.
+
+### Ongelma
+
+Sama saatekirje ei välttämättä sovi sellaisenaan kaikkiin työpaikkoihin.
+
+Hakijan täytyy usein muokata saatekirjettä jokaisen työpaikan vaatimusten, tehtävän ja yrityksen mukaan.
+
+### Ratkaisu
+
+Käyttäjä voi valita Duunifyyn tallentamansa työpaikan ja antaa työnhakuavustajalle oman pohjasaatekirjeensä tai taustatietonsa.
+
+Järjestelmä analysoi työpaikkailmoituksen ja muodostaa sen perusteella kohdennetun saatekirjeen.
+
+Tekoäly pyrkii:
+
+1. tunnistamaan ilmoituksen tärkeimmät vaatimukset
+2. löytämään hakijan taustasta niihin liittyvän osaamisen
+3. korostamaan työnantajalle relevantteja vahvuuksia
+4. säilyttämään hakijan todellisen kokemuksen ja taustan
+5. välttämään sellaisen kokemuksen keksimistä, jota hakijalla ei ole
+
+Tämän ansiosta käyttäjä voi käyttää samaa pohjaa useiden hakemusten lähtökohtana ilman, että jokainen saatekirje täytyy kirjoittaa täysin uudelleen.
+
+---
+
+# UC-6: Tekoälyn tietosuojan tukeminen
+
+Duunifyn tekoälytoiminnoissa käytetään erillistä tekstin esikäsittelyä (`lib/anonymize.ts`).
+
+Sen tarkoituksena on poistaa tekstistä tunnistettavia henkilötietoja ennen kuin tekstiä käytetään tekoälytoiminnossa.
+
+Anonymisointifunktio tunnistaa esimerkiksi:
+
+- suomalaisia henkilötunnuksia
+- sähköpostiosoitteita
+- verkkosivujen osoitteita
+- puhelinnumeroita
+- tyypillisiä katuosoitteita
+- suomalaisia postinumero–paikkakunta-yhdistelmiä
+- käyttäjän nimen, mikäli se on järjestelmän tiedossa
+
+Tunnistetut tiedot korvataan neutraaleilla merkinnöillä, kuten:
+
+`[SÄHKÖPOSTI_POISTETTU]`
+
+`[PUHELIN_POISTETTU]`
+
+`[HAKIJAN_NIMI]`
+
+Näin tekoälylle voidaan välittää mahdollisimman paljon hakemuksen kannalta olennaista sisältöä – esimerkiksi koulutusta, työkokemusta ja osaamista – ilman, että kaikkia alkuperäisen tekstin henkilötietoja tarvitsee välittää sellaisenaan.
+
+### Miksi tämä on tärkeää?
+
+Työnhakuasiakirjat sisältävät helposti paljon henkilötietoja.
+
+Duunifyn lähestymistavassa tietojen käsittelyä ei jätetä kokonaan tekoälypalvelun vastuulle, vaan teksti käsitellään ensin Duunifyn omassa sovelluslogiikassa.
+
+Anonymisointi ei kuitenkaan ole täydellinen henkilötietojen tunnistusjärjestelmä. Regex-pohjainen käsittely ei voi tunnistaa kaikkia mahdollisia henkilötietoja, minkä vuoksi sitä tulee pitää **ylimääräisenä suojaavana kerroksena**, ei absoluuttisena anonymisointitakuuna.
+
+---
+
+# UC-7: Järjestelmän ylläpito ja turvallisuus
+
+Duunify sisältää erillisen ylläpitojärjestelmän.
+
+Admin-käyttäjät voivat esimerkiksi:
+
+- tarkastella käyttäjiä
+- hallita käyttäjien oikeuksia
+- tarkastella toimintalokeja
+- jäädyttää käyttäjätilejä
+- tarkastella bännättyjä käyttäjiä
+
+Pääsy admin-toimintoihin perustuu käyttäjän rooliin.
+
+Admin-reitit suojataan myös sovelluksen palvelinpuolen reitityksessä, jotta tavallinen käyttäjä ei voi käyttää hallintanäkymiä pelkästään kirjoittamalla niiden URL-osoitetta selaimeen.
+
+---
+
+# UC-8: Demo-tila
+
+Duunify sisältää myös kirjautumattoman demo-ympäristön.
+
+Demo käyttää valmista mock-dataa eikä tarvitse käyttäjän omaa tietokantaa.
+
+Tämän avulla palvelua voidaan esitellä ilman, että käyttäjän täytyy ensin luoda tiliä.
+
+---
+
+# 2. Teknologiapino
+
+## 2.1 Frontend
+
+### Next.js
+
+Duunify on rakennettu Next.js:n App Router -arkkitehtuurilla.
+
+Next.js mahdollistaa Reactin käyttämisen sekä palvelimella että selaimessa.
+
+Sovelluksessa käytetään:
+
+- React Server Components -komponentteja palvelinpuolella
+- Client Components -komponentteja interaktiivisissa näkymissä
+- palvelinpuolen API-reittejä
+- palvelinpuolen autentikointia
+- reitityksen ja käyttöoikeuksien hallintaa
+
+Tämän ansiosta kaikkea sovelluslogiikkaa ei tarvitse lähettää käyttäjän selaimeen.
+
+### TypeScript
+
+TypeScriptiä käytetään koko sovelluksessa.
+
+Se auttaa havaitsemaan virheitä jo kehitysvaiheessa ja tekee erityisesti tietokannan, API-kutsujen ja React-komponenttien välisestä tiedonsiirrosta selkeämpää.
+
+### Tailwind CSS
+
+Käyttöliittymä on rakennettu Tailwind CSS:llä.
+
+Käyttöliittymä on responsiivinen ja toimii sekä työpöydällä että mobiililaitteilla.
+
+---
+
+# 2.2 Backend ja tietokanta
+
+### Supabase
+
+Duunify käyttää Supabasea PostgreSQL-tietokannan, autentikoinnin ja tiedostojen tallennuksen yhteydessä.
+
+Tietokantaan tallennetaan esimerkiksi:
+
+- käyttäjät
+- profiilit
+- työpaikat
+- hakemukset
+- kalenteritapahtumat
+- toimintahistoria
+- admin-lokit
+
+Supabase Storagea voidaan käyttää esimerkiksi CV- ja saatekirjetiedostojen säilyttämiseen.
+
+### Cheerio
+
+Cheerioa käytetään työpaikkailmoitusten HTML-rakenteen käsittelyyn.
+
+Duunify pyrkii hyödyntämään työpaikkasivujen rakenteistettua JSON-LD-dataa, jolloin ilmoituksen tietoja voidaan tunnistaa ilman riippuvuutta mahdollisimman monista yksittäisistä CSS-luokista.
+
+### Resend
+
+Resendiä käytetään sähköpostien lähettämiseen esimerkiksi yhteydenottolomakkeen kautta.
+
+---
+
+# 2.3 Tekoäly
+
+Duunifyn työnhakuavustaja hyödyntää Google Gemini -malleja.
+
+Tekoälytoiminto sijaitsee palvelinpuolella.
+
+Käyttäjän selain ei tarvitse suoraa pääsyä tekoälypalvelun tunnistetietoihin. Selain lähettää tarvittavat tiedot Duunifyn omalle palvelimelle, joka käsittelee pyynnön.
+
+Tämä on tärkeä arkkitehtuuriratkaisu, koska ulkoisen tekoälypalvelun tunnistetietoja ei pidä sijoittaa selaimessa ajettavaan JavaScript-koodiin.
+
+---
+
+# 3. Tietoturva
+
+## 3.1 Roolipohjainen pääsynhallinta
+
+Duunify erottaa tavalliset käyttäjät ja admin-käyttäjät roolien perusteella.
+
+Admin-toiminnot eivät ole normaalin käyttäjän käytettävissä.
+
+Käyttöoikeuksia tarkistetaan palvelinpuolella, eikä pelkkä käyttöliittymän piilottaminen toimi tietoturvaratkaisuna.
+
+---
+
+## 3.2 Supabasen RLS
+
+Käyttäjien data suojataan PostgreSQL:n Row Level Security -säännöillä.
+
+Tavoitteena on, että käyttäjä voi käsitellä vain omaan tiliinsä kuuluvaa dataa.
+
+Esimerkiksi toinen käyttäjä ei saa pystyä lukemaan toisen käyttäjän hakemuksia muuttamalla selaimesta lähetettävää pyyntöä.
+
+RLS toimii siten tärkeänä tietoturvakerroksena sovelluksen käyttöliittymän ja palvelinlogiikan lisäksi.
+
+---
+
+## 3.3 Palvelin- ja selainasiakkaiden erottaminen
+
+Duunifyssa on erilliset Supabase-yhteydet eri käyttötarkoituksiin.
+
+### Selain
+
+Selainpuolen Supabase-asiakas toimii käyttäjän normaalien sovellustoimintojen yhteydessä.
+
+### Palvelin
+
+Palvelinpuolen Supabase-asiakas käsittelee toimintoja, jotka kuuluvat Next.js-palvelimelle.
+
+### Admin
+
+Erityisen tehokkaita ylläpitotoimintoja varten käytetään palvelinpuolen admin-yhteyttä.
+
+Tämän yhteyden tunnistetietoja ei koskaan tule sijoittaa client-puolen koodiin.
+
+---
+
+# 3.4 Käyttäjien bännijärjestelmä
+
+Duunify sisältää käyttäjien tilapäisen ja pysyvän estämisen.
+
+Bännin yhteydessä käyttäjälle voidaan määrittää esimerkiksi:
+
+- aktiivinen esto
+- bännin päättymisaika
+- pysyvä esto
+
+Sovelluksen `proxy.ts` tarkistaa kirjautuneen käyttäjän tilan ja voi ohjata aktiivisesti estetyn käyttäjän `/banned`-sivulle.
+
+Tämä muodostaa ensimmäisen suojakerroksen ennen varsinaisten suojattujen näkymien lataamista.
+
+---
+
+# 3.5 API-reittien suojaaminen
+
+Tekoälytoimintoja ja muita palvelinpuolen toimintoja ei tule suojata pelkästään piilottamalla niiden käyttöliittymässä oleva painike.
+
+Palvelin tarkistaa pyynnön yhteydessä käyttäjän oikeudet.
+
+Tällä estetään tilanne, jossa tavallinen käyttäjä yrittäisi kutsua esimerkiksi tekoälytoimintoa suoraan selaimesta tai omalla HTTP-pyynnöllään.
+
+---
+
+# 4. Datan käsittely
+
+## 4.1 Työpaikkailmoituksen käsittely
+
+Prosessi voidaan kuvata seuraavasti:
+
+**URL → palvelin → verkkosivu → HTML/JSON-LD → jäsennys → työpaikkadata → tietokanta**
+
+Käyttäjän ei tarvitse kopioida ilmoituksesta tietoja käsin.
+
+---
+
+## 4.2 Tekoälyavustajan käsittely
+
+Työnhakuavustajan prosessi:
+
+**Työpaikkailmoitus + käyttäjän pohjasaatekirje → henkilötietojen esikäsittely → tekoälykäsittely → valmis saatekirje**
+
+Tekoälylle pyritään välittämään mahdollisimman paljon työn kannalta olennaista tietoa ja mahdollisimman vähän tarpeettomia henkilötietoja.
+
+---
+
+# 5. Tietokannan eheys ja poistaminen
+
+Kun hakemus poistetaan, siihen liittyviä tietoja voidaan poistaa tietokannan relaatiomallin mukaisesti.
+
+Analytiikan ja toimintalokin tarpeisiin voidaan kuitenkin säilyttää erillisiä tietoja poistetuista hakemuksista.
+
+Tämä mahdollistaa sen, että esimerkiksi käyttäjän aktiivisuushistoria ei vääristy automaattisesti jokaisen poistamisen yhteydessä.
+
+---
+
+# 6. Demo ja uudelleenkäytettävät komponentit
+
+Demo- ja tuotantoympäristö hyödyntävät samoja käyttöliittymäkomponentteja.
+
+Esimerkiksi dashboardin visualisointikomponentit voivat vastaanottaa joko:
+
+- oikeaa käyttäjädataa
+- demo-dataa
+
+Tämä vähentää koodin duplikaatiota ja tekee käyttöliittymästä helpommin ylläpidettävän.
+
+---
+
+
+# 7. Arkkitehtuurin kokonaiskuva
+
+Duunifyn kokonaisuus voidaan tiivistää seuraavasti:
+
+**Käyttäjä**
+
+↓
+
+**Next.js + React**
+
+↓
+
+**Palvelinpuolen logiikka / API-reitit**
+
+↓
+
+**Supabase / PostgreSQL**
+
+↓
+
+**Työpaikkadata, hakemukset, kalenteri ja käyttäjädata**
+
+Samanaikaisesti:
+
+**Käyttäjän työpaikkailmoitus + taustatiedot**
+
+↓
+
+**Duunifyn henkilötietojen esikäsittely**
+
+↓
+
+**Tekoälypalvelu**
+
+↓
+
+**Räätälöity saatekirje**
+
+Tärkeä osa arkkitehtuuria on se, että käyttöliittymä, palvelinlogiikka, tietokanta ja ulkoiset palvelut eivät kaikki ole suoraan yhteydessä toisiinsa. Niiden välissä on selkeitä rajapintoja ja käyttöoikeustarkistuksia.
+
+---
+
+# 8. Projektin nykyinen kehityssuunta
+
+Duunify on kehittynyt alkuperäisestä työpaikkailmoitusten keräämiseen ja hakemusten seurantaan keskittyvästä työkalusta kohti kokonaisvaltaisempaa työnhaun työkalua.
+
+Alkuperäinen ydin:
+
+**Löydä → tallenna → seuraa**
+
+Uudempi kokonaisuus:
+
+**Löydä → tallenna → seuraa → analysoi → valmistele → hae**
+
+Tämä muuttaa Duunifyn roolia merkittävästi.
+
+Se ei ole enää pelkästään työnhaun seurantatyökalu, vaan alusta, joka voi auttaa käyttäjää myös työnhaun käytännön tekemisessä.
+
+## 9. Projektin Rakenne
 ```
 duunify/
 │
 ├── app/                                  # Next.js App Router
 │   │
-│   ├── layout.tsx                        # Koko sovelluksen layout
-│   ├── page.tsx                          # Landing page
-│   ├── globals.css                       # Globaalit tyylit
-│   ├── favicon.ico
-│   │
 │   ├── admin/                            # Admin-paneeli
+│   │   ├── applications/
 │   │   ├── layout.tsx
-│   │   ├── page.tsx
 │   │   ├── logs/
 │   │   │   └── page.tsx
+│   │   ├── page.tsx
 │   │   └── users/
 │   │       └── page.tsx
 │   │
-│   ├── api/                              # API Routes
+│   ├── api/                              # Backend API -reitit
 │   │   ├── admin/
 │   │   │   └── users/
 │   │   │       └── [id]/
-│   │   │           ├── ban/              # Reitti käyttäjien bännäämiselle
+│   │   │           ├── ban/
+│   │   │           │   └── route.ts
+│   │   │           ├── confirm/
 │   │   │           │   └── route.ts
 │   │   │           └── route.ts
+│   │   │
 │   │   ├── contact/
 │   │   │   └── route.ts
-│   │   └── parse-job/
-│   │       └── route.ts
+│   │   │
+│   │   ├── generate-cover-letter/
+│   │   │   └── route.ts
+│   │   │
+│   │   ├── parse-job/
+│   │   │   └── route.ts
+│   │   │
+│   │   └── webhooks/
+│   │       └── new-user/
+│   │           └── route.ts
 │   │
-│   ├── applications/
-│   │   ├── page.tsx
+│   ├── applications/                     # Työhakemusten hallinta
 │   │   ├── AddApplicationForm.tsx
 │   │   ├── ApplicationCard.tsx
 │   │   ├── ApplicationDialog.tsx
+│   │   ├── page.tsx
 │   │   └── [id]/
-│   │       └── page.tsx
 │   │
-│   ├── banned/                           # Porttikieltosivu estetyille käyttäjille
-│   │   └── page.tsx
+│   ├── auth/
+│   │   └── callback/
+│   │       └── route.ts
 │   │
-│   ├── dashboard/
+│   ├── banned/
 │   │   └── page.tsx
 │   │
 │   ├── calendar/
 │   │   └── page.tsx
 │   │
-│   ├── favorites/
-│   │   └── page.tsx
-│   │
-│   ├── history/
-│   │   └── page.tsx
-│   │
-│   ├── settings/
+│   ├── changelog/
 │   │   └── page.tsx
 │   │
 │   ├── contact/
 │   │   └── page.tsx
 │   │
+│   ├── dashboard/
+│   │   └── page.tsx
+│   │
+│   ├── demo/                             # Kirjautumaton demo
+│   │   ├── applications/
+│   │   │   └── page.tsx
+│   │   ├── calendar/
+│   │   │   └── page.tsx
+│   │   ├── favorites/
+│   │   │   └── page.tsx
+│   │   ├── history/
+│   │   │   └── page.tsx
+│   │   ├── job-assistant/
+│   │   │   ├── page.tsx
+│   │   │   └── [id]/
+│   │   │       ├── page.tsx
+│   │   │       └── result/
+│   │   │           └── page.tsx
+│   │   └── page.tsx
+│   │
+│   ├── error.tsx
+│   ├── favicon.ico
+│   │
+│   ├── favorites/
+│   │   └── page.tsx
+│   │
+│   ├── globals.css
+│   │
+│   ├── history/
+│   │   └── page.tsx
+│   │
+│   ├── job-assistant/                    # Työnhakuavustaja
+│   │   ├── page.tsx
+│   │   └── [id]/
+│   │       ├── generate/
+│   │       │   └── page.tsx
+│   │       ├── page.tsx
+│   │       └── result/
+│   │           └── page.tsx
+│   │
+│   ├── layout.tsx
+│   │
 │   ├── login/
-│   │   ├── actions.ts                    # Kirjautumislogiikka (sis. bännitarkistuksen)
+│   │   ├── actions.ts
 │   │   └── page.tsx
 │   │
 │   ├── logout/
 │   │   └── page.tsx
 │   │
+│   ├── not-found.tsx
+│   ├── page.tsx                          # Landing page
+│   │
 │   ├── privacy/
 │   │   └── page.tsx
 │   │
-│   ├── tos/
+│   ├── settings/
 │   │   └── page.tsx
 │   │
-│   └── demo/
-│       ├── page.tsx
-│       ├── applications/
-│       │   └── page.tsx
-│       ├── calendar/
-│       │   └── page.tsx
-│       ├── history/
-│       │   └── page.tsx
-│       └── favorites/
-│           └── page.tsx
+│   └── tos/
+│       └── page.tsx
 │
-├── components/                           # Jaettavat React-komponentit
+├── components/                           # Uudelleenkäytettävät React-komponentit
 │   │
-│   ├── admin/
+│   ├── Admin/
 │   │   ├── AdminSidebar.tsx
 │   │   ├── LogDetailModal.tsx
-│   │   └── UsersTable.tsx                # Käyttäjähallintataulukko bännin keston valinnalla
+│   │   └── UsersTable.tsx
+│   │
+│   ├── AdminCard.tsx
 │   │
 │   ├── applications/
-│   │   └── AddAttachment.tsx
+│   │   ├── AddAttachment.tsx
+│   │   ├── ApplicationHistory.tsx
+│   │   └── CompanyLogo.tsx
 │   │
 │   ├── calendar/
 │   │   ├── AddEventModal.tsx
@@ -232,6 +595,7 @@ duunify/
 │   │   ├── ApplicationTrendChart.tsx
 │   │   ├── ConsistencyCard.tsx
 │   │   ├── DashboardHeader.tsx
+│   │   ├── GhostedCard.tsx
 │   │   ├── ImpactRatingCard.tsx
 │   │   ├── LocationsChart.tsx
 │   │   ├── MapComponent.tsx
@@ -241,14 +605,48 @@ duunify/
 │   │
 │   ├── demo/
 │   │   ├── DemoBanner.tsx
+│   │   ├── DemoCompanyLogo.tsx
 │   │   └── DemoSidebar.tsx
+│   │
+│   ├── DownloadButton.tsx
+│   │
+│   ├── favorites/
+│   │
+│   ├── Footer.tsx
 │   │
 │   ├── history/
 │   │   └── HistoryClient.tsx
 │   │
+│   ├── job-assistant/                    # Työnhakuavustajan komponentit
+│   │   ├── JobAssistantHeader.tsx
+│   │   ├── JobCard.tsx
+│   │   ├── JobList.tsx
+│   │   ├── StepIndicator.tsx
+│   │   │
+│   │   └── id/
+│   │       ├── DocumentItem.tsx
+│   │       ├── InfoSidebar.tsx
+│   │       ├── JobDescriptionCard.tsx
+│   │       ├── JobHeader.tsx
+│   │       ├── UserDocumentsCard.tsx
+│   │       │
+│   │       └── result/
+│   │           ├── CoverLetterCard.tsx
+│   │           ├── CoverLetterSkeleton.tsx
+│   │           ├── DocumentHeader.tsx
+│   │           ├── ResultHeader.tsx
+│   │           └── ResultSidebar.tsx
+│   │
+│   ├── LandingIndexCard.tsx
+│   ├── local-date.tsx
+│   ├── LoginModal.tsx
+│   │
 │   ├── logout/
 │   │   ├── LogoutConfirmModal.tsx
 │   │   └── ModalProvider.tsx
+│   │
+│   ├── NavBar.tsx
+│   ├── NavBarWait.tsx
 │   │
 │   ├── settings/
 │   │   ├── AvatarUpload.tsx
@@ -256,7 +654,12 @@ duunify/
 │   │   ├── ProfileDetailsForm.tsx
 │   │   └── SettingsClient.tsx
 │   │
-│   ├── ui/                               # Yleiset UI-komponentit
+│   ├── Sidebar.tsx
+│   ├── SimpleNav.tsx
+│   ├── theme-provider.tsx
+│   │
+│   ├── ui/
+│   │   ├── AppToaster.tsx
 │   │   ├── avatar.tsx
 │   │   ├── badge.tsx
 │   │   ├── button.tsx
@@ -269,47 +672,28 @@ duunify/
 │   │   ├── skeleton.tsx
 │   │   ├── skeletons.tsx
 │   │   ├── table.tsx
+│   │   ├── tabs.tsx
 │   │   ├── TimerComponent.tsx
-│   │   ├── theme-provider.tsx
 │   │   └── tooltip.tsx
 │   │
-│   ├── Footer.tsx
-│   ├── LandingIndexCard.tsx
-│   ├── LoginModal.tsx
-│   ├── NavBar.tsx
-│   ├── NavBarWait.tsx
-│   ├── Sidebar.tsx
-│   ├── SimpleNav.tsx
-│   ├── DownloadButton.tsx
-│   ├── WaitlistSignup.tsx
-│   └── AppToaster.tsx
+│   └── WaitlistSignup.tsx
 │
 ├── lib/                                  # Sovelluslogiikka
-│   ├── auth-errors.ts
-│   ├── calendar.ts
-│   ├── demo-data.ts
-│   ├── export-csv.ts
-│   ├── history.ts
-│   ├── logger.ts
-│   ├── ratelimit.ts
-│   ├── supabase.ts
-│   ├── supabase-admin.ts
-│   └── supabase-server.ts
-│
-├── middleware.ts                         # Reittien suojaus (Auth + Admin)
-│
-├── public/                               # Staattiset tiedostot
-│   ├── logo.svg
-│   ├── favicon.ico
-│   ├── icons/
-│   ├── screenshots/
-│   └── images/
-│
-├── types/                                # TypeScript-tyypit
-│   ├── application.ts
-│   ├── user.ts
-│   ├── history.ts
-│   └── database.ts
+│   ├── anonymize.ts                      # AI-käsittelyn henkilötietojen suojaus
+│   ├── applications.tsx                  # Hakemuslogiikka
+│   ├── auth-errors.ts                    # Autentikointivirheiden käsittely
+│   ├── calendar.ts                       # Kalenterilogiikka
+│   ├── changelog.ts                      # Muutosloki
+│   ├── demo-data.ts                      # Demon mock-data
+│   ├── export-csv.ts                     # CSV-vienti
+│   ├── history.ts                        # Historia- ja lokilogiikka
+│   ├── logger.ts                         # Lokitus
+│   ├── middleware.ts                     # Supabase-istunnon päivityslogiikka
+│   ├── ratelimit.ts                      # Rate limiting
+│   ├── supabase-admin.ts                 # Supabase Admin -yhteys
+│   ├── supabase-server.ts                # Supabase-palvelinyhteys
+│   ├── supabase.ts                       # Supabase-selainyhteys
+│   └── utils.ts                          # Yleiset apufunktiot
 │
 ├── hooks/                                # Custom React Hooks
 │   ├── useAuth.ts
@@ -317,14 +701,29 @@ duunify/
 │   ├── useDashboard.ts
 │   └── useProfile.ts
 │
-├── utils/                                # Pienet apufunktiot
+├── types/                                # TypeScript-tyypit
+│   ├── application.ts
+│   ├── user.ts
+│   ├── history.ts
+│   └── database.ts
+│
+├── utils/                                # Pienet yleiset apufunktiot
 │   ├── formatDate.ts
 │   ├── formatSalary.ts
 │   ├── validators.ts
 │   └── constants.ts
 │
+├── public/                               # Staattiset resurssit
+│   ├── logo.svg
+│   ├── favicon.ico
+│   ├── icons/
+│   ├── screenshots/
+│   └── images/
+│
+├── middleware.ts                         # Vanha / yhteensopivuus
+├── proxy.ts                              # Reittien suojaus ja session tarkistus
+│
 ├── package.json
-├── proxy.ts                              # middleware-name-update
 ├── tsconfig.json
 ├── next.config.ts
 └── README.md
@@ -332,14 +731,31 @@ duunify/
 
 ## Yhteenveto
 
+### Duunify – moderni työnhaun hallinta- ja avustuspalvelu
 
-### Laajempi konteksti: Moderni Mini-SaaS ja Duunifyn arkkitehtuuri
-Vastaavanlaista tarkkaa arkkitehtuuria ja tekoälyvetoista suunnittelua hyödynnetään myös muissa suomalaisissa kehitysprojekteissa, kuten modernissa **Duunify**-alustassa. Duunifyssa korvataan perinteiset Excel-taulukot automatisoidulla järjestelmällä, joka hallitsee koko työnhakuprosessin elinkaarta:
-* **Automaattinen tiedonkeruu (DOM Parsing):** URL-osoitteen perusteella sivustolta haetaan metatiedot ja leipäteksti Cheeriolla, mikä takaa tietojen säilyvyyden silloinkin, kun alkuperäinen työpaikkailmoitus poistetaan verkosta.
-* **Tietoturva ja monikerroksinen arkkitehtuuri:** Supabase-tietokantayhteydet on eriytetty selaimen, palvelimen ja järjestelmänvalvojan (Service Role) kesken, ja RLS (Row Level Security) suojaa käyttäjien dataa.
-* **Käytettävyys ja analytiikka:** React Server Components (RSC), Tailwind CSS, Next.js App Router sekä Recharts-pohjainen visuaalinen dashboard muodostavat saumattoman kokonaisuuden, joka tekee monimutkaisesta datasta helppokäyttöistä ja visuaalisesti näyttävää.
+Duunify on suomalaisille työnhakijoille suunniteltu Mini-SaaS-palvelu, jonka tavoitteena on tehdä työnhausta järjestelmällisempää, selkeämpää ja tehokkaampaa. Lähtökohtana on ollut ongelma, jossa työnhakijan tiedot, työpaikkailmoitukset, hakemukset, haastattelut ja muistiinpanot ovat helposti hajallaan useissa eri palveluissa ja esimerkiksi Excel-taulukoissa.
 
-Oli kyseessä sitten yksittäinen interaktiivinen komponentti tai laajempi Mini-SaaS-palvelu, avain menestykseen on teknisen toteutuksen ja huolellisen ulkoasun/käyttökokemuksen tasapaino.
+Duunify kokoaa nämä yhteen palveluun ja automatisoi mahdollisimman suuren osan toistuvasta työstä.
+
+Palvelun keskeisiä kokonaisuuksia ovat:
+
+- **Työpaikkailmoitusten automaattinen tallennus:** Käyttäjä voi tuoda työpaikkailmoituksen URL-osoitteella, jolloin järjestelmä poimii ilmoituksesta olennaiset tiedot ja tallentaa myös alkuperäisen ilmoitustekstin myöhempää käyttöä varten.
+- **Hakemusten hallinta:** Käyttäjä voi seurata hakemustensa etenemistä yhdestä paikasta, lisätä muistiinpanoja ja liittää mukaan esimerkiksi CV:n ja saatekirjeen.
+- **Kalenteri ja muistutukset:** Haastattelut, hakuajat ja muut työnhakuun liittyvät tapahtumat voidaan hallita keskitetysti.
+- **Analytiikka:** Dashboard kokoaa työnhaun aktiivisuuden ja hakemusten tilanteen visuaaliseksi kokonaisuudeksi, jolloin käyttäjä näkee nopeasti oman työnhakunsa tilanteen.
+- **Toimintaloki:** Käyttäjän tekemät keskeiset muutokset ja tapahtumat voidaan säilyttää osana työnhakuprosessia.
+- **Työnhakuavustaja:** Tekoälyä hyödynnetään konkreettisena apuna työnhaussa. Käyttäjä voi valita tallentamansa työpaikkailmoituksen ja käyttää omaa pohjasaatekirjettään lähtökohtana räätälöidyn hakemuksen muodostamiseen.
+- **Tietosuoja:** Ennen tekoälykäsittelyä käyttäjän tekstistä poistetaan automaattisesti tunnistettavia henkilötietoja, kuten nimi, sähköposti, puhelinnumero, henkilötunnus ja osoitetietoja. Tavoitteena on välittää tekoälylle ensisijaisesti työn kannalta olennaista osaamis- ja kokemustietoa.
+- **Hallinta ja turvallisuus:** Järjestelmässä on erillinen ylläpito-osio, roolipohjainen käyttöoikeuksien hallinta, käyttäjien estäminen sekä toimintojen lokitus.
+- **Demo-ympäristö:** Palvelun toimintaa voidaan esitellä ilman käyttäjätiliä erillisellä mock-datalla toimivalla demo-ympäristöllä.
+
+Teknisesti Duunify on rakennettu modernin Next.js- ja React-ekosysteemin ympärille. TypeScript huolehtii sovelluksen tyyppiturvallisuudesta, Next.js App Router tarjoaa sekä palvelin- että selainpuolen komponentit ja Supabase toimii tietokannan, käyttäjähallinnan ja tiedostojen tallennuksen perustana. Tailwind CSS mahdollistaa responsiivisen käyttöliittymän rakentamisen, ja Rechartsia hyödynnetään työnhaun visualisoinnissa.
+
+Arkkitehtuurissa on kiinnitetty erityistä huomiota tietoturvaan. Käyttäjien dataa suojataan Supabasen RLS-säännöillä, palvelin- ja selainpuolen tietokantayhteydet on erotettu toisistaan ja ylläpidon tehokkaampia oikeuksia käyttävät toiminnot pidetään palvelinpuolella. Suojatut reitit ja ylläpito-osio tarkistavat käyttäjän kirjautumisen ja käyttöoikeudet ennen pääsyn sallimista.
+
+Duunify on siten kehittynyt yksinkertaisesta työpaikkailmoitusten keräämisestä kokonaiseksi työnhaun hallintatyökaluksi. Erityisesti työnhakuavustajan kaltaiset ominaisuudet tuovat palveluun uuden tason: tavoitteena ei ole ainoastaan auttaa käyttäjää **seuraamaan työnhakua**, vaan myös **helpottaa itse työnhakutyötä**.
+
+Projektissa yhdistyvät käytännön ongelman ratkaiseminen, moderni web-kehitys, tietokannat, käyttäjähallinta, automaattinen tiedonkeruu, tekoälyn hyödyntäminen sekä tietoturvallinen palvelinarkkitehtuuri. Kokonaisuus toimii samalla käytännön projektina, jossa modernin SaaS-palvelun eri osa-alueet tulevat konkreettisesti tutuiksi.
 
 Tutustu Duunify-projektiin ja lähdekoodiin GitHubissa:  
 
