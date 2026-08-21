@@ -53,7 +53,6 @@ function PortfolioHome() {
     <>
       <Header />
       <Home />
-      <GitHubHeatmap />
       <Technologies />
       <Navbar />
       <main>
