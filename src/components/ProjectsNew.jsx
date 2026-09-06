@@ -25,12 +25,29 @@ import project19 from "../images/project19.png";
 import project20 from "../images/project20.png";
 import project21 from "../images/project21.png";
 import project22 from "../images/project22.png";
+import project23 from "../images/project23.png";
 
 export const projectsData = [
   {
+    slug: "gyre-roulette",
+    hasArticle: true,
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    image: project23,
+    titleEn: "Gyre Roulette – Interactive Play-for-Fun Roulette",
+    titleFi: "Gyre Roulette – Leikkimielinen interaktiivinen ruletti",
+    descriptionEn:
+      "A modern, interactive 15-slot browser roulette demo game built strictly for fun. Features provably fair randomness via CSPRNG Engine, synchronized audio-visual animations, and a responsive UI.",
+    descriptionFi:
+      "Moderni 15-paikkainen rulettipeli puhtaasti leikkimieliseen viihde-, ja testi-käyttöön. Sisältää todennettavasti satunnaisen CSPRNG-moottorin, ja responsiivisen käyttöliittymän.",
+    github: "https://github.com/0xjulius/casino",
+    live: "https://gyre-roulette.vercel.app",
+    badgeEn: "NEW!",
+    badgeFi: "UUSI!",
+  },
+  {
     slug: "duunify-mini-saas",
     hasArticle: true,
-    tags: ["React", "NextJS", "Tailwind", "SaaS", "Full-Stack", "Automation"],
+    tags: ["NextJS", "Tailwind", "SaaS", "Full-Stack", "Automation", "Typescript", "Gemini", "Supabase"],
     image: project22,
     titleEn: "Duunify.com – Mini-SaaS | Smart Job Application Solution",
     titleFi: "Duunify.com – Mini-SaaS | Älykäs työnhakuratkaisu",
