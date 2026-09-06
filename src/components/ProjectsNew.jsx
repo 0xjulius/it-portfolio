@@ -38,7 +38,7 @@ export const projectsData = [
     descriptionEn:
       "A modern, interactive 15-slot browser roulette demo game built strictly for fun. Features provably fair randomness via CSPRNG Engine, synchronized audio-visual animations, and a responsive UI.",
     descriptionFi:
-      "Moderni 15-paikkainen rulettipeli puhtaasti leikkimieliseen viihde-, ja testi-käyttöön. Sisältää todennettavasti satunnaisen CSPRNG-moottorin, ja responsiivisen käyttöliittymän.",
+      "Moderni 15-paikkainen demo-ruletti puhtaasti leikkimieliseen viihde- ja testi-käyttöön. Sisältää todennettavasti satunnaisen CSPRNG-moottorin, ja responsiivisen käyttöliittymän.",
     github: "https://github.com/0xjulius/casino",
     live: "https://gyre-roulette.vercel.app",
     badgeEn: "NEW!",
