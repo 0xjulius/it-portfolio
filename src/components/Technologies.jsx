@@ -19,7 +19,6 @@ import {
   faDatabase,
   faBrain,
   faRobot,
-  faTerminal,
   faCloud,
   faShieldHalved,
   faPlug,
@@ -28,6 +27,8 @@ import {
   faMicrochip,
   faSliders,
   faChevronDown,
+  faCode,
+  faLayerGroup,
 } from "@fortawesome/free-solid-svg-icons";
 
 const techGroups = [
@@ -95,6 +96,11 @@ const techGroups = [
       en: "Web Dev, APIs & Software",
     },
     items: [
+      {
+        name: { fi: "TypeScript", en: "TypeScript" },
+        icon: faCode,
+        color: "#3178C6",
+      },
       {
         name: { fi: "React & Next.js", en: "React & Next.js" },
         icon: faReact,
@@ -179,6 +185,14 @@ const techGroups = [
     },
     items: [
       {
+        name: {
+          fi: "Sanity Headless CMS",
+          en: "Sanity Headless CMS",
+        },
+        icon: faLayerGroup,
+        color: "#F04336",
+      },
+      {
         name: { fi: "Räätälöidyt admin-paneelit", en: "Custom Admin Panels" },
         icon: faSliders,
         color: "#6366f1",
@@ -202,7 +216,6 @@ const techGroups = [
   },
 ];
 
-// Korttien saapumisanimaatio (Kevyt scale & opacity, stagger-viiveillä)
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.95, y: 15 },
   visible: (i) => ({

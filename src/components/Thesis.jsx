@@ -13,7 +13,7 @@ const thesisContent = {
     p2Before: "Opinnäytetyöstäni saama ",
     p2Highlight: "täysi arvosana 5/5",
     p2After:
-      " on minulle suuri merkkipaalu, ja uskon sen antavan vahvan pohjan tulevalle työuralleni.",
+      " on minulle suuri merkkipaalu, joka edesauttaa merkittävästi ammatillista kehitystä.",
   },
   en: {
     title: "My thesis of University of Applied Sciences studies",
