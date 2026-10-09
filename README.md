@@ -1,4 +1,4 @@
-# WEBSITE LIVE: [https://react-portfolio-0xjulius.vercel.app/](https://react-portfolio-0xjulius.vercel.app/)
+# WEBSITE LIVE: [https://juliusaalto.com/](https://juliusaalto.com/)
 
 # Recreating my WordPress IT-Portfolio, with React & Tailwind.CSS
 
