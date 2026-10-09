@@ -12,6 +12,3 @@
 
 # With good looking hover effects on navbar
 ![screenshot](photo4.png)
-
-# My old WordPress Solution here: [juliusaalto.com](www.juliusaalto.com)
-![screenshot](src/images/project11.png)
