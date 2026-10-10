@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCogs,
@@ -11,6 +11,7 @@ import {
   faServer,
   faMobileAlt,
   faBrain,
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -171,15 +172,57 @@ const skillsContent = {
   },
 };
 
-const SkillItem = ({ icon, title, description }) => (
-  <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-    <div className="p-4 h-full transition-all duration-300 hover:scale-105">
-      <h3 className="font-semibold text-2xl mb-2 ptx">
-        <FontAwesomeIcon icon={icon} className="mr-2 pr-1" />
-        {title}
-      </h3>
-      <p className="leading-tight ctext font-semibold text-lg">{description}</p>
+// Mobiilin harmonikkarivi
+const MobileSkillItem = ({ icon, title, description }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-b border-white/20 last:border-none transition-colors">
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center justify-between py-5 px-6 sm:px-8 cursor-pointer hover:bg-white/30 transition-colors gap-3"
+      >
+        <h3 className="font-semibold text-xl ptx flex items-center min-w-0 flex-1 truncate">
+          <span className="w-8 flex justify-center flex-shrink-0 mr-3">
+            <FontAwesomeIcon icon={icon} fixedWidth className="text-xl" />
+          </span>
+          <span className="truncate">{title}</span>
+        </h3>
+        <FontAwesomeIcon
+          icon={faChevronDown}
+          className={`text-black/50 transition-transform duration-300 ease-in-out flex-shrink-0 text-lg ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </div>
+
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen
+            ? "grid-rows-[1fr] opacity-100 pb-6"
+            : "grid-rows-[0fr] opacity-0 pb-0"
+        }`}
+      >
+        <div className="overflow-hidden px-6 sm:px-8">
+          <p className="leading-relaxed ctext font-medium text-lg sm:text-xl pt-1">
+            {description}
+          </p>
+        </div>
+      </div>
     </div>
+  );
+};
+
+// Työpöydän kortti (käytetään puhdasta p-4 täytettä ilman w-1/4 -leveysmääritteitä)
+const DesktopSkillItem = ({ icon, title, description }) => (
+  <div className="p-4 h-full transition-all duration-300 hover:scale-105 flex flex-col">
+    <h3 className="font-semibold text-xl xl:text-2xl mb-2 ptx flex items-center">
+      <FontAwesomeIcon icon={icon} fixedWidth className="mr-2 flex-shrink-0" />
+      <span>{title}</span>
+    </h3>
+    <p className="leading-relaxed ctext font-semibold text-base xl:text-lg">
+      {description}
+    </p>
   </div>
 );
 
@@ -193,9 +236,23 @@ const Skills = () => {
         <h2 className="text-[30px] lg:text-[36px] uppercase text-center lg:text-center text-4xl font-bold text-gradient mb-10">
           {t.title}
         </h2>
-        <div className="flex flex-wrap card">
+
+        {/* MOBIILIN HARMONIKKA (Näkyy puhelimilla & pienillä tableteilla < 1024px) */}
+        <div className="flex flex-col card max-w-5xl mx-auto lg:hidden overflow-hidden shadow-sm">
           {t.skills.map((skill, index) => (
-            <SkillItem
+            <MobileSkillItem
+              key={index}
+              icon={skill.icon}
+              title={skill.title}
+              description={skill.description}
+            />
+          ))}
+        </div>
+
+        {/* TYÖPÖYDÄN RESPONSIVINEN GRID (2 saraketta lg-näytöllä, 4 saraketta xl-näytöllä) */}
+        <div className="hidden lg:grid grid-cols-2 xl:grid-cols-4 gap-4 card p-4">
+          {t.skills.map((skill, index) => (
+            <DesktopSkillItem
               key={index}
               icon={skill.icon}
               title={skill.title}
